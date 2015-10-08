@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace FICTFeed.Bussines
 {
-    public class TestEntity
+    public class TestEntity : Entity
     {
-        public virtual Guid Id { get; set; }
     }
 }

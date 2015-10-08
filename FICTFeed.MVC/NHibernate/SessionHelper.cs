@@ -48,9 +48,9 @@ namespace FICTFeed.MVC.NHibernate
         /// <summary>
         /// Open an ISession.
         /// </summary>
-        public void OpenSession()
+        public ISession OpenSession()
         {
-            _nHibernateHelper.OpenSession();
+            return _nHibernateHelper.OpenSession();
         }
 
         /// <summary>
