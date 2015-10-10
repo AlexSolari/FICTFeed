@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FICTFee.DependecyResolver
+namespace FICTFeed.DependecyResolver
 {
     public static class Resolver
     {

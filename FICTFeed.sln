@@ -5,11 +5,13 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FICTFeed.MVC", "FICTFeed.MVC\FICTFeed.MVC.csproj", "{40973F18-5929-40EB-B859-24218F5B8E44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FICTFee.DependecyResolver", "Resolver\FICTFee.DependecyResolver.csproj", "{57F7BA96-4AC6-479D-B402-DD09DAD1D29B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FICTFeed.DependecyResolver", "Resolver\FICTFeed.DependecyResolver.csproj", "{57F7BA96-4AC6-479D-B402-DD09DAD1D29B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FICTFeed.Bussines", "FICTFeed.Bussines\FICTFeed.Bussines.csproj", "{440268C1-3C8C-4D9F-9E59-2B7A6D8DD3FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FICTFeed.Database", "FICTFeed.Database\FICTFeed.Database.csproj", "{EC12B6A4-F5EB-47A8-B0BD-676CDFED7E68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FICTFeed.Framework", "FICTFeed.Framework\FICTFeed.Framework.csproj", "{0F5823A8-F8D9-4C9A-9B5C-6108BA5F1B4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EC12B6A4-F5EB-47A8-B0BD-676CDFED7E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC12B6A4-F5EB-47A8-B0BD-676CDFED7E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC12B6A4-F5EB-47A8-B0BD-676CDFED7E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5823A8-F8D9-4C9A-9B5C-6108BA5F1B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5823A8-F8D9-4C9A-9B5C-6108BA5F1B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5823A8-F8D9-4C9A-9B5C-6108BA5F1B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5823A8-F8D9-4C9A-9B5C-6108BA5F1B4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

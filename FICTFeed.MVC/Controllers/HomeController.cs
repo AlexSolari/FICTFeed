@@ -13,8 +13,6 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var a = new DataProvider<TestEntity>();
-            a.Create(new TestEntity());
             return View();
         }
     }
