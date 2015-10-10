@@ -127,9 +127,6 @@
     </Compile>
     <Compile Include="Models\PageViews\RegisterUserPageView.cs" />
     <Compile Include="Models\ViewModels\UserViewModel.cs" />
-    <Compile Include="NHibernate\NHibernateHelper.cs" />
-    <Compile Include="NHibernate\Providers\DataProvider.cs" />
-    <Compile Include="NHibernate\SessionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +166,13 @@
       <Project>{440268c1-3c8c-4d9f-9e59-2b7a6d8dd3ff}</Project>
       <Name>FICTFeed.Bussines</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Resolver\DependecyResolver.csproj">
+    <ProjectReference Include="..\FICTFeed.Database\FICTFeed.Database.csproj">
+      <Project>{ec12b6a4-f5eb-47a8-b0bd-676cdfed7e68}</Project>
+      <Name>FICTFeed.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resolver\FICTFee.DependecyResolver.csproj">
       <Project>{57f7ba96-4ac6-479d-b402-dd09dad1d29b}</Project>
-      <Name>DependecyResolver</Name>
+      <Name>FICTFee.DependecyResolver</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

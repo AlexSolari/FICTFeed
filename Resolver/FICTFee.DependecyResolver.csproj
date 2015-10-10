@@ -7,8 +7,8 @@
     <ProjectGuid>{57F7BA96-4AC6-479D-B402-DD09DAD1D29B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DependecyResolver</RootNamespace>
-    <AssemblyName>DependecyResolver</AssemblyName>
+    <RootNamespace>FICTFee.DependecyResolver</RootNamespace>
+    <AssemblyName>FICTFee.DependecyResolver</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

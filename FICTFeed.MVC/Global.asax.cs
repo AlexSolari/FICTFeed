@@ -1,4 +1,4 @@
-﻿using FICTFeed.MVC.NHibernate;
+﻿using FICTFeed.Database.NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;

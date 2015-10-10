@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FICTFeed.MVC.NHibernate.Providers;
 using FICTFeed.Bussines;
+using FICTFeed.Database.NHibernate.Providers;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -14,10 +14,7 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult Index()
         {
             var a = new DataProvider<TestEntity>();
-            for (int i = 0; i < 13; i++)
-            {
-                a.Create(new TestEntity());
-            }
+            a.Create(new TestEntity());
             return View();
         }
     }
