@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="FrameworkInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +170,10 @@
     <ProjectReference Include="..\FICTFeed.Database\FICTFeed.Database.csproj">
       <Project>{ec12b6a4-f5eb-47a8-b0bd-676cdfed7e68}</Project>
       <Name>FICTFeed.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FICTFeed.Framework\FICTFeed.Framework.csproj">
+      <Project>{0f5823a8-f8d9-4c9a-9b5c-6108ba5f1b4a}</Project>
+      <Name>FICTFeed.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Resolver\FICTFeed.DependecyResolver.csproj">
       <Project>{57f7ba96-4ac6-479d-b402-dd09dad1d29b}</Project>
