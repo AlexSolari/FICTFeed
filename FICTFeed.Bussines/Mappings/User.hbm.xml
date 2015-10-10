@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="FICTFeed.Bussines" assembly="FICTFeed.Bussines">
+
+  <class name="User" table="Users" >
+
+    <!-- Primary Key(s) -->
+    <id name="Id" column="ID">
+      <generator class="guid" />
+    </id>
+    <property name="Name" type="string" not-null="true"/>
+    <property name="PasswordCrypted" type="string" not-null="true"/>
+    <property name="Mail" type="string" not-null="true"/>
+  </class>
+</hibernate-mapping>
