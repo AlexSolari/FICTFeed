@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using FICTFeed.Bussines;
-using FICTFeed.Database.NHibernate.Providers;
+﻿using System.Web.Mvc;
 
 namespace FICTFeed.MVC.Controllers
 {
