@@ -3,7 +3,7 @@ using NHibernate;
 using System;
 using System.Collections.Generic;
 
-namespace FICTFeed.Database
+namespace FICTFeed.Framework.NHibernate
 {
     public class DataProvider<TEntity>
         where TEntity : Entity

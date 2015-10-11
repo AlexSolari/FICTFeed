@@ -47,10 +47,6 @@
     <EmbeddedResource Include="Mappings\User.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FICTFeed.Framework\FICTFeed.Framework.csproj">
-      <Project>{0f5823a8-f8d9-4c9a-9b5c-6108ba5f1b4a}</Project>
-      <Name>FICTFeed.Framework</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Resolver\FICTFeed.DependecyResolver.csproj">
       <Project>{57f7ba96-4ac6-479d-b402-dd09dad1d29b}</Project>
       <Name>FICTFeed.DependecyResolver</Name>

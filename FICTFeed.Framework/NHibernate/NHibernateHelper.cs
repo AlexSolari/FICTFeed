@@ -2,7 +2,7 @@
 using NHibernate.Cfg;
 using NHibernate.Context;
 
-namespace FICTFeed.Database
+namespace FICTFeed.Framework.NHibernate
 {
     public class NHibernateHelper
     {

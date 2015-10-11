@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -167,10 +168,6 @@
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
       <Project>{440268c1-3c8c-4d9f-9e59-2b7a6d8dd3ff}</Project>
       <Name>FICTFeed.Bussines</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FICTFeed.Database\FICTFeed.Database.csproj">
-      <Project>{ec12b6a4-f5eb-47a8-b0bd-676cdfed7e68}</Project>
-      <Name>FICTFeed.Database</Name>
     </ProjectReference>
     <ProjectReference Include="..\FICTFeed.Framework\FICTFeed.Framework.csproj">
       <Project>{0f5823a8-f8d9-4c9a-9b5c-6108ba5f1b4a}</Project>

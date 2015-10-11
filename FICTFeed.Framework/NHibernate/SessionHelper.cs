@@ -1,6 +1,6 @@
 ﻿using NHibernate;
 
-namespace FICTFeed.Database
+namespace FICTFeed.Framework.NHibernate
 {
     public class SessionHelper
     {
