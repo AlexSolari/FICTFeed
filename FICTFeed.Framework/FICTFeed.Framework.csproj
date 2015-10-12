@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encryptor.cs" />
+    <Compile Include="Map\Mapper.cs" />
     <Compile Include="NHibernate\NHibernateHelper.cs" />
     <Compile Include="NHibernate\Providers\DataProvider.cs" />
     <Compile Include="NHibernate\SessionHelper.cs" />
@@ -62,6 +63,10 @@
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
       <Project>{440268c1-3c8c-4d9f-9e59-2b7a6d8dd3ff}</Project>
       <Name>FICTFeed.Bussines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resolver\FICTFeed.DependecyResolver.csproj">
+      <Project>{57f7ba96-4ac6-479d-b402-dd09dad1d29b}</Project>
+      <Name>FICTFeed.DependecyResolver</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
