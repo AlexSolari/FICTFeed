@@ -59,7 +59,7 @@ namespace FICTFeed.Framework.NHibernate
         {
             return Execute(session =>
             {
-                return session.Get<TEntity>(id);
+                return session.Get<TEntity>(Guid.Parse(id));
             });
         }
 
@@ -69,7 +69,7 @@ namespace FICTFeed.Framework.NHibernate
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    session.SaveOrUpdate(model);
+                    session.Save(model);
                     transaction.Commit();
                 }
             });
@@ -81,8 +81,7 @@ namespace FICTFeed.Framework.NHibernate
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    session.SaveOrUpdate(model);
-                    session.Flush();
+                    session.Update(model);
                     transaction.Commit();
                 }
             });

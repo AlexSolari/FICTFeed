@@ -21,6 +21,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (Request.Cookies.AllKeys.Contains("FICTFeed.LoginCookie"))
+                    {
+                        <li >@Html.RouteLink("Log out", "LogoutUser")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.RouteLink("Log in", "LoginUser")</li>
+                    }
                 </ul>
             </div>
         </div>
@@ -31,6 +39,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/site.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

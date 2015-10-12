@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FICTFeed.Framework.Map
 {
-    public partial class Mapper
+    public class Mapper
     {
         public static Dictionary<Type, Func<object, object, object>> CustomMappings = new Dictionary<Type, Func<object, object, object>>();
 

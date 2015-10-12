@@ -9,12 +9,14 @@ namespace FICTFeed.Framework.Users
     {
         public User GetByMail(string mail)
         {
-            return Execute(session =>
+            User result = null;
+            Execute(session =>
             {
                 var criteria = session.CreateCriteria(typeof(User));
-                criteria.Add(Restrictions.Eq("Email", mail));
-                return criteria.UniqueResult<User>();
+                criteria.Add(Restrictions.Eq("Mail", mail));
+                result = criteria.UniqueResult<User>();
             });
+            return result;
         }
     }
 }

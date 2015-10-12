@@ -2,6 +2,10 @@
     ViewBag.Title = "Home Page";
 }
 <div class="home-content">
+    @if(Request.Cookies.AllKeys.Contains("FICTFeed.LoginCookie"))
+    {
+        <div>You are logined with id @Request.Cookies["FICTFeed.LoginCookie"].Value</div>
+    }
     <div class="tagline">you will love ZSTU or you will die</div>
 </div>
 @Styles.Render("~/Content/Home.css")

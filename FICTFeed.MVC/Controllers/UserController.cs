@@ -3,6 +3,9 @@ using FICTFeed.DependecyResolver;
 using System;
 using System.Web.Mvc;
 using FICTFeed.Framework.Users;
+using FICTFeed.Framework.Map;
+using FICTFeed.Bussines;
+using FICTFeed.MVC.Models.ViewModels;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -28,7 +31,9 @@ namespace FICTFeed.MVC.Controllers
                 return View(pageView);
 
             var newUser = pageView.NewUser;
-            throw new NotImplementedException();
+            userManager.Register(Mapper.Map<User,UserViewModel>(newUser));
+
+            return RedirectToRoute("Home");
         }
 
         [HttpGet]
@@ -43,8 +48,23 @@ namespace FICTFeed.MVC.Controllers
             if (!ModelState.IsValid)
                 return View(pageView);
 
-            throw new NotImplementedException();
-            userManager.Login(pageView.LoginData.Mail, pageView.LoginData.Password, Request);
+            if (userManager.Login(pageView.LoginData.Mail, pageView.LoginData.Password, Response) != UserManager.OperationResult.Success)
+            {
+                pageView.Valid = false;
+                return View(pageView);
+            }
+
+            return RedirectToRoute("Home");
         }
-	}
+
+        [HttpGet]
+        public ActionResult LogoutUser()
+        {
+            var result = userManager.Logout(Request);
+
+            if (result == UserManager.OperationResult.Success)
+                Response.Cookies["FICTFeed.LoginCookie"].Expires = DateTime.Now.AddDays(-1d);
+            return RedirectToRoute("Home");
+        }
+    }
 }
