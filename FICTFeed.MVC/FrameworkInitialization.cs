@@ -2,6 +2,7 @@
 using FICTFeed.DependecyResolver;
 using FICTFeed.Framework;
 using FICTFeed.Framework.Map;
+using FICTFeed.Framework.Users;
 using FICTFeed.MVC.Models.ViewModels;
 
 namespace FICTFeed.MVC
@@ -18,6 +19,7 @@ namespace FICTFeed.MVC
         static void MapTypes()
         {
             Resolver.RegisterType<User, User>();
+            Resolver.RegisterType<UserManager, UserManager>();
         }
 
         static void RegisterSingletons()
