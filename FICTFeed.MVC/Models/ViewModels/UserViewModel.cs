@@ -23,7 +23,7 @@ namespace FICTFeed.MVC.Models.ViewModels
         [DataType(DataType.EmailAddress)]
         [Required]
         public virtual string Mail { get; set; }
-
+        
         public UserViewModel() { }
 
         public UserViewModel(string name, string password, string confirmPassword, string mail)

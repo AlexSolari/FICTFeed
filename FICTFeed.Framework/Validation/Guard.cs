@@ -12,14 +12,14 @@ namespace FICTFeed.Framework.Validation
         public static void ThrowIfNegative<T>(T value, string message, string paramName)
             where T : IComparable<T>
         {
-            ThrowIfLessThan(value, default(T), message, paramName);
+            ThrowIfLessThan(value, default(T));
         }   
 
-        public static void ThrowIfLessThan<T>(T value, T minValue, string message, string paramName)
+        public static void ThrowIfLessThan<T>(T value, T minValue)
             where T : IComparable<T>
         {
             if (value.CompareTo(minValue) < 0)
-                throw new ArgumentOutOfRangeException(paramName, message);
+                throw new ArgumentOutOfRangeException("Value cannot be less than " + value.ToString());
         }
 
         public static void ThrowIfNull(object obj)
@@ -50,10 +50,10 @@ namespace FICTFeed.Framework.Validation
                 throw new ArgumentException(message, paramName);
         }
 
-        public static void ThrowIfLonger(string str, int maxLength, string paramName)
+        public static void ThrowIfLonger(string str, int maxLength)
         {
             if (!string.IsNullOrEmpty(str) && str.Length > maxLength)
-                throw new ArgumentOutOfRangeException(paramName, String.Format("{0} cannot be longer than {1} characters.", paramName, maxLength));
+                throw new ArgumentOutOfRangeException(String.Format("Value cannot be longer than {1} characters.", maxLength));
         }
 
         public static void ThrowIfNotEqual<T>(T value1, T value2, string message)
@@ -68,10 +68,10 @@ namespace FICTFeed.Framework.Validation
                 throw new ArgumentException(message);
         }
 
-        public static void ThrowIfEmptyGuid(Guid guid, string message)
+        public static void ThrowIfEmptyGuid(Guid guid)
         {
             if (guid == Guid.Empty)
-                throw new ArgumentException(message);
+                throw new ArgumentException("GUID cant be empty");
         }
     }
 }

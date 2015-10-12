@@ -10,5 +10,6 @@
     <property name="Name" type="string" not-null="true"/>
     <property name="PasswordCrypted" type="string" not-null="true"/>
     <property name="Mail" type="string" not-null="true"/>
+    <property name="Online" type="bool" not-null="true"/>
   </class>
 </hibernate-mapping>
