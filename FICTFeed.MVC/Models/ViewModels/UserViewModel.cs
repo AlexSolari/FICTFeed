@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FICTFeed.Framework.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace FICTFeed.MVC.Models.ViewModels
 {
@@ -27,6 +28,11 @@ namespace FICTFeed.MVC.Models.ViewModels
 
         public UserViewModel(string name, string password, string confirmPassword, string mail)
         {
+            Guard.ThrowIfEmptyString(name);
+            Guard.ThrowIfEmptyString(password);
+            Guard.ThrowIfEmptyString(confirmPassword);
+            Guard.ThrowIfEmptyString(mail);
+
             Name = name;
             Password = password;
             ConfirmPassword = confirmPassword;

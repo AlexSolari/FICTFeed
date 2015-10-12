@@ -13,7 +13,7 @@ namespace FICTFeed.Framework.Validation
             where T : IComparable<T>
         {
             ThrowIfLessThan(value, default(T), message, paramName);
-        }
+        }   
 
         public static void ThrowIfLessThan<T>(T value, T minValue, string message, string paramName)
             where T : IComparable<T>
