@@ -1,5 +1,6 @@
 ﻿using FICTFeed.Bussines;
 using FICTFeed.DependecyResolver;
+using FICTFeed.Framework.Strings;
 using FICTFeed.Framework.Validation;
 using System;
 using System.Collections.Generic;
@@ -57,21 +58,21 @@ namespace FICTFeed.Framework.Users
 
             user.Online = true;
             Provider.Update(user);
-            response.Cookies.Add(new HttpCookie(LoginCookie, user.Id.ToString()));
+            response.Cookies.Add(new HttpCookie(CookiesNames.LoginCookie, user.Id.ToString()));
 
             return OperationResult.Success;
         }
 
         public OperationResult Logout(HttpRequestBase request)
         {
-            var user = Provider.GetById(request.Cookies[LoginCookie].Value);
+            var user = Provider.GetById(request.Cookies[CookiesNames.LoginCookie].Value);
 
             if (user == null)
                 return OperationResult.InvalidCookie;
 
             user.Online = false;
             Provider.Update(user);
-            request.Cookies.Remove(LoginCookie);
+            request.Cookies.Remove(CookiesNames.LoginCookie);
 
             return OperationResult.Success;
         }

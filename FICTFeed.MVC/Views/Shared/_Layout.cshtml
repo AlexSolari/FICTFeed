@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using FICTFeed.Framework.Strings
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -21,7 +22,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (Request.Cookies.AllKeys.Contains(LoginCookie))
+                    @if (Request.Cookies.AllKeys.Contains(CookiesNames.LoginCookie))
                     {
                         <li >@Html.RouteLink("Log out", "LogoutUser")</li>
                     }

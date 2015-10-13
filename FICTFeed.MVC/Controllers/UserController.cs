@@ -6,6 +6,7 @@ using FICTFeed.Framework.Users;
 using FICTFeed.Framework.Map;
 using FICTFeed.Bussines;
 using FICTFeed.MVC.Models.ViewModels;
+using FICTFeed.Framework.Strings;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -63,7 +64,7 @@ namespace FICTFeed.MVC.Controllers
             var result = userManager.Logout(Request);
 
             if (result == UserManager.OperationResult.Success)
-                Response.Cookies[LoginCookie].Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies[CookiesNames.LoginCookie].Expires = DateTime.Now.AddDays(-1d);
             return RedirectToRoute("Home");
         }
     }

@@ -1,4 +1,5 @@
 ﻿using FICTFeed.Bussines;
+using FICTFeed.Framework.Strings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace FICTFeed.Framework.Users
         {
             get
             {
-                return Request.Cookies.AllKeys.Contains(LoginCookie);
+                return Request.Cookies.AllKeys.Contains(CookiesNames.LoginCookie);
             }
             private set { }
         }
@@ -30,7 +31,7 @@ namespace FICTFeed.Framework.Users
                 if (!IsAuthorized)
                     return null;
 
-                return Manager.Provider.GetById(Request.Cookies[LoginCookie].Value);
+                return Manager.Provider.GetById(Request.Cookies[CookiesNames.LoginCookie].Value);
             }
             private set { }
         }
