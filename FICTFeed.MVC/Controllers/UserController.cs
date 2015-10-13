@@ -63,7 +63,7 @@ namespace FICTFeed.MVC.Controllers
             var result = userManager.Logout(Request);
 
             if (result == UserManager.OperationResult.Success)
-                Response.Cookies["FICTFeed.LoginCookie"].Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies[LoginCookie].Expires = DateTime.Now.AddDays(-1d);
             return RedirectToRoute("Home");
         }
     }

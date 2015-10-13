@@ -21,7 +21,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (Request.Cookies.AllKeys.Contains("FICTFeed.LoginCookie"))
+                    @if (Request.Cookies.AllKeys.Contains(LoginCookie))
                     {
                         <li >@Html.RouteLink("Log out", "LogoutUser")</li>
                     }

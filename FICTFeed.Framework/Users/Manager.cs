@@ -57,21 +57,21 @@ namespace FICTFeed.Framework.Users
 
             user.Online = true;
             Provider.Update(user);
-            response.Cookies.Add(new HttpCookie("FICTFeed.LoginCookie", user.Id.ToString()));
+            response.Cookies.Add(new HttpCookie(LoginCookie, user.Id.ToString()));
 
             return OperationResult.Success;
         }
 
         public OperationResult Logout(HttpRequestBase request)
         {
-            var user = Provider.GetById(request.Cookies["FICTFeed.LoginCookie"].Value);
+            var user = Provider.GetById(request.Cookies[LoginCookie].Value);
 
             if (user == null)
                 return OperationResult.InvalidCookie;
 
             user.Online = false;
             Provider.Update(user);
-            request.Cookies.Remove("FICTFeed.LoginCookie");
+            request.Cookies.Remove(LoginCookie);
 
             return OperationResult.Success;
         }

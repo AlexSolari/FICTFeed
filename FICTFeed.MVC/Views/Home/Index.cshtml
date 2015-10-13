@@ -5,7 +5,7 @@
 <div class="home-content">
     @if(Model.UserData.IsAuthorized)
     {
-        <div>You are logined with id @Request.Cookies["FICTFeed.LoginCookie"].Value</div>
+        <div>You are logined with id @Model.UserData.CurrentUser.Id</div>
     }
     <div class="tagline">you will love ZSTU or you will die</div>
 </div>

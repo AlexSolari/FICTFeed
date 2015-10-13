@@ -18,7 +18,7 @@ namespace FICTFeed.Framework.Users
         {
             get
             {
-                return Request.Cookies.AllKeys.Contains("FICTFeed.LoginCookie");
+                return Request.Cookies.AllKeys.Contains(LoginCookie);
             }
             private set { }
         }
@@ -30,7 +30,7 @@ namespace FICTFeed.Framework.Users
                 if (!IsAuthorized)
                     return null;
 
-                return Manager.Provider.GetById(Request.Cookies["FICTFeed.LoginCookie"].Value);
+                return Manager.Provider.GetById(Request.Cookies[LoginCookie].Value);
             }
             private set { }
         }
