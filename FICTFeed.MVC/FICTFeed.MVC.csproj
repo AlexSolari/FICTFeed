@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PageViews\BasePageView.cs" />
     <Compile Include="Models\PageViews\LoginUserPageView.cs" />
     <Compile Include="Models\PageViews\RegisterUserPageView.cs" />
     <Compile Include="Models\ViewModels\UserLoginViewModel.cs" />

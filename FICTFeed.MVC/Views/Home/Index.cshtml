@@ -1,8 +1,9 @@
-﻿@{
+﻿@model FICTFeed.MVC.Models.PageViews.BasePageView
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="home-content">
-    @if(Request.Cookies.AllKeys.Contains("FICTFeed.LoginCookie"))
+    @if(Model.UserData.IsAuthorized)
     {
         <div>You are logined with id @Request.Cookies["FICTFeed.LoginCookie"].Value</div>
     }

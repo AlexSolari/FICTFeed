@@ -5,7 +5,7 @@ using NHibernate.Criterion;
 
 namespace FICTFeed.Framework.Users
 {
-    class UserDataProvider : DataProvider<User>
+    public class UserDataProvider : DataProvider<User>
     {
         public User GetByMail(string mail)
         {
