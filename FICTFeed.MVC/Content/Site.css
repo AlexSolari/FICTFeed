@@ -1,4 +1,58 @@
-﻿/* Set padding to keep content from hitting the edges */
+﻿/*MATERIAL DESIGN PALLETE*/
+.primary a{
+  color: white;
+}
+.primary{
+  color: #FFFFFF;
+  background: #03A9F4;
+}
+.primary.dark {
+    background: #0288D1;
+}
+.primary.light {
+    background: #B3E5FC;
+}
+.accent {
+    background: #607D8B;
+}
+.primary-text {
+    color: #212121;
+}
+.secondary-text {
+    color: #727272;
+}
+.border-divider {
+    border-color: #B6B6B6;
+}
+.btn-material{
+    border-radius: 0;
+}
+.btn-material:active{
+    box-shadow: none;
+}
+/*raised btn*/
+.btn-raised{
+    background: #03A9F4;
+    color: white;
+}
+.btn-raised:hover, .btn-raised:focus {
+    background: #2db5f2;
+    color: white;
+}
+.btn-raised:active {
+    background: #03A9F4;
+    color: white;
+}
+/*flat btn*/
+.btn-flat{
+    background: transparent;
+    color: #0288D1;
+}
+.primary .btn-flat, .primary .btn-flat:hover, .primary .btn-flat:hover, .primary .btn-flat:active {
+    color: white;
+}
+/**/
+/* Set padding to keep content from hitting the edges */
 .body-content {
     height: 100%;
     width: 100%;
@@ -56,7 +110,6 @@ body{margin: 0}
 header{
         z-index: 1000;
         position: fixed;
-        background: #FFF9D2;
         width: 100%;
         max-width: 1300px;
         height: 50px;
@@ -74,20 +127,29 @@ header a{
 }
 #logo{
         padding-left: 5px;
-        background: #FFF9D2;
         height: 100%;
         width: 160px;
         display: inline-block;
         padding-top: 0.5em;
 }
 #search{
-        background: #FFF9D2;
         height: 100%;
         width: 300px;
         float: right;
         text-align: center;
+        padding-top: 0.5em;
 }
-#search *:first-child { margin-top: 1em; }
+#search form{
+    max-width: 300px;
+}
+#search .input-search{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: #B3E5FC;
+    font-size: 1em;
+    line-height: 200%;
+}
 #main{
         padding-top: 50px;
         position: relative;
@@ -114,14 +176,12 @@ header a{
 article{
         min-height: 250px;
         height: auto;
-        background: lightblue;
         display: inline-block;
         padding: 1em;
 }
 article .image{
         width: 150px;
         height: 150px;
-        background: crimson;
         float: left;
         margin-right: 1em;
 }
@@ -132,21 +192,17 @@ article .description{
     height: 100%;
     width: 50px;
     float: left;
-    background: #ffdcd4;
     position: fixed;
 }
 #sidebar{
   z-index: 800;
   float: right;
   width: 300px;
-  background: yellow;
   position: relative;
   top: 50px;
 }
 #sidebar div{
   height: 200px;
-  background: orange;
-  margin-bottom: 10px;
 }
 #sidebar div:last-child{
   margin: 0;
@@ -156,13 +212,11 @@ article .description{
     float: right;
     width: 50px;
     height:100%;
-    background: #399b44;
     display: none;
 }
 #dropdown-navigation{
     min-width: 100px;
     padding: 20px;
-    background: gray;
     position:absolute;
     right:0;
     top: 50px;
@@ -191,7 +245,7 @@ article .description{
         display: none;
     }
     #search{
-        width: 350px;
+        width: 300px;
     }
     #navigation-button{
         display: inline-block;
