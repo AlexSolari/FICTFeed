@@ -4,22 +4,27 @@
 }
 <div class="home-content">
 
-    @if (Model.UserData.IsAuthorized)
-    {
-        if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin)
+    
+    <ul class="news-list">
+        @if (Model.UserData.IsAuthorized)
         {
-            <a href="@Url.RouteUrl("NewsCreate")">
-                <div id="add-news" class="btn btn-raised">Add news</div>
-            </a>
+            if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin)
+            {
+                <li>
+                    <a href="@Url.RouteUrl("NewsCreate")">
+                        <div id="add-news" class="btn btn-raised">Add news</div>
+                    </a>
+                </li>
+                
+            }
         }
-    }
-    <ul>
         @foreach (var item in Model.News)
         {
-            <li>
+            <li class="primary light secondary-text">
+                <div class="posting-date">@item.PostingDate</div>
                 <h3>@item.Title</h3>
-                <div>@item.ShortDescription</div>
-                <div>@item.PostingDate</div>
+                <p>@item.ShortDescription</p>
+                <p><a class="read-more" href="@Url.RouteUrl("NewsItem")?id=@item.Id" class="secondary-text">Read more</a></p>       
             </li>
         }
     </ul>

@@ -8,6 +8,9 @@ namespace FICTFeed.MVC.Models.ViewModels.News
 {
     public class NewsItemViewModel
     {
+        [HiddenInput(DisplayValue = false)]
+        public virtual Guid Id { get; set; }
+
         [StringLength(100, ErrorMessage = "Must be between 10 and 100 characters", MinimumLength = 10)]
         [Required]
         public virtual string Title { get; set; }

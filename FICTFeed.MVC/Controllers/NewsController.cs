@@ -13,6 +13,12 @@ namespace FICTFeed.MVC.Controllers
     public class NewsController : Controller
     {
         [HttpGet]
+        public ActionResult Index(string id)
+        {
+            return View(new NewsItemPageView(Request, id));
+        }
+
+        [HttpGet]
         public ActionResult Create()
         {
             return View(new NewsItemCreatePageView(Request));

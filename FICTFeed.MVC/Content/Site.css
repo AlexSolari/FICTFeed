@@ -1,4 +1,8 @@
 ﻿/*MATERIAL DESIGN PALLETE*/
+@font-face {
+    font-family: Icons;
+    src: url(../fonts/glyphicons-halflings-regular.ttf);
+}
 .primary a{
   color: white;
 }
@@ -214,6 +218,9 @@ article .description{
     height:100%;
     display: none;
 }
+#navigation-button::after {
+    content: "menu";
+}
 #dropdown-navigation{
     min-width: 100px;
     padding: 20px;
@@ -233,8 +240,6 @@ article .description{
     text-align: center;
     height: 50px;
     width: 100%;
-    padding: 15px;
-    margin: 5px;
 }
 .news-creation input[type="text"]{
     width: 100%;
@@ -244,6 +249,28 @@ article .description{
     width: 100%;
     height: 150pt;
     max-width: 100%;
+}
+.news-list{
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+.news-list li{
+    line-break: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.news-list li .posting-date{
+    float: right;
+    margin: 15px 10px 5px 5px;
+}
+.news-list li h3{
+    padding-top: 15px;
+}
+.news-list li .read-more{
+    color: #151515;
 }
 @media (max-width: 1024px) {
   #sidebar{
