@@ -32,7 +32,7 @@ namespace FICTFeed.MVC.Controllers
                 return View(pageView);
 
             var newUser = pageView.NewUser;
-            userManager.Register(Mapper.Map<User,UserViewModel>(newUser));
+            userManager.Register(Mapper.Map<User,UserCreateViewModel>(newUser));
 
             return RedirectToRoute("Home");
         }

@@ -229,6 +229,13 @@ article .description{
 #dropdown-navigation ul li{
    margin: 10px 5px;
 }
+#add-news{
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+    margin: 5px;
+}
 @media (max-width: 1024px) {
   #sidebar{
     display: none;

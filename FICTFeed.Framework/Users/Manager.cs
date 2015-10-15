@@ -65,15 +65,23 @@ namespace FICTFeed.Framework.Users
 
         public OperationResult Logout(HttpRequestBase request)
         {
+            if (request.Cookies[CookiesNames.LoginCookie] == null)
+                return OperationResult.InvalidCookie;
+
             var user = Provider.GetById(request.Cookies[CookiesNames.LoginCookie].Value);
 
             if (user == null)
-                return OperationResult.InvalidCookie;
+                return OperationResult.UnregisteredUser;
 
             user.Online = false;
             Provider.Update(user);
-            request.Cookies.Remove(CookiesNames.LoginCookie);
 
+            return OperationResult.Success;
+        }
+
+        public OperationResult Update(User user)
+        {
+            Provider.Update(user);
             return OperationResult.Success;
         }
     }

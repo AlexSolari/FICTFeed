@@ -3,10 +3,14 @@
     ViewBag.Title = "Home";
 }
 <div class="home-content">
-    @if(Model.UserData.IsAuthorized)
+
+    @if (Model.UserData.IsAuthorized)
     {
+        if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin)
+        {
+            <div id="add-news" class="btn btn-raised">Add news</div>
+        }
         <div>You are logined with id @Model.UserData.CurrentUser.Id</div>
     }
     <div class="tagline">you will love ZSTU or you will die</div>
 </div>
-@Styles.Render("~/Content/Home.css")

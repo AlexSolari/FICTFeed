@@ -1,9 +1,10 @@
-﻿using FICTFeed.Framework.Validation;
+﻿using FICTFeed.Bussines.AdditionalData;
+using FICTFeed.Framework.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace FICTFeed.MVC.Models.ViewModels
 {
-    public class UserViewModel
+    public class UserCreateViewModel
     {
         [StringLength(50, ErrorMessage = "Must be between 3 and 50 characters", MinimumLength = 3)]
         [Required]
@@ -23,10 +24,12 @@ namespace FICTFeed.MVC.Models.ViewModels
         [DataType(DataType.EmailAddress)]
         [Required]
         public virtual string Mail { get; set; }
-        
-        public UserViewModel() { }
 
-        public UserViewModel(string name, string password, string confirmPassword, string mail)
+        protected virtual Roles Role { get; set; }
+        
+        public UserCreateViewModel() { }
+
+        public UserCreateViewModel(string name, string password, string confirmPassword, string mail)
         {
             Guard.ThrowIfEmptyString(name);
             Guard.ThrowIfEmptyString(password);
@@ -37,6 +40,7 @@ namespace FICTFeed.MVC.Models.ViewModels
             Password = password;
             ConfirmPassword = confirmPassword;
             Mail = mail;
+            Role = Roles.User;
         }
     }
 }

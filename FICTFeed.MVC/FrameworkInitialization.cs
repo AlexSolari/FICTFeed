@@ -29,7 +29,7 @@ namespace FICTFeed.MVC
 
         static void SetupMappings()
         {
-            Mapper.AddMapping<User, UserViewModel>((result, source) =>
+            Mapper.AddMapping<User, UserCreateViewModel>((result, source) =>
             {
                 result.PasswordCrypted = Resolver.GetSingleton<Encryptor>().CryptPassword(source.Password);
 
