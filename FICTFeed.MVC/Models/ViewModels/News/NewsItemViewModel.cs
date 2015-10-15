@@ -53,6 +53,7 @@ namespace FICTFeed.MVC.Models.ViewModels.News
         {
             PostingDate = DateTime.Now;
             AuthorId = userId;
+            Id = Guid.NewGuid();
         }
     }
 }
