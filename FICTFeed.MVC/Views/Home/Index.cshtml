@@ -1,4 +1,4 @@
-﻿@model FICTFeed.MVC.Models.PageViews.BasePageView
+﻿@model FICTFeed.MVC.Models.PageViews.News.NewsListPageView
 @{
     ViewBag.Title = "Home";
 }
@@ -8,9 +8,19 @@
     {
         if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin)
         {
-            <div id="add-news" class="btn btn-raised">Add news</div>
+            <a href="@Url.RouteUrl("NewsCreate")">
+                <div id="add-news" class="btn btn-raised">Add news</div>
+            </a>
         }
-        <div>You are logined with id @Model.UserData.CurrentUser.Id</div>
     }
-    <div class="tagline">you will love ZSTU or you will die</div>
+    <ul>
+        @foreach (var item in Model.News)
+        {
+            <li>
+                <h3>@item.Title</h3>
+                <div>@item.ShortDescription</div>
+                <div>@item.PostingDate</div>
+            </li>
+        }
+    </ul>
 </div>

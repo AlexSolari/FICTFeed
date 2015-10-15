@@ -1,4 +1,5 @@
 ﻿using FICTFeed.MVC.Models.PageViews;
+using FICTFeed.MVC.Models.PageViews.News;
 using System.Web.Mvc;
 
 namespace FICTFeed.MVC.Controllers
@@ -8,7 +9,7 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(new BasePageView(Request));
+            return View(new NewsListPageView(Request));
         }
     }
 }

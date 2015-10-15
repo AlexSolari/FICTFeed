@@ -1,23 +1,23 @@
-﻿@model FICTFeed.MVC.Models.PageViews.User.RegisterUserPageView
+﻿@model FICTFeed.MVC.Models.PageViews.News.NewsItemCreatePageView
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RegisterUser</h2>
+<h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>RegisterUserPageView</h4>
+
+    <div class="form-horizontal news-creation">
+        <h4>NewsItemCreatePageView</h4>
         <hr />
         @Html.ValidationSummary(true)
 
-        @Html.EditorFor(m=>m.NewUser)
+        @Html.EditorFor(m => m.NewNewsItem)
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -26,7 +26,6 @@
         </div>
     </div>
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

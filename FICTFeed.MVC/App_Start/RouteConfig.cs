@@ -28,6 +28,12 @@ namespace FICTFeed.MVC
             );
 
             routes.MapRoute(
+                name: "NewsCreate",
+                url: "news/create",
+                defaults: new { controller = "News", action = "Create", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Home",
                 url: "home",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

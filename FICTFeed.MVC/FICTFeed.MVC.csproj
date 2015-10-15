@@ -122,16 +122,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="FrameworkInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\PageViews\BasePageView.cs" />
-    <Compile Include="Models\PageViews\LoginUserPageView.cs" />
-    <Compile Include="Models\PageViews\RegisterUserPageView.cs" />
-    <Compile Include="Models\ViewModels\UserLoginViewModel.cs" />
-    <Compile Include="Models\ViewModels\UserViewModel.cs" />
+    <Compile Include="Models\PageViews\News\NewsItemCreatePageView.cs" />
+    <Compile Include="Models\PageViews\News\NewsListPageView.cs" />
+    <Compile Include="Models\PageViews\User\LoginUserPageView.cs" />
+    <Compile Include="Models\PageViews\User\RegisterUserPageView.cs" />
+    <Compile Include="Models\ViewModels\News\NewsItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\User\UserLoginViewModel.cs" />
+    <Compile Include="Models\ViewModels\User\UserCreateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +175,7 @@
     <Content Include="Views\User\RegisterUser.cshtml" />
     <Content Include="Views\User\LoginUser.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

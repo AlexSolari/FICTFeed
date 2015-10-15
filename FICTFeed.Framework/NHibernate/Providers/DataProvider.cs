@@ -1,5 +1,6 @@
 ﻿using FICTFeed.Bussines;
 using NHibernate;
+using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
 
@@ -46,11 +47,13 @@ namespace FICTFeed.Framework.NHibernate
             }
         }
 
-        public IList<TEntity> GetList()
+        public IList<TEntity> GetList(string orderBy = null)
         {
             return Execute(session =>
             {
                 var criteria = session.CreateCriteria<TEntity>();
+                if (!String.IsNullOrWhiteSpace(orderBy))
+                    criteria = criteria.AddOrder(Order.Desc(orderBy));
                 return criteria.List<TEntity>();
             });
         }

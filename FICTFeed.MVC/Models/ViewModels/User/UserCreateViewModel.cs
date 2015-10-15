@@ -2,7 +2,7 @@
 using FICTFeed.Framework.Validation;
 using System.ComponentModel.DataAnnotations;
 
-namespace FICTFeed.MVC.Models.ViewModels
+namespace FICTFeed.MVC.Models.ViewModels.User
 {
     public class UserCreateViewModel
     {

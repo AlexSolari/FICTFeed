@@ -4,6 +4,8 @@ using FICTFeed.Framework;
 using FICTFeed.Framework.Map;
 using FICTFeed.Framework.Users;
 using FICTFeed.MVC.Models.ViewModels;
+using FICTFeed.MVC.Models.ViewModels.News;
+using FICTFeed.MVC.Models.ViewModels.User;
 
 namespace FICTFeed.MVC
 {
@@ -19,6 +21,8 @@ namespace FICTFeed.MVC
         static void MapTypes()
         {
             Resolver.RegisterType<User, User>();
+            Resolver.RegisterType<NewsItem, NewsItem>();
+            Resolver.RegisterType<NewsItemViewModel, NewsItemViewModel>();
             Resolver.RegisterType<UserManager, UserManager>();
         }
 

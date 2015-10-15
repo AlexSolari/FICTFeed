@@ -7,6 +7,8 @@ using FICTFeed.Framework.Map;
 using FICTFeed.Bussines;
 using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.Framework.Strings;
+using FICTFeed.MVC.Models.PageViews.User;
+using FICTFeed.MVC.Models.ViewModels.User;
 
 namespace FICTFeed.MVC.Controllers
 {
