@@ -239,6 +239,7 @@ article .description{
 #add-news{
     text-align: center;
     height: 50px;
+    padding-top: 1em;
     width: 100%;
 }
 .news-creation input[type="text"]{
@@ -256,21 +257,28 @@ article .description{
     list-style: none;
 }
 .news-list li{
-    line-break: normal;
-    word-break: break-all;
-    word-wrap: break-word;
     padding: 10px;
     margin-bottom: 10px;
 }
-.news-list li .posting-date{
+.posting-date{
     float: right;
     margin: 15px 10px 5px 5px;
+}
+.news-item .posting-date{
+    float: right;
+    margin: initial;
 }
 .news-list li h3{
     padding-top: 15px;
 }
 .news-list li .read-more{
     color: #151515;
+}
+.news-item{
+    padding: 15px;
+}
+.news-item p, .news-list li p{
+    text-align: justify;
 }
 @media (max-width: 1024px) {
   #sidebar{

@@ -21,10 +21,10 @@
         @foreach (var item in Model.News)
         {
             <li class="primary light secondary-text">
-                <div class="posting-date">@item.PostingDate</div>
-                <h3>@item.Title</h3>
+                <div class="posting-date">@item.PostingDate.ToShortDateString()</div>
+                <h3><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@item.Title</a></h3>
                 <p>@item.ShortDescription</p>
-                <p><a class="read-more" href="@Url.RouteUrl("NewsItem")?id=@item.Id" class="secondary-text">Read more</a></p>       
+                <p><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">Read more</a></p>       
             </li>
         }
     </ul>
