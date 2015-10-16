@@ -1,24 +1,34 @@
 ﻿using FICTFeed.Bussines;
+using FICTFeed.Framework.News;
 using FICTFeed.Framework.Users;
 using FICTFeed.MVC.Models.PageViews.News;
 using FICTFeed.MVC.Models.ViewModels.News;
+using FICTFeed.DependecyResolver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FICTFeed.Framework.Map;
 
 namespace FICTFeed.MVC.Controllers
 {
     public class NewsController : Controller
     {
+        protected NewsManager newsManager;
+
+        public NewsController()
+        {
+            newsManager = Resolver.GetInstance<NewsManager>();
+        }
+
         [HttpGet]
         public ActionResult Index(string id)
         {
             Guid tmp;
             //TODO: implement manager "news creation call" instead of direct call
-            var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
-            if (!Guid.TryParse(id,out tmp) || a.GetById(id) == null)
+            //var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
+            if (!Guid.TryParse(id, out tmp) || newsManager.GetById(id) == null)
                 return RedirectToRoute("Home");
 
             return View(new NewsItemPageView(Request, id));
@@ -41,8 +51,11 @@ namespace FICTFeed.MVC.Controllers
             newNewsItem.PrapareToPosting(userdata.CurrentUser.Id.ToString());
 
             //TODO: implement manager "news creation call" instead of direct call
-            var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
-            a.Create(FICTFeed.Framework.Map.Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
+            //var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
+
+            //a.Create(FICTFeed.Framework.Map.Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
+
+            newsManager.Create(Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
             //
 
             return RedirectToRoute("Home");
