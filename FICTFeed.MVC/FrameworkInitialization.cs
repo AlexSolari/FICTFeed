@@ -2,6 +2,7 @@
 using FICTFeed.DependecyResolver;
 using FICTFeed.Framework;
 using FICTFeed.Framework.Map;
+using FICTFeed.Framework.News;
 using FICTFeed.Framework.Users;
 using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.MVC.Models.ViewModels.News;
@@ -23,7 +24,8 @@ namespace FICTFeed.MVC
             Resolver.RegisterType<User, User>();
             Resolver.RegisterType<NewsItem, NewsItem>();
             Resolver.RegisterType<NewsItemViewModel, NewsItemViewModel>();
-            Resolver.RegisterType<UserManager, UserManager>();
+            Resolver.RegisterType<IUserManager, UserManager>();
+            Resolver.RegisterType<INewsManager, NewsManager>();
         }
 
         static void RegisterSingletons()

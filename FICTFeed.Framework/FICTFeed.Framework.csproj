@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encryptor.cs" />
+    <Compile Include="IManager.cs" />
     <Compile Include="Map\Mapper.cs" />
+    <Compile Include="News\INewsManager.cs" />
     <Compile Include="News\NewsDataProvider.cs" />
     <Compile Include="News\NewsManager.cs" />
     <Compile Include="NHibernate\NHibernateHelper.cs" />
@@ -57,6 +59,8 @@
     <Compile Include="NHibernate\SessionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strings\CookiesNames.cs" />
+    <Compile Include="Users\OperationResult.cs" />
+    <Compile Include="Users\IUserManager.cs" />
     <Compile Include="Users\Manager.cs" />
     <Compile Include="Users\Provider.cs" />
     <Compile Include="Users\UserDataContainer.cs" />

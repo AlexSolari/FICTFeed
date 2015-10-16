@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FICTFeed.Framework.News
 {
-    public class NewsManager
+    public class NewsManager : INewsManager
     {
         protected NewsDataProvider provider = new NewsDataProvider();
 

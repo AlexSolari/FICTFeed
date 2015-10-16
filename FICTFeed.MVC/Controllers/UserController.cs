@@ -14,11 +14,11 @@ namespace FICTFeed.MVC.Controllers
 {
     public class UserController : Controller
     {
-        UserManager userManager;
+        IUserManager userManager;
 
         public UserController()
         {
-            userManager = Resolver.GetInstance<UserManager>();
+            userManager = Resolver.GetInstance<IUserManager>();
         }
 
         [HttpGet]
@@ -51,7 +51,7 @@ namespace FICTFeed.MVC.Controllers
             if (!ModelState.IsValid)
                 return View(pageView);
 
-            if (userManager.Login(pageView.LoginData.Mail, pageView.LoginData.Password, Response) != UserManager.OperationResult.Success)
+            if (userManager.Login(pageView.LoginData.Mail, pageView.LoginData.Password) != OperationResult.Success)
             {
                 pageView.Valid = false;
                 return View(pageView);
@@ -63,9 +63,9 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult LogoutUser()
         {
-            var result = userManager.Logout(Request);
+            var result = userManager.Logout();
 
-            if (result == UserManager.OperationResult.Success)
+            if (result == OperationResult.Success)
                 Response.Cookies[CookiesNames.LoginCookie].Expires = DateTime.Now.AddDays(-1d);
             return RedirectToRoute("Home");
         }
