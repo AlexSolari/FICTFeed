@@ -12,7 +12,7 @@ using FICTFeed.MVC.Components.User;
 
 namespace FICTFeed.MVC.Controllers
 {
-    [OnlyAdminAccess]
+    [AllowTo(Roles.Admin)]
     public class AdminController : Controller
     {
         // GET: Admin
