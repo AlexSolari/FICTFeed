@@ -8,20 +8,13 @@ using System.Web.Mvc;
 using FICTFeed.Bussines.AdditionalData;
 using FICTFeed.MVC.Models.PageViews;
 using System.Web.Routing;
+using FICTFeed.MVC.Components.User;
 
 namespace FICTFeed.MVC.Controllers
 {
+    [OnlyAdminAccess]
     public class AdminController : Controller
     {
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
-        {
-            base.OnActionExecuting(filterContext);
-            if (!(new UserDataContainer(Request).IsInRole(Roles.Admin)))
-            {
-                filterContext.Result = RedirectToRoute("Default");
-            }
-        }
-        
         // GET: Admin
         public ActionResult Index()
         {

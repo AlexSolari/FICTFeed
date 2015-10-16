@@ -73,6 +73,16 @@ namespace FICTFeed.MVC
 
             #endregion
 
+            #region Errors
+
+            routes.MapRoute(
+                "NotFound",
+                "{*url}",
+             new { controller = "Error", action = "Index" }
+            );
+
+            #endregion
+
         }
     }
 }
