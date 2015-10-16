@@ -11,48 +11,48 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
-    <div id="content">
-        <header class="primary dark">
-            <div id="navigation-button" class="primary light">
-            </div>
-            <div id="search">
-                <form>
-                    <input class="input-search" />
-                    <input type="submit" class="btn btn-material btn-flat" />
-                </form>
-            </div>
-            <div id="dropdown-navigation" class="hidden primary primary-text">
-                <ul>
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (UserData.IsAuthorized)
-                    {
-                        <li>@Html.RouteLink("Log out", "LogoutUser")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.RouteLink("Log in", "LoginUser")</li>
-                        <li>@Html.RouteLink("Registration", "RegisterUser")</li>
-                    }
-                </ul>
-            </div>
-            <div id="logo">
-                <img src="/content/images/logo.png">
-            </div>
-            <div id="navigation">
-                <ul class="list-inline inline-block">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (UserData.IsAuthorized)
-                    {
-                        <li>@Html.RouteLink("Log out", "LogoutUser")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.RouteLink("Log in", "LoginUser")</li>
-                        <li>@Html.RouteLink("Registration", "RegisterUser")</li>
-                    }
-                </ul>
-            </div>       
-        </header>
+    <nav class="primary dark">
+        <div id="navigation-button" class="primary light">
+        </div>
+        <div id="search">
+            <form>
+                <input type="search" class="input-search" />
+                <input type="submit" class="btn-flat" />
+            </form>
+        </div>
+        <div id="dropdown-navigation" class="hidden primary primary-text">
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @if (UserData.IsAuthorized)
+                {
+                    <li>@Html.RouteLink("Log out", "LogoutUser")</li>
+                }
+                else
+                {
+                    <li>@Html.RouteLink("Log in", "LoginUser")</li>
+                    <li>@Html.RouteLink("Registration", "RegisterUser")</li>
+                }
+            </ul>
+        </div>
+        <div id="logo">
+        </div>
+        <div id="navigation">
+            <ul class="inline-list inline-block">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @if (UserData.IsAuthorized)
+                {
+                    <li>@Html.RouteLink("Log out", "LogoutUser")</li>
+                }
+                else
+                {
+                    <li>@Html.RouteLink("Log in", "LoginUser")</li>
+                    <li>@Html.RouteLink("Registration", "RegisterUser")</li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <a href="#top"><div id="jumpup" class="primary light"></div></a>
+    <div id="content">      
         <div id="sidebar" class="primary light primary-text">
                 @if (UserData.IsAuthorized)
                 {
@@ -79,7 +79,7 @@
                 </div>
         </div>
         <div id="main">
-            <a href="#top"><div id="jumpup" class="primary light"></div></a>
+            
             <div id="body">
                 @RenderBody()
             </div>

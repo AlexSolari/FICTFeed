@@ -12,7 +12,7 @@
             {
                 <li>
                     <a href="@Url.RouteUrl("NewsCreate")">
-                        <div id="add-news" class="btn btn-raised">Add news</div>
+                        <div id="add-news" class="btn red">Add news</div>
                     </a>
                 </li>
                 
@@ -21,10 +21,18 @@
         @foreach (var item in Model.News)
         {
             <li class="primary light secondary-text">
-                <div class="posting-date">@item.PostingDate.ToShortDateString()</div>
-                <h3><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@item.Title</a></h3>
-                <p>@item.ShortDescription</p>
-                <p><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">Read more</a></p>       
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <div class="posting-date">@item.PostingDate.ToShortDateString()</div>
+                        <h3><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@item.Title</a></h3>
+                    </div>
+                    <div class="card-content">
+                        <p>@item.ShortDescription</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">Read more</a>
+                    </div>
+                </div>     
             </li>
         }
     </ul>

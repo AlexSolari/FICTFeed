@@ -1,61 +1,5 @@
-﻿/*MATERIAL DESIGN PALLETE*/
-@font-face {
-    font-family: Icons;
-    src: url(../fonts/glyphicons-halflings-regular.ttf);
-}
-.primary a{
-  color: white;
-}
-.primary{
-  color: #FFFFFF;
-  background: #03A9F4;
-}
-.primary.dark {
-    background: #0288D1;
-}
-.primary.light {
-    background: #B3E5FC;
-}
-.accent {
-    background: #607D8B;
-}
-.primary-text {
-    color: #212121;
-}
-.secondary-text {
-    color: #727272;
-}
-.border-divider {
-    border-color: #B6B6B6;
-}
-.btn-material{
-    border-radius: 0;
-}
-.btn-material:active{
-    box-shadow: none;
-}
-/*raised btn*/
-.btn-raised{
-    background: #03A9F4;
-    color: white;
-}
-.btn-raised:hover, .btn-raised:focus {
-    background: #2db5f2;
-    color: white;
-}
-.btn-raised:active {
-    background: #03A9F4;
-    color: white;
-}
-/*flat btn*/
-.btn-flat{
-    background: transparent;
-    color: #0288D1;
-}
-.primary .btn-flat, .primary .btn-flat:hover, .primary .btn-flat:hover, .primary .btn-flat:active {
-    color: white;
-}
-/**/
+﻿/*
+*{outline: 1px solid black;}*/
 /* Set padding to keep content from hitting the edges */
 .body-content {
     height: 100%;
@@ -70,6 +14,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.hidden{ display: none;}
 
 /* styles for validation helpers */
 .field-validation-error {
@@ -111,13 +57,9 @@ body{margin: 0}
         height: 100%;
         margin: 0 auto;
 }
-header{
+nav{
         z-index: 1000;
         position: fixed;
-        width: 100%;
-        max-width: 1300px;
-        height: 50px;
-        min-width: 520px;
 }
 header a{
    color: black;
@@ -128,6 +70,9 @@ header a{
     max-width: 724px;
     display: inline;
     position:relative;
+}
+#navigation li{
+    margin: 0 5px;
 }
 #logo{
         padding-left: 5px;
@@ -141,18 +86,20 @@ header a{
         width: 300px;
         float: right;
         text-align: center;
-        padding-top: 0.5em;
 }
 #search form{
     max-width: 300px;
 }
-#search .input-search{
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid white;
-    color: #B3E5FC;
-    font-size: 1em;
-    line-height: 200%;
+#search input[type="submit"]{
+    color: white;
+}
+#search input[type="search"]{
+    float: left;
+    width: 175px;
+}
+#search input[type="search"]:active, #search input[type="search"]:focus{
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
 }
 #main{
         padding-top: 50px;
@@ -193,6 +140,9 @@ article .description{
         text-align: justify;
 }
 #jumpup{
+    background: red;
+    z-index: -1;
+    top: 0;
     height: 100%;
     width: 50px;
     float: left;
@@ -239,7 +189,6 @@ article .description{
 #add-news{
     text-align: center;
     height: 50px;
-    padding-top: 1em;
     width: 100%;
 }
 .news-creation input[type="text"]{
@@ -257,8 +206,10 @@ article .description{
     list-style: none;
 }
 .news-list li{
-    padding: 10px;
     margin-bottom: 10px;
+}
+.news-list li div{
+    padding: 0.5em;
 }
 .posting-date{
     float: right;
