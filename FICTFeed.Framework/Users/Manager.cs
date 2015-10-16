@@ -22,7 +22,7 @@ namespace FICTFeed.Framework.Users
             InvalidCookie
         }
 
-        public UserDataProvider Provider = new UserDataProvider();
+        protected UserDataProvider Provider = new UserDataProvider();
 
         void CheckNullValues(User user)
         {
