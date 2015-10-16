@@ -15,11 +15,11 @@ namespace FICTFeed.MVC.Controllers
 {
     public class NewsController : Controller
     {
-        protected NewsManager newsManager;
+        protected INewsManager newsManager;
 
         public NewsController()
         {
-            newsManager = Resolver.GetInstance<NewsManager>();
+            newsManager = Resolver.GetInstance<INewsManager>();
         }
 
         [HttpGet]
