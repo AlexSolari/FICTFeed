@@ -9,6 +9,8 @@ namespace FICTFeed.MVC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            #region User
+
             routes.MapRoute(
                 name: "RegisterUser",
                 url: "registration",
@@ -27,6 +29,10 @@ namespace FICTFeed.MVC
                 defaults: new { controller = "User", action = "LogoutUser", id = UrlParameter.Optional }
             );
 
+            #endregion
+
+            #region News
+
             routes.MapRoute(
                 name: "NewsCreate",
                 url: "news/create",
@@ -39,6 +45,20 @@ namespace FICTFeed.MVC
                 defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional }
             );
 
+            #endregion
+
+            #region Admin
+
+            routes.MapRoute(
+                name: "Admin",
+                url: "admin",
+                defaults: new { controller = "Admin", action = "Index" }
+            );
+
+            #endregion
+
+            #region Home
+
             routes.MapRoute(
                 name: "Home",
                 url: "home",
@@ -50,6 +70,9 @@ namespace FICTFeed.MVC
                 url: "",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            #endregion
+
         }
     }
 }
