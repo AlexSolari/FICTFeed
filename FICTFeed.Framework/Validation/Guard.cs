@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FICTFeed.Bussines;
+using FICTFeed.Bussines.AdditionalData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +74,32 @@ namespace FICTFeed.Framework.Validation
         {
             if (guid == Guid.Empty)
                 throw new ArgumentException("GUID cant be empty");
+        }
+
+        public static bool HaveEnoughRights(User user, Roles minimalLevel)
+        {
+            if (user == null)
+                return false;
+
+            switch (minimalLevel)
+            {
+                case Roles.User:
+                    return true;
+                case Roles.Praepostor:
+                    if (user.Role == Roles.User)
+                        return false;
+                    return true;
+                case Roles.Moderator:
+                    if (user.Role == Roles.User || user.Role == Roles.Praepostor)
+                        return false;
+                    return true;
+                case Roles.Admin:
+                    if (user.Role == Roles.Admin)
+                        return true;
+                    return false;
+                default:
+                    return false;
+            }
         }
     }
 }
