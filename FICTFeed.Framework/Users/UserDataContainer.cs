@@ -1,5 +1,7 @@
 ﻿using FICTFeed.Bussines;
+using FICTFeed.Bussines.AdditionalData;
 using FICTFeed.Framework.Strings;
+using FICTFeed.Framework.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +36,11 @@ namespace FICTFeed.Framework.Users
                 return Manager.GetById(Request.Cookies[CookiesNames.LoginCookie].Value);
             }
             private set { }
+        }
+
+        public bool IsInRole(Roles role)
+        {
+            return (Guard.HaveEnoughRights(CurrentUser, role));
         }
 
         public UserDataContainer(HttpRequestBase request)
