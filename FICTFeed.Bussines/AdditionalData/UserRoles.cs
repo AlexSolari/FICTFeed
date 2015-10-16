@@ -9,6 +9,8 @@ namespace FICTFeed.Bussines.AdditionalData
     public enum Roles
     {
         User,
+        Praepostor,
+        Moderator,
         Admin
     }
 }
