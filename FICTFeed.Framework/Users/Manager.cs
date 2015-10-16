@@ -22,7 +22,7 @@ namespace FICTFeed.Framework.Users
             InvalidCookie
         }
 
-        protected UserDataProvider Provider = new UserDataProvider();
+        protected UserDataProvider provider = new UserDataProvider();
 
         void CheckNullValues(User user)
         {
@@ -32,6 +32,13 @@ namespace FICTFeed.Framework.Users
             Guard.ThrowIfEmptyString(user.PasswordCrypted);
         }
 
+        public User GetById(string id)
+        {
+            Guard.ThrowIfEmptyString(id);
+
+            return provider.GetById(id);
+        }
+
         public OperationResult Register(User user)
         {
             CheckNullValues(user);
@@ -39,17 +46,17 @@ namespace FICTFeed.Framework.Users
             Guard.ThrowIfLessThan(user.Name.Length, 3);
             Guard.ThrowIfLonger(user.Name, 50);
 
-            if (Provider.GetByMail(user.Mail) != null)
+            if (provider.GetByMail(user.Mail) != null)
                 return OperationResult.AlreadyRegistered;
 
-            Provider.Create(user);
+            provider.Create(user);
 
             return OperationResult.Success;
         }
 
         public OperationResult Login(string mail, string passwordRaw, HttpResponseBase response)
         {
-            var user = Provider.GetByMail(mail);
+            var user = provider.GetByMail(mail);
             if (user == null)
                 return OperationResult.UnregisteredUser;
 
@@ -57,7 +64,7 @@ namespace FICTFeed.Framework.Users
                 return OperationResult.InvalidPassword;
 
             user.Online = true;
-            Provider.Update(user);
+            provider.Update(user);
             response.Cookies.Add(new HttpCookie(CookiesNames.LoginCookie, user.Id.ToString()));
 
             return OperationResult.Success;
@@ -68,20 +75,20 @@ namespace FICTFeed.Framework.Users
             if (request.Cookies[CookiesNames.LoginCookie] == null)
                 return OperationResult.InvalidCookie;
 
-            var user = Provider.GetById(request.Cookies[CookiesNames.LoginCookie].Value);
+            var user = provider.GetById(request.Cookies[CookiesNames.LoginCookie].Value);
 
             if (user == null)
                 return OperationResult.UnregisteredUser;
 
             user.Online = false;
-            Provider.Update(user);
+            provider.Update(user);
 
             return OperationResult.Success;
         }
 
         public OperationResult Update(User user)
         {
-            Provider.Update(user);
+            provider.Update(user);
             return OperationResult.Success;
         }
     }

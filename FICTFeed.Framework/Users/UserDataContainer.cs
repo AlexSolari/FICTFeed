@@ -31,7 +31,7 @@ namespace FICTFeed.Framework.Users
                 if (!IsAuthorized)
                     return null;
 
-                return Manager.Provider.GetById(Request.Cookies[CookiesNames.LoginCookie].Value);
+                return Manager.GetById(Request.Cookies[CookiesNames.LoginCookie].Value);
             }
             private set { }
         }
