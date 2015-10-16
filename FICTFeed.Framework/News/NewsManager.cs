@@ -18,5 +18,12 @@ namespace FICTFeed.Framework.News
 
             provider.Create(newsItem);
         }
+
+        public NewsItem GetById(string id)
+        {
+            Guard.ThrowIfEmptyString(id);
+
+            return provider.GetById(id);
+        }
     }
 }
