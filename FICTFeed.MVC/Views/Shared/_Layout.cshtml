@@ -12,7 +12,20 @@
 </head>
 <body>
     <nav class="primary dark">
-        <div id="navigation-button" class="primary light">
+        <div id="logo">LOGO</div>
+        <div id="navigation">
+            <ul class="inline-list inline-block">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                @if (UserData.IsAuthorized)
+                {
+                    <li>@Html.RouteLink("Log out", "LogoutUser")</li>
+                }
+                else
+                {
+                    <li>@Html.RouteLink("Log in", "LoginUser")</li>
+                    <li>@Html.RouteLink("Registration", "RegisterUser")</li>
+                }
+            </ul>
         </div>
         <div id="search">
             <form>
@@ -34,22 +47,9 @@
                 }
             </ul>
         </div>
-        <div id="logo">
-        </div>
-        <div id="navigation">
-            <ul class="inline-list inline-block">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                @if (UserData.IsAuthorized)
-                {
-                    <li>@Html.RouteLink("Log out", "LogoutUser")</li>
-                }
-                else
-                {
-                    <li>@Html.RouteLink("Log in", "LoginUser")</li>
-                    <li>@Html.RouteLink("Registration", "RegisterUser")</li>
-                }
-            </ul>
-        </div>
+        
+        <div id="navigation-button" class="primary light"></div>
+        
     </nav>
     <a href="#top"><div id="jumpup" class="primary light"></div></a>
     <div id="content">      

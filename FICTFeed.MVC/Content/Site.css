@@ -91,6 +91,7 @@ header a{
     max-width: 300px;
 }
 #search input[type="submit"]{
+    padding-left: 0;
     color: white;
 }
 #search input[type="search"]{
@@ -141,7 +142,7 @@ article .description{
 }
 #jumpup{
     background: red;
-    z-index: -1;
+    z-index: 500;
     top: 0;
     height: 100%;
     width: 50px;
