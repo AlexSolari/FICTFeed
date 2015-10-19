@@ -35,11 +35,8 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult GetUsers()
         {
             var users = userManager.GetList();
-            var list = new List<EditUserPageView>();
-            list.Add(new EditUserPageView(Request, new UserEditViewModel("123", "sadsadsa@mail.com", Roles.User)));
-            list.Add(new EditUserPageView(Request, new UserEditViewModel("44443", "aaaaa@mail.com", Roles.Praepostor)));
-            //var usersList = Mapper.Map<UserEditViewModel, User>(users);
-            return View(list);
+            var model = new EditUserPageView(Request, Mapper.Map<UserEditViewModel, User>(users));
+            return View(model);
         }
     }
 }

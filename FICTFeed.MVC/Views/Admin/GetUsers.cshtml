@@ -1,4 +1,4 @@
-﻿@model IList<FICTFeed.MVC.Models.PageViews.User.EditUserPageView>
+﻿@model FICTFeed.MVC.Models.PageViews.User.EditUserPageView
 @{
     ViewBag.Title = "GetUsers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,19 +8,19 @@
 
 @if (Model != null)
 {
-    foreach (var item in Model)
+    foreach (var item in Model.Users)
     {
         <div class="custom-card small z-depth-2">
             <div class="card-content">
-                <span class="card-title grey-text">@Html.DisplayFor(m => item.User.Name)</span>
+                <span class="card-title grey-text">@Html.DisplayFor(m => item.Name)</span>
                 <p>
                     <ul>
-                        <li>Mail: @Html.DisplayFor(m => item.User.Mail)</li>
-                        <li>Current role: @Html.DisplayFor(m => item.User.Role)</li>
+                        <li>Mail: @Html.DisplayFor(m => item.Mail)</li>
+                        <li>Current role: @Html.DisplayFor(m => item.Role)</li>
                     </ul>
                     
                     <div class="default-input-width">
-                        @Html.EditorFor(m => item.User.Role)
+                        @Html.EditorFor(m => item.Role)
                     </div>
                 </p>
             </div>

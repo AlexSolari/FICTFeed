@@ -24,6 +24,7 @@ namespace FICTFeed.MVC
             Resolver.RegisterType<User, User>();
             Resolver.RegisterType<NewsItem, NewsItem>();
             Resolver.RegisterType<NewsItemViewModel, NewsItemViewModel>();
+            Resolver.RegisterType<UserEditViewModel, UserEditViewModel>();
             Resolver.RegisterType<IUserManager, UserManager>();
             Resolver.RegisterType<INewsManager, NewsManager>();
         }
