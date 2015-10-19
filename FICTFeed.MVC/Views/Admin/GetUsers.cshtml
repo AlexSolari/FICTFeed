@@ -1,0 +1,14 @@
+﻿@model FICTFeed.MVC.Models.PageViews.User.EditUserPageView
+@{
+    ViewBag.Title = "GetUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Пользователи</h2>
+
+@if (Model != null)
+{
+    foreach (var item in Model.Users)
+    {
+    }
+}

@@ -30,6 +30,11 @@ namespace FICTFeed.Framework.Users
             return provider.GetById(id);
         }
 
+        public IList<User> GetList()
+        {
+            return provider.GetList();
+        }
+
         public OperationResult Register(User user)
         {
             CheckNullValues(user);

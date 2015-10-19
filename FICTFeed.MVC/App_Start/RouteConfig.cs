@@ -55,6 +55,12 @@ namespace FICTFeed.MVC
                 defaults: new { controller = "Admin", action = "Index" }
             );
 
+            routes.MapRoute(
+                name: "GetUsers",
+                url: "admin/users",
+                defaults: new { controller = "Admin", action = "GetUsers" }
+            );
+
             #endregion
 
             #region Home

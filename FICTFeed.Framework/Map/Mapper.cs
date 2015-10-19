@@ -1,5 +1,6 @@
 ﻿using FICTFeed.DependecyResolver;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,13 @@ namespace FICTFeed.Framework.Map
     {
         public static Dictionary<Type, Func<object, object, object>> CustomMappings = new Dictionary<Type, Func<object, object, object>>();
 
-        public static T Map<T,I>(I source)
+        public static TDestination Map<TDestination,TSource>(TSource source)
         {
-            var result = Resolver.GetInstance<T>();
+            var result = Resolver.GetInstance<TDestination>();
 
-            foreach (var fieldR in typeof(T).GetProperties())
+            foreach (var fieldR in typeof(TDestination).GetProperties())
             {
-                foreach (var fieldS in typeof(I).GetProperties())
+                foreach (var fieldS in typeof(TSource).GetProperties())
                 {
                     if (fieldR.Name == fieldS.Name)
                     {
@@ -26,9 +27,19 @@ namespace FICTFeed.Framework.Map
                 }
             }
 
-            if (CustomMappings.ContainsKey(typeof(I)))
-                result = (T)CustomMappings[typeof(I)](result, source);
+            if (CustomMappings.ContainsKey(typeof(TSource)))
+                result = (TDestination)CustomMappings[typeof(TSource)](result, source);
 
+            return result;
+        }
+
+        public static IEnumerable<TDestination> Map<TDestination, TSource>(IEnumerable<TSource> source)
+        {
+            var result = new List<TDestination>();
+            foreach (var item in source)
+            {
+                result.Add(Map<TDestination, TSource>(item));
+            }
             return result;
         }
 

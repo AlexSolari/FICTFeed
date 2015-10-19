@@ -15,5 +15,7 @@ namespace FICTFeed.Framework.Users
         OperationResult Login(string mail, string passwordRaw);
 
         OperationResult Logout();
+
+        IList<User> GetList();
     }
 }

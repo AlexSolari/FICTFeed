@@ -135,9 +135,11 @@
     <Compile Include="Models\PageViews\News\NewsItemCreatePageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemPageView.cs" />
     <Compile Include="Models\PageViews\News\NewsListPageView.cs" />
+    <Compile Include="Models\PageViews\User\EditUserPageView.cs" />
     <Compile Include="Models\PageViews\User\LoginUserPageView.cs" />
     <Compile Include="Models\PageViews\User\RegisterUserPageView.cs" />
     <Compile Include="Models\ViewModels\News\NewsItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\User\UserEditViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserLoginViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserCreateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,6 +207,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Error\page404.cshtml" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\Admin\GetUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
