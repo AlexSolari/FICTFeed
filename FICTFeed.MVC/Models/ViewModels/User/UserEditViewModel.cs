@@ -14,6 +14,7 @@ namespace FICTFeed.MVC.Models.ViewModels.User
 
         public virtual string Mail { get; set; }
 
+        [UIHint("EditRoles")]
         public virtual Roles Role { get; set; }
         
         public UserEditViewModel() { }

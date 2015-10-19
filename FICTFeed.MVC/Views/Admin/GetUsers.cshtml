@@ -1,4 +1,5 @@
-﻿@model FICTFeed.MVC.Models.PageViews.User.EditUserPageView
+﻿@model IList<FICTFeed.MVC.Models.PageViews.User.EditUserPageView>
+@using FICTFeed.MVC.Components.HtmlExtensions
 @{
     ViewBag.Title = "GetUsers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,7 +9,20 @@
 
 @if (Model != null)
 {
-    foreach (var item in Model.Users)
+    <select id="asd">
+        <option>asdsad</option>
+        <option>asdsa312d</option>
+        <option>asd312534sad</option>
+    </select>
+    foreach (var item in Model)
     {
+        <div>
+            @Html.DisplayFor(m => item.User.Mail)
+            @Html.DisplayFor(m => item.User.Name)
+            <div>
+                21312 @Html.EditorFor(m => item.User.Role)
+            </div>
+            @*@Html.EditorFor()*@
+        </div>
     }
 }

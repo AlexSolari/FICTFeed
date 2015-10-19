@@ -8,17 +8,23 @@ namespace FICTFeed.MVC.Models.PageViews.User
 {
     public class EditUserPageView : BasePageView
     {
-        public List<UserEditViewModel> Users { get; set; }
+        public UserEditViewModel User { get; set; }
+
+        public EditUserPageView(HttpRequestBase request, UserEditViewModel user)
+            : base(request)
+        {
+            User = new UserEditViewModel(user.Name, user.Mail, user.Role);
+        }
 
         public EditUserPageView(HttpRequestBase request)
             : base(request)
         {
-            Users = new List<UserEditViewModel>();
+            User = new UserEditViewModel();
         }
 
         public EditUserPageView()
         {
-            Users = new List<UserEditViewModel>();
+            User = new UserEditViewModel();
         }
     }
 }
