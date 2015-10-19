@@ -10,6 +10,8 @@ namespace FICTFeed.MVC.Models.ViewModels.User
 {
     public class UserEditViewModel
     {
+        public virtual string Id { get; set; }
+
         public virtual string Name { get; set; }
 
         public virtual string Mail { get; set; }

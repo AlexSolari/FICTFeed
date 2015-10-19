@@ -17,6 +17,7 @@
                 @Html.EditorFor(m => item.User.Role)
             </div>
         </div>
+        @Html.RouteLink("Edit", "Edit", new { id = item.User.Id })
     }
 }
 
