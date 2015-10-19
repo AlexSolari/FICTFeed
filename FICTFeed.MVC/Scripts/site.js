@@ -5,4 +5,5 @@
     $("*:not(*:has(#dropdown-navigation), #search, #navigation-button)").click(function () {
         $("#dropdown-navigation").addClass("hidden");
     });
+    $('select').material_select();
 });

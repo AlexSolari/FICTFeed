@@ -10,22 +10,24 @@
 {
     foreach (var item in Model)
     {
-        <div>
-            @Html.DisplayFor(m => item.User.Mail)
-            @Html.DisplayFor(m => item.User.Name)
-            <div>
-                @Html.EditorFor(m => item.User.Role)
+        <div class="custom-card small z-depth-2">
+            <div class="card-content">
+                <span class="card-title grey-text">@Html.DisplayFor(m => item.User.Name)</span>
+                <p>
+                    <ul>
+                        <li>Mail: @Html.DisplayFor(m => item.User.Mail)</li>
+                        <li>Current role: @Html.DisplayFor(m => item.User.Role)</li>
+                    </ul>
+                    
+                    <div class="default-input-width">
+                        @Html.EditorFor(m => item.User.Role)
+                    </div>
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="btn-flat grey-text">Save</a>
             </div>
         </div>
-        @Html.RouteLink("Edit", "Edit", new { id = item.User.Id })
+        //@Html.RouteLink("Edit", "Edit", new { id = item.User.Id })
     }
 }
-
-@*TODO: IN MATERIALIZE.CSS 
-    SELECT { DISPLAY: NONE } 
-    WTF!!!!*@
-<style>
-    select {
-        display: inline-block;
-    }
-</style>

@@ -49,6 +49,14 @@ h1, h2, h3{
 
 .inline-block{display: inline-block;}
 
+.default-input-width { width: 280px; }
+
+.custom-card{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #d4d4d4;
+}
+
 body{margin: 0}
 
 #content{
