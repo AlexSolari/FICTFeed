@@ -9,5 +9,7 @@ namespace FICTFeed.Bussines.Models
     public class Group : Entity
     {
         public virtual string Name { get; set; }
+
+        //List userId
     }
 }

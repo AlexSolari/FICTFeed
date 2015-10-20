@@ -47,14 +47,7 @@ namespace FICTFeed.MVC.Controllers
 
             var newNewsItem = pageView.NewNewsItem;
             newNewsItem.PrapareToPosting(userdata.CurrentUser.Id.ToString());
-
-            //TODO: implement manager "news creation call" instead of direct call
-            //var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
-
-            //a.Create(FICTFeed.Framework.Map.Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
-
             newsManager.Create(Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
-            //
 
             return RedirectToRoute("Home");
         }

@@ -8,5 +8,6 @@ namespace FICTFeed.Bussines
         public virtual string Mail { get; set; }
         public virtual bool Online { get; set; }
         public virtual Roles Role { get; set; }
+        //groupId
     }
 }
