@@ -1,5 +1,7 @@
 ﻿using FICTFeed.Bussines;
+using FICTFeed.DependecyResolver;
 using FICTFeed.Framework.Map;
+using FICTFeed.Framework.News;
 using FICTFeed.MVC.Models.ViewModels.News;
 using System;
 using System.Collections.Generic;
@@ -12,21 +14,21 @@ namespace FICTFeed.MVC.Models.PageViews.News
     {
         public List<NewsItemViewModel> News;
 
+        protected INewsManager newsManager;
+
         public NewsListPageView(HttpRequestBase request)
             : base(request)
         {
-            //TODO: Implement getting new from manager instead of direct get
+            newsManager = Resolver.GetInstance<INewsManager>();
             News = new List<NewsItemViewModel>();
-            var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
-            News.AddRange(a.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
+            News.AddRange(newsManager.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
         }
 
         public NewsListPageView()
         {
-            //TODO: Implement getting new from manager instead of direct get
+            newsManager = Resolver.GetInstance<INewsManager>();
             News = new List<NewsItemViewModel>();
-            var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
-            News.AddRange(a.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
+            News.AddRange(newsManager.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
         }
     }
 }

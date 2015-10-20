@@ -25,5 +25,10 @@ namespace FICTFeed.Framework.News
 
             return provider.GetById(id);
         }
+
+        public IList<NewsItem> GetList(string orderBy = null)
+        {
+            return provider.GetList(orderBy);
+        }
     }
 }

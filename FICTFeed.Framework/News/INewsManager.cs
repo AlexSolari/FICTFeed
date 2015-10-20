@@ -9,5 +9,6 @@ namespace FICTFeed.Framework.News
 {
     public interface INewsManager : IManager<NewsItem>
     {
+        IList<NewsItem> GetList(string orderBy = null);
     }
 }
