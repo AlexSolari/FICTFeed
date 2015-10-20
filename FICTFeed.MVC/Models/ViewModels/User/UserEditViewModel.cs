@@ -21,14 +21,14 @@ namespace FICTFeed.MVC.Models.ViewModels.User
         
         public UserEditViewModel() { }
 
-        public UserEditViewModel(string name, string mail, Roles role)
+        public UserEditViewModel(string name, string mail, Roles role = Roles.User)
         {
             Guard.ThrowIfEmptyString(name);
             Guard.ThrowIfEmptyString(mail);
 
             Name = name;
             Mail = mail;
-            Role = Roles.User;
+            Role = role;
         }
     }
 }

@@ -40,15 +40,16 @@ namespace FICTFeed.MVC.Controllers
             return View(model);
         }
 
-        public ActionResult EditUserRole(string id)
+        public ActionResult EditUserRole(UserEditViewModel model)
         {
-            var user = userManager.GetById(id);
+            var user = userManager.GetById(model.Id.ToString());
+            user.Role = model.Role;
             if (userManager.Update(user) == OperationResult.Success)
             {
                 return RedirectToRoute("GetUsers");
             }
             //show error
-            return View();
+            return RedirectToRoute("GetUsers");
         }
 
     }

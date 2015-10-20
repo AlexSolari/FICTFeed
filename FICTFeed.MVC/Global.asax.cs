@@ -12,6 +12,7 @@ namespace FICTFeed.MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ModelBinders.Binders.Add(typeof(FICTFeed.MVC.Models.ViewModels.User.UserEditViewModel), new FICTFeed.MVC.Components.ModelBinders.UserEditViewModelBinder());
             FrameworkInitializer.Start();
         }
     }

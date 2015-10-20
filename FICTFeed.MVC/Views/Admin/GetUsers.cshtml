@@ -20,12 +20,18 @@
                     </ul>
                     
                     <div class="default-input-width">
-                        @Html.EditorFor(m => item.Role)
+                        @using (Html.BeginForm("EditUserRole", "Admin"))
+                        {
+                            @Html.HiddenFor(m => item.Id)
+                            @Html.HiddenFor(m => item.Mail)
+                            @Html.HiddenFor(m => item.Name)
+                            @Html.EditorFor(m => item.Role)
+                            <div class="card-action">
+                                <button type="submit" class="btn-flat grey-text">Save</button>
+                            </div>
+                        }
                     </div>
                 </p>
-            </div>
-            <div class="card-action">
-                <a href="@Url.RouteUrl("EditUserRole", new { id = item.Id })" class="btn-flat grey-text">Save</a>
             </div>
         </div>
         //@Html.RouteLink("Edit", "Edit", new { id = item.User.Id })
