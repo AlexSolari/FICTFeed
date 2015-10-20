@@ -40,10 +40,10 @@ namespace FICTFeed.MVC.Controllers
             return View(model);
         }
 
-        public async Task<ActionResult> EditUserRole(string id)
+        public ActionResult EditUserRole(string id)
         {
             var user = userManager.GetById(id);
-            if (await userManager.UpdateAsync(user) == OperationResult.Success)
+            if (userManager.Update(user) == OperationResult.Success)
             {
                 return RedirectToRoute("GetUsers");
             }

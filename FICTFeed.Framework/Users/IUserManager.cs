@@ -20,6 +20,6 @@ namespace FICTFeed.Framework.Users
 
         OperationResult Update(User user);
 
-        Task<OperationResult> UpdateAsync(User user);
+        //Task<OperationResult> UpdateAsync(User user);
     }
 }

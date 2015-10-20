@@ -90,20 +90,20 @@ namespace FICTFeed.Framework.NHibernate
             });
         }
 
-        public async void UpdateAsync(TEntity model)
-        {
-            await System.Threading.Tasks.Task.Run(() =>
-            {
-                Execute(session =>
-                {
-                    using (var transaction = session.BeginTransaction())
-                    {
-                        session.Update(model);
-                        transaction.Commit();
-                    }
-                });
-            });
-        }
+        //public async void UpdateAsync(TEntity model)
+        //{
+        //    await System.Threading.Tasks.Task.Run(() =>
+        //    {
+        //        Execute(session =>
+        //        {
+        //            using (var transaction = session.BeginTransaction())
+        //            {
+        //                session.Update(model);
+        //                transaction.Commit();
+        //            }
+        //        });
+        //    });
+        //}
 
         public void Delete(TEntity model)
         {
