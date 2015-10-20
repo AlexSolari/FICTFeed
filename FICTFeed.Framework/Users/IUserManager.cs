@@ -17,5 +17,9 @@ namespace FICTFeed.Framework.Users
         OperationResult Logout();
 
         IList<User> GetList();
+
+        OperationResult Update(User user);
+
+        Task<OperationResult> UpdateAsync(User user);
     }
 }

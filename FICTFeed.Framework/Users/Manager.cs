@@ -94,5 +94,14 @@ namespace FICTFeed.Framework.Users
             provider.Update(user);
             return OperationResult.Success;
         }
+
+        public async Task<OperationResult> UpdateAsync(User user)
+        {
+            await Task.Run(() => 
+                {
+                    provider.UpdateAsync(user);
+                });
+            return OperationResult.Success;
+        }
     }
 }

@@ -14,6 +14,7 @@ using FICTFeed.MVC.Models.ViewModels.User;
 using FICTFeed.Bussines;
 using FICTFeed.DependecyResolver;
 using FICTFeed.MVC.Models.PageViews.User;
+using System.Threading.Tasks;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -38,5 +39,17 @@ namespace FICTFeed.MVC.Controllers
             var model = new EditUserPageView(Request, Mapper.Map<UserEditViewModel, User>(users));
             return View(model);
         }
+
+        public async Task<ActionResult> EditUserRole(string id)
+        {
+            var user = userManager.GetById(id);
+            if (await userManager.UpdateAsync(user) == OperationResult.Success)
+            {
+                return RedirectToRoute("GetUsers");
+            }
+            //show error
+            return View();
+        }
+
     }
 }
