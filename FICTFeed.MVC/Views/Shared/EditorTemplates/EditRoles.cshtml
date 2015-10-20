@@ -1,7 +1,6 @@
 ﻿@model Enum
 
-@{
-    //TODO: SELECT dropdown invisible                 
+@{             
     var values = Enum.GetValues(ViewData.ModelMetadata.ModelType);
     var list = new List<SelectListItem>();
     foreach (var item in values)
