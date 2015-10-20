@@ -26,8 +26,6 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult Index(string id)
         {
             Guid tmp;
-            //TODO: implement manager "news creation call" instead of direct call
-            //var a = new FICTFeed.Framework.NHibernate.DataProvider<NewsItem>();
             if (!Guid.TryParse(id, out tmp) || newsManager.GetById(id) == null)
                 return RedirectToRoute("Home");
 

@@ -13,7 +13,7 @@ namespace FICTFeed.Framework.Users
 {
     public class UserDataContainer
     {
-        UserManager Manager;
+        IUserManager Manager;
         
         HttpRequestBase Request;
         
@@ -45,8 +45,10 @@ namespace FICTFeed.Framework.Users
 
         public UserDataContainer(HttpRequestBase request)
         {
+            //TODO: Remove "request" like parametr from all project using HttpContext.Current.Request.RequestContext.HttpContext.Request instead;
+            //var re = HttpContext.Current.Request.RequestContext.HttpContext.Request;
             this.Request = request;
-            this.Manager = new UserManager();
+            this.Manager = FICTFeed.DependecyResolver.Resolver.GetInstance<IUserManager>();
         }
     }
 }

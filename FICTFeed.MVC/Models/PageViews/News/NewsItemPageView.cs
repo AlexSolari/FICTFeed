@@ -20,7 +20,6 @@ namespace FICTFeed.MVC.Models.PageViews.News
             : base(request)
         {
             newsManager = Resolver.GetInstance<INewsManager>();
-            //TODO: Implement getting new from manager instead of direct get
             NewsItem = Mapper.Map<NewsItemViewModel, NewsItem>(newsManager.GetById(id));
         }
 

@@ -55,7 +55,7 @@ namespace FICTFeed.Framework.Users
             provider.Create(user);
         }
 
-        public OperationResult Login(string mail, string passwordRaw)//, HttpResponseBase response)
+        public OperationResult Login(string mail, string passwordRaw)
         {
             var response = HttpContext.Current.Request.RequestContext.HttpContext.Response;
             var user = provider.GetByMail(mail);
@@ -72,7 +72,7 @@ namespace FICTFeed.Framework.Users
             return OperationResult.Success;
         }
 
-        public OperationResult Logout()//HttpRequestBase request)
+        public OperationResult Logout()
         {
             var request = HttpContext.Current.Request.RequestContext.HttpContext.Request;
             if (request.Cookies[CookiesNames.LoginCookie] == null)
