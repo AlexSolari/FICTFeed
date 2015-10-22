@@ -1,4 +1,5 @@
 ﻿using FICTFeed.Bussines.AdditionalData;
+using System;
 namespace FICTFeed.Bussines.Models
 {
     public class User : Entity
@@ -13,6 +14,6 @@ namespace FICTFeed.Bussines.Models
 
         public virtual Roles Role { get; set; }
 
-        //groupId
+        public virtual Guid GroupId { get; set; } 
     }
 }

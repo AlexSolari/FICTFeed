@@ -54,7 +54,7 @@
     <a href="#top"><div id="jumpup" class="primary light"></div></a>
     <div id="content">      
         <div id="sidebar" class="primary light primary-text">
-                @if (UserData.IsAuthorized)
+                @if (UserData.IsAuthorized && UserData.CurrentUser != null)
                 {
                     <div class="border-divider">
                         <h3>UserData</h3>

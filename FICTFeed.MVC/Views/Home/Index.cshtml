@@ -6,7 +6,7 @@
 
     
     <ul class="news-list">
-        @if (Model.UserData.IsAuthorized)
+        @if (Model.UserData.IsAuthorized && Model.UserData.CurrentUser != null)
         {
             if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin)
             {
