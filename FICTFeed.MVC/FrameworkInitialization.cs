@@ -10,6 +10,8 @@ using FICTFeed.MVC.Models.ViewModels.User;
 using FICTFeed.Framework.Groups;
 using FICTFeed.MVC.Models.ViewModels.Groups;
 using FICTFeed.Bussines.Models;
+using System.Web.Mvc;
+using FICTFeed.MVC.Components.ModelBinders;
 
 namespace FICTFeed.MVC
 {
@@ -17,6 +19,7 @@ namespace FICTFeed.MVC
     {
         public static void Start()
         {
+            RegisterBinders();
             MapTypes();
             RegisterSingletons();
             SetupMappings();         
@@ -48,9 +51,12 @@ namespace FICTFeed.MVC
 
                 return result;
             });
+        }
 
-            //Mapper.AddMapping<Group, GroupEditViewModel>((result, source) => { return result; });
-            //Mapper.AddMapping<GroupEditViewModel, Group>((result, source) => { return result; });
+        static void RegisterBinders()
+        {
+            ModelBinders.Binders.Add(typeof(UserEditViewModel), new UserEditViewModelBinder());
+            ModelBinders.Binders.Add(typeof(GroupEditViewModel), new GroupEditViewModelBinder());
         }
     }
 }

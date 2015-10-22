@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Components\HtmlExtensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Components\ModelBinders\GroupEditViewModelBinder.cs" />
     <Compile Include="Components\ModelBinders\UserEditViewModelBinder.cs" />
     <Compile Include="Components\User\AllowToAttribute.cs" />
     <Compile Include="Controllers\AdminController.cs" />

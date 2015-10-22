@@ -79,6 +79,12 @@ namespace FICTFeed.MVC
                 defaults: new { controller = "Admin", action = "CreateGroup" }
             );
 
+            routes.MapRoute(
+                name: "EditGroupName",
+                url: "admin/editgroup",
+                defaults: new { controller = "Admin", action = "EditGroupName" }
+            );
+
             #endregion
 
             #region Home

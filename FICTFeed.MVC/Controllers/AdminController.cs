@@ -50,6 +50,9 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult EditUserRole(UserEditViewModel model)
         {
             var user = userManager.GetById(model.Id.ToString());
+            if (user == null)
+                return View();
+
             user.Role = model.Role;
             if (userManager.Update(user) == OperationResult.Success)
             {
@@ -69,6 +72,9 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult EditGroupName(GroupEditViewModel model)
         {
             var group = groupsManager.GetById(model.Id.ToString());
+            if (group == null)
+                return View(model);
+
             group.Name = model.Name;
             groupsManager.Update(group);
             return RedirectToRoute("GetGroups");
