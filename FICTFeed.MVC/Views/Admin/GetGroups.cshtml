@@ -20,7 +20,7 @@
                             @Html.HiddenFor(m => item.Id)
                             @Html.EditorFor(m => item.Name)
                             <div class="card-action">
-                                <button type="submit" class="btn-flat grey-text">Edit</button>
+                                <button type="submit" class="btn-flat grey-text">Save</button>
                             </div>
                         }
                     </div>
@@ -28,4 +28,7 @@
             </div>
         </div>
     }
+    <a href="@Url.RouteUrl("CreateGroup")">
+        <div id="add-news" class="btn red">Add group</div>
+    </a>
 }

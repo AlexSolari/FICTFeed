@@ -10,7 +10,9 @@ namespace FICTFeed.Bussines
 
         public virtual string Description { get; set; }
 
-        public virtual string AuthorId { get; set; }
+        public virtual Guid AuthorId { get; set; }
+
+        public virtual Guid GroupId { get; set; }
 
         public virtual DateTime PostingDate { get; set; }
     }

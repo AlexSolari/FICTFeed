@@ -51,6 +51,13 @@ namespace FICTFeed.MVC
 
                 return result;
             });
+
+            Mapper.AddMapping<Group, GroupCreateViewModel>((result, source) =>
+            {
+                result.CanBeDeleted = true;
+
+                return result;
+            });
         }
 
         static void RegisterBinders()

@@ -23,6 +23,8 @@ namespace FICTFeed.Framework.Groups
 
         public void Delete(Group group)
         {
+            if (!group.CanBeDeleted)
+                throw new ArgumentException("This group cannot be deleted");
             provider.Delete(group);
         }
 

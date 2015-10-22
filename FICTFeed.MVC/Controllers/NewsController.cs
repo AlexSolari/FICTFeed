@@ -46,7 +46,7 @@ namespace FICTFeed.MVC.Controllers
                 return View(pageView);
 
             var newNewsItem = pageView.NewNewsItem;
-            newNewsItem.PrapareToPosting(userdata.CurrentUser.Id.ToString());
+            newNewsItem.PrapareToPosting(userdata.CurrentUser.Id);
             newsManager.Create(Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
 
             return RedirectToRoute("Home");

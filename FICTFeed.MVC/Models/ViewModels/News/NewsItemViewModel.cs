@@ -29,19 +29,22 @@ namespace FICTFeed.MVC.Models.ViewModels.News
         public virtual string Description { get; set; }
 
         [HiddenInput(DisplayValue = false)]
-        public virtual string AuthorId { get; set; }
+        public virtual Guid AuthorId { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public virtual Guid GroupId { get; set; }
 
         [HiddenInput(DisplayValue = false)]
         public virtual DateTime PostingDate { get; set; }
         
         public NewsItemViewModel() { }
 
-        public NewsItemViewModel(string title, string shortDescription, string description, string authorId)
+        public NewsItemViewModel(string title, string shortDescription, string description, Guid authorId)
         {
             Guard.ThrowIfEmptyString(title);
             Guard.ThrowIfEmptyString(shortDescription);
             Guard.ThrowIfEmptyString(description);
-            Guard.ThrowIfEmptyString(authorId);
+            Guard.ThrowIfEmptyGuid(authorId);
 
             Title = title;
             ShortDescription = shortDescription;
@@ -49,7 +52,7 @@ namespace FICTFeed.MVC.Models.ViewModels.News
             AuthorId = authorId;
         }
 
-        public void PrapareToPosting(string userId)
+        public void PrapareToPosting(Guid userId)
         {
             PostingDate = DateTime.Now;
             AuthorId = userId;
