@@ -8,13 +8,8 @@ namespace FICTFeed.MVC.Models.PageViews.User
     {
         public UserCreateViewModel NewUser { get; set; }
 
-        public RegisterUserPageView(HttpRequestBase request)
-            : base(request)
-        {
-            NewUser = new UserCreateViewModel();
-        }
-
         public RegisterUserPageView()
+            : base()
         {
             NewUser = new UserCreateViewModel();
         }

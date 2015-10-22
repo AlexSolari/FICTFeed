@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encryptor.cs" />
+    <Compile Include="Groups\GroupsDataProvider.cs" />
+    <Compile Include="Groups\GroupsManager.cs" />
+    <Compile Include="Groups\IGroupsManager.cs" />
     <Compile Include="IManager.cs" />
     <Compile Include="Map\Mapper.cs" />
     <Compile Include="News\INewsManager.cs" />

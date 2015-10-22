@@ -43,11 +43,12 @@ namespace FICTFeed.Framework.Users
             return (Guard.HaveEnoughRights(CurrentUser, role));
         }
 
-        public UserDataContainer(HttpRequestBase request)
+        public UserDataContainer()
         {
-            //TODO: Remove "request" like parametr from all project using HttpContext.Current.Request.RequestContext.HttpContext.Request instead;
-            //var re = HttpContext.Current.Request.RequestContext.HttpContext.Request;
-            this.Request = request;
+            if (HttpContext.Current.Request.RequestContext.HttpContext.Request != null)
+            {
+                this.Request = HttpContext.Current.Request.RequestContext.HttpContext.Request;
+            }
             this.Manager = FICTFeed.DependecyResolver.Resolver.GetInstance<IUserManager>();
         }
     }

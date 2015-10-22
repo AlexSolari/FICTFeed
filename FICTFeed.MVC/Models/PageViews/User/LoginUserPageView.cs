@@ -9,17 +9,12 @@ namespace FICTFeed.MVC.Models.PageViews.User
         public UserLoginViewModel LoginData { get; set; }
         public bool Valid { get; set; }
 
-        public LoginUserPageView(HttpRequestBase request)
-            : base(request)
+        public LoginUserPageView()
+            : base()
         {
             Valid = true;
             LoginData = new UserLoginViewModel();
         }
 
-        public LoginUserPageView()
-        {
-            Valid = true;
-            LoginData = new UserLoginViewModel();
-        }
     }
 }

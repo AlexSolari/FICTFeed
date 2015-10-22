@@ -29,19 +29,19 @@ namespace FICTFeed.MVC.Controllers
             if (!Guid.TryParse(id, out tmp) || newsManager.GetById(id) == null)
                 return RedirectToRoute("Home");
 
-            return View(new NewsItemPageView(Request, id));
+            return View(new NewsItemPageView(id));
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            return View(new NewsItemCreatePageView(Request));
+            return View(new NewsItemCreatePageView());
         }
 
         [HttpPost]
         public ActionResult Create(NewsItemCreatePageView pageView)
         {
-            var userdata = new UserDataContainer(Request);
+            var userdata = new UserDataContainer();
             if (!ModelState.IsValid)
                 return View(pageView);
 

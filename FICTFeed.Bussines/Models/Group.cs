@@ -10,6 +10,6 @@ namespace FICTFeed.Bussines.Models
     {
         public virtual string Name { get; set; }
 
-        //List userId
+        public virtual IList<User> Users { get; set; }
     }
 }

@@ -10,14 +10,9 @@ namespace FICTFeed.MVC.Models.PageViews
     {
         public UserDataContainer UserData;
 
-        public BasePageView(HttpRequestBase request)
-        {
-            UserData = new UserDataContainer(request);
-        }
-
         public BasePageView()
         {
-
+            UserData = new UserDataContainer();
         }
     }
 }

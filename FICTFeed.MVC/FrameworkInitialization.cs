@@ -7,6 +7,9 @@ using FICTFeed.Framework.Users;
 using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.MVC.Models.ViewModels.News;
 using FICTFeed.MVC.Models.ViewModels.User;
+using FICTFeed.Framework.Groups;
+using FICTFeed.MVC.Models.ViewModels.Groups;
+using FICTFeed.Bussines.Models;
 
 namespace FICTFeed.MVC
 {
@@ -25,8 +28,11 @@ namespace FICTFeed.MVC
             Resolver.RegisterType<NewsItem, NewsItem>();
             Resolver.RegisterType<NewsItemViewModel, NewsItemViewModel>();
             Resolver.RegisterType<UserEditViewModel, UserEditViewModel>();
+            Resolver.RegisterType<Group, Group>();
+            Resolver.RegisterType<GroupEditViewModel, GroupEditViewModel>();
             Resolver.RegisterType<IUserManager, UserManager>();
             Resolver.RegisterType<INewsManager, NewsManager>();
+            Resolver.RegisterType<IGroupsManager, GroupsManager>();
         }
 
         static void RegisterSingletons()
@@ -42,6 +48,9 @@ namespace FICTFeed.MVC
 
                 return result;
             });
+
+            //Mapper.AddMapping<Group, GroupEditViewModel>((result, source) => { return result; });
+            //Mapper.AddMapping<GroupEditViewModel, Group>((result, source) => { return result; });
         }
     }
 }

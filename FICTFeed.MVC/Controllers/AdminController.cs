@@ -15,6 +15,10 @@ using FICTFeed.Bussines;
 using FICTFeed.DependecyResolver;
 using FICTFeed.MVC.Models.PageViews.User;
 using System.Threading.Tasks;
+using FICTFeed.Framework.Groups;
+using FICTFeed.MVC.Models.PageViews.Groups;
+using FICTFeed.MVC.Models.ViewModels.Groups;
+using FICTFeed.Bussines.Models;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -22,21 +26,24 @@ namespace FICTFeed.MVC.Controllers
     public class AdminController : Controller
     {
         IUserManager userManager;
+        IGroupsManager groupsManager;
 
         public AdminController()
         {
             userManager = Resolver.GetInstance<IUserManager>();
+            groupsManager = Resolver.GetInstance<IGroupsManager>();
         }
+
         // GET: Admin
         public ActionResult Index()
         {
-            return View(new BasePageView(Request));
+            return View(new BasePageView());
         }
 
         public ActionResult GetUsers()
         {
             var users = userManager.GetList();
-            var model = new EditUserPageView(Request, Mapper.Map<UserEditViewModel, User>(users));
+            var model = new EditUserPageView(Mapper.Map<UserEditViewModel, User>(users));
             return View(model);
         }
 
@@ -50,6 +57,34 @@ namespace FICTFeed.MVC.Controllers
             }
             //show error
             return RedirectToRoute("GetUsers");
+        }
+
+        public ActionResult GetGroups()
+        {
+            var groups = groupsManager.GetList();
+            var model = new EditGroupsPageView(Mapper.Map<GroupEditViewModel, Group>(groups));
+            return View(model);
+        }
+
+        public ActionResult EditGroupName(GroupEditViewModel model)
+        {
+            var group = groupsManager.GetById(model.Id.ToString());
+            group.Name = model.Name;
+            groupsManager.Update(group);
+            return RedirectToRoute("GetGroups");
+        }
+
+        [HttpGet]
+        public ActionResult CreateGroup()
+        {
+            return View(new GroupCreateViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult CreateGroup()
+        {
+            //create group
+            return RedirectToRoute("GetGroups");
         }
 
     }

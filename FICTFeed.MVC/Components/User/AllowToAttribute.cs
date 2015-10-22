@@ -16,7 +16,7 @@ namespace FICTFeed.MVC.Components.User
         void IActionFilter.OnActionExecuting(ActionExecutingContext filterContext)
         {
             var request = HttpContext.Current.Request.RequestContext.HttpContext.Request;
-            if (!(new UserDataContainer(request).IsInRole(Role)))
+            if (!(new UserDataContainer().IsInRole(Role)))
             {
                 filterContext.Result = new RedirectResult("error/not-found");
             }

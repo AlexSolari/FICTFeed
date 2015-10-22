@@ -62,6 +62,12 @@ namespace FICTFeed.MVC
             );
 
             routes.MapRoute(
+                name: "GetGroups",
+                url: "admin/groups",
+                defaults: new { controller = "Admin", action = "GetGroups" }
+            );
+
+            routes.MapRoute(
                 name: "EditUserRole",
                 url: "edituserrole/{id}",
                 defaults: new { controller = "Admin", action = "EditUserRole", id = UrlParameter.Optional }

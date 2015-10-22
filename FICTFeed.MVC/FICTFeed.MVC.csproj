@@ -134,12 +134,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\PageViews\BasePageView.cs" />
+    <Compile Include="Models\PageViews\Groups\EditGroupsPageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemCreatePageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemPageView.cs" />
     <Compile Include="Models\PageViews\News\NewsListPageView.cs" />
     <Compile Include="Models\PageViews\User\EditUserPageView.cs" />
     <Compile Include="Models\PageViews\User\LoginUserPageView.cs" />
     <Compile Include="Models\PageViews\User\RegisterUserPageView.cs" />
+    <Compile Include="Models\ViewModels\Groups\GroupEditViewModel.cs" />
     <Compile Include="Models\ViewModels\News\NewsItemViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserEditViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserLoginViewModel.cs" />
@@ -211,6 +213,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Admin\GetUsers.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EditRoles.cshtml" />
+    <Content Include="Views\Admin\GetGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

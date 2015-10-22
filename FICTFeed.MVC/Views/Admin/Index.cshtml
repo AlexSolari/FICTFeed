@@ -6,4 +6,11 @@
 
 <h2>Index</h2>
 
+@*Сделать списком
+    в "группы" добавить: 1) все группы (с редактированием имени группы, удалением группы)
+                         2) добавить группу*@
+
 @Html.RouteLink("Все пользователи", "GetUsers")
+@Html.RouteLink("Группы", "GetGroups")
+    @Html.RouteLink("Все группы", "GetGroups")
+    @Html.RouteLink("Добавить группу", "CreateGroup")

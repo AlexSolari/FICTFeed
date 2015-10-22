@@ -24,7 +24,7 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult RegisterUser()
         {
-            return View(new RegisterUserPageView(Request));
+            return View(new RegisterUserPageView());
         }
 
         [HttpPost]
@@ -42,7 +42,7 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult LoginUser()
         {
-            return View(new LoginUserPageView(Request));
+            return View(new LoginUserPageView());
         }
 
         [HttpPost]

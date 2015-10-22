@@ -16,19 +16,13 @@ namespace FICTFeed.MVC.Models.PageViews.News
 
         protected INewsManager newsManager;
 
-        public NewsListPageView(HttpRequestBase request)
-            : base(request)
+        public NewsListPageView()
+            : base()
         {
             newsManager = Resolver.GetInstance<INewsManager>();
             News = new List<NewsItemViewModel>();
             News.AddRange(newsManager.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
         }
 
-        public NewsListPageView()
-        {
-            newsManager = Resolver.GetInstance<INewsManager>();
-            News = new List<NewsItemViewModel>();
-            News.AddRange(newsManager.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
-        }
     }
 }

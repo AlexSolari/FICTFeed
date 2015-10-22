@@ -10,15 +10,11 @@ namespace FICTFeed.MVC.Models.PageViews.News
     {
         public NewsItemViewModel NewNewsItem { get; set; }
 
-        public NewsItemCreatePageView(HttpRequestBase request)
-            : base(request)
+        public NewsItemCreatePageView()
+            : base()
         {
             NewNewsItem = new NewsItemViewModel();
         }
 
-        public NewsItemCreatePageView()
-        {
-            NewNewsItem = new NewsItemViewModel();
-        }
     }
 }

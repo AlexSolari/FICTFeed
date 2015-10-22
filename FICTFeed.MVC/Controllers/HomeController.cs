@@ -9,7 +9,7 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(new NewsListPageView(Request));
+            return View(new NewsListPageView());
         }
     }
 }
