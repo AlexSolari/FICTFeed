@@ -1,4 +1,4 @@
-﻿using FICTFeed.Bussines;
+﻿using FICTFeed.Bussines.Models;
 using FICTFeed.Bussines.AdditionalData;
 using FICTFeed.Framework.Strings;
 using FICTFeed.Framework.Validation;

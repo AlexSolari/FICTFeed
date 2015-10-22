@@ -4,7 +4,7 @@ using System;
 using System.Web.Mvc;
 using FICTFeed.Framework.Users;
 using FICTFeed.Framework.Map;
-using FICTFeed.Bussines;
+using FICTFeed.Bussines.Models;
 using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.Framework.Strings;
 using FICTFeed.MVC.Models.PageViews.User;

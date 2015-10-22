@@ -1,5 +1,5 @@
 ﻿using FICTFeed.Bussines.AdditionalData;
-namespace FICTFeed.Bussines
+namespace FICTFeed.Bussines.Models
 {
     public class User : Entity
     {

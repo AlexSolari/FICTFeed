@@ -77,13 +77,18 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult CreateGroup()
         {
-            return View(new GroupCreateViewModel());
+            return View(new CreateGroupPageView());
         }
 
         [HttpPost]
-        public ActionResult CreateGroup()
+        public ActionResult CreateGroup(CreateGroupPageView model)
         {
-            //create group
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var newGroup = model.NewGroup;
+            groupsManager.Create(Mapper.Map<Group, GroupCreateViewModel>(newGroup));
+
             return RedirectToRoute("GetGroups");
         }
 

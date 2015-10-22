@@ -1,4 +1,4 @@
-﻿using FICTFeed.Bussines;
+﻿using FICTFeed.Bussines.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
