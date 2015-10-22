@@ -12,6 +12,8 @@ namespace FICTFeed.Bussines.Models
 
         public virtual string DayId { get; set; }
 
-        public virtual List<string> Subjects { get; set; } // TODO: Subjects to XML Fields in Schedule table in Database
+        public virtual List<string> Subjects { get; set; } 
+        
+        // TODO: Subjects to XML Fields in Schedule table in Database
     }
 }

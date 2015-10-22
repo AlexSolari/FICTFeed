@@ -17,7 +17,19 @@
         <hr />
         @Html.ValidationSummary(true)
 
-        @Html.EditorFor(m=>m.NewUser)
+        @Html.EditorFor(m => m.NewUser)
+
+        @*@Html.DisplayFor(m => m.NewUser.Name)
+        @Html.EditorFor(m => m.NewUser.Name)
+
+        @Html.DisplayFor(m => m.NewUser.Mail)
+        @Html.EditorFor(m => m.NewUser.Mail)
+
+        @Html.DisplayFor(m => m.NewUser.Password)
+        @Html.EditorFor(m => m.NewUser.Password)
+
+        @Html.DisplayFor(m => m.NewUser.ConfirmPassword)
+        @Html.EditorFor(m => m.NewUser.ConfirmPassword)*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
