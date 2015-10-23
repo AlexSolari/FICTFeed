@@ -11,5 +11,7 @@ namespace FICTFeed.Bussines.Models
         public virtual string Name { get; set; }
 
         public virtual IList<User> Users { get; set; }
+
+        public virtual bool CanBeDeleted { get; set; }
     }
 }

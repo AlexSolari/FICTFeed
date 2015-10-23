@@ -8,6 +8,7 @@
       <generator class="guid" />
     </id>
     <property name="Name" type="string" not-null="true"/>
+    <property name="CanBeDeleted" type="bool" not-null="true"/>
     <list name="Users" cascade="all">
       <key column="GroupId"/>
       <list-index column="idx"/>
