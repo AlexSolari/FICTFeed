@@ -37,5 +37,11 @@ namespace FICTFeed.Framework.Groups
         {
             return provider.GetList(orderBy);
         }
+
+
+        public Group GetByName(string name)
+        {
+            return provider.GetByName(name);
+        }
     }
 }

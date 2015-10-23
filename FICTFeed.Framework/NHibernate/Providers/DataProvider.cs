@@ -66,6 +66,16 @@ namespace FICTFeed.Framework.NHibernate
             });
         }
 
+        public TEntity GetByName(string name)
+        {
+            return Execute(session =>
+            {
+                var criteria = session.CreateCriteria<TEntity>();
+                    criteria.Add(Restrictions.Eq("Name", name));
+                return criteria.UniqueResult<TEntity>();
+            });
+        }
+
         public void Create(TEntity model)
         {
             Execute(session =>

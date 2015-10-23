@@ -72,11 +72,11 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult EditGroupName(GroupEditViewModel model)
         {
             var group = groupsManager.GetById(model.Id.ToString());
-            if (group == null)
-                return View(model);
-
-            group.Name = model.Name;
-            groupsManager.Update(group);
+            if (group != null && groupsManager.GetByName(model.Name) == null)
+            {
+                group.Name = model.Name;
+                groupsManager.Update(group);
+            }
             return RedirectToRoute("GetGroups");
         }
 

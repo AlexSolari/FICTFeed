@@ -14,5 +14,7 @@ namespace FICTFeed.Framework.Groups
         void Delete(Group group);
 
         void Update(Group group);
+
+        Group GetByName(string name);
     }
 }
