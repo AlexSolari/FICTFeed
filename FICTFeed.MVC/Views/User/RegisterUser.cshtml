@@ -19,6 +19,8 @@
 
         @Html.EditorFor(m => m.NewUser)
 
+        @Html.DropDownListFor(m => m.NewUser.GroupId, Model.NewUser.Groups)
+
         @*@Html.DisplayFor(m => m.NewUser.Name)
         @Html.EditorFor(m => m.NewUser.Name)
 

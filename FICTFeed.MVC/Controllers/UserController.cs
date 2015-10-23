@@ -9,21 +9,24 @@ using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.Framework.Strings;
 using FICTFeed.MVC.Models.PageViews.User;
 using FICTFeed.MVC.Models.ViewModels.User;
+using FICTFeed.Framework.Groups;
 
 namespace FICTFeed.MVC.Controllers
 {
     public class UserController : Controller
     {
         IUserManager userManager;
+        IGroupsManager groupsManager;
 
         public UserController()
         {
             userManager = Resolver.GetInstance<IUserManager>();
+            groupsManager = Resolver.GetInstance<IGroupsManager>();
         }
 
         [HttpGet]
         public ActionResult RegisterUser()
-        {
+        { 
             return View(new RegisterUserPageView());
         }
 

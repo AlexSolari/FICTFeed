@@ -1,12 +1,12 @@
-﻿@model Enum
+﻿@model string
 
-@{             
+@{
     var values = Enum.GetValues(ViewData.ModelMetadata.ModelType);
     var list = new List<SelectListItem>();
     foreach (var item in values)
     {
         var it = new SelectListItem { Selected = item.Equals(Model), Text = item.ToString(), Value = item.ToString() };
-        list.Add(it); 
+        list.Add(it);
     }
 }
 <div class="input-field">

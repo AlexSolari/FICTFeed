@@ -12,6 +12,7 @@ using FICTFeed.MVC.Models.ViewModels.Groups;
 using FICTFeed.Bussines.Models;
 using System.Web.Mvc;
 using FICTFeed.MVC.Components.ModelBinders;
+using FICTFeed.MVC.Models.PageViews.User;
 
 namespace FICTFeed.MVC
 {
@@ -64,6 +65,7 @@ namespace FICTFeed.MVC
         {
             ModelBinders.Binders.Add(typeof(UserEditViewModel), new UserEditViewModelBinder());
             ModelBinders.Binders.Add(typeof(GroupEditViewModel), new GroupEditViewModelBinder());
+            ModelBinders.Binders.Add(typeof(RegisterUserPageView), new RegisterUserPageViewBinder());
         }
     }
 }

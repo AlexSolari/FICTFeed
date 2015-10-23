@@ -123,6 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Components\HtmlExtensions\HtmlHelperExtensions.cs" />
     <Compile Include="Components\ModelBinders\GroupEditViewModelBinder.cs" />
+    <Compile Include="Components\ModelBinders\RegisterUserPageViewBinder.cs" />
     <Compile Include="Components\ModelBinders\UserEditViewModelBinder.cs" />
     <Compile Include="Components\User\AllowToAttribute.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -218,6 +219,7 @@
     <Content Include="Views\Admin\GetGroups.cshtml" />
     <Content Include="Views\Admin\CreateGroup.cshtml" />
     <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GroupsDropdown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
