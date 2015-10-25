@@ -24,5 +24,11 @@ namespace FICTFeed.MVC.Models.PageViews.News
             News.AddRange(newsManager.GetList("PostingDate").Select(x => Mapper.Map<NewsItemViewModel, NewsItem>(x)));
         }
 
+        public NewsListPageView(IEnumerable<NewsItemViewModel> news)
+            : base()
+        {
+            newsManager = Resolver.GetInstance<INewsManager>();
+            News = news.ToList();
+        }
     }
 }

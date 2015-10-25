@@ -1,4 +1,5 @@
 ﻿using FICTFeed.Bussines;
+using FICTFeed.Framework.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace FICTFeed.Framework.News
     public interface INewsManager : IManager<NewsItem>
     {
         IList<NewsItem> GetList(string orderBy = null);
+        IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null);
     }
 }

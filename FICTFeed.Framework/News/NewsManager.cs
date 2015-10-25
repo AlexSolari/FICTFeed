@@ -1,4 +1,7 @@
 ﻿using FICTFeed.Bussines;
+using FICTFeed.DependecyResolver;
+using FICTFeed.Framework.Groups;
+using FICTFeed.Framework.Users;
 using FICTFeed.Framework.Validation;
 using System;
 using System.Collections.Generic;
@@ -29,6 +32,31 @@ namespace FICTFeed.Framework.News
         public IList<NewsItem> GetList(string orderBy = null)
         {
             return provider.GetList(orderBy);
+        }
+
+        public IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null)
+        {
+            var groupManager = Resolver.GetInstance<IGroupsManager>();
+            var groups = new List<Guid>();
+            if (userData.IsAuthorized)
+            {
+                switch (userData.CurrentUser.Role)
+                {
+                    case Bussines.AdditionalData.Roles.User:
+                    case Bussines.AdditionalData.Roles.Praepostor:
+                        groups.Add(userData.CurrentUser.GroupId);
+                        break;
+                    case Bussines.AdditionalData.Roles.Moderator:
+                    case Bussines.AdditionalData.Roles.Admin:
+                        foreach (var item in groupManager.GetList())
+                            groups.Add(item.Id);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            groups.Add(groupManager.GetByName("Global").Id);
+            return provider.GetList(orderBy, groups);
         }
     }
 }
