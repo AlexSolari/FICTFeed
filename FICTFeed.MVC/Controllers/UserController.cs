@@ -4,6 +4,7 @@ using System;
 using System.Web.Mvc;
 using FICTFeed.Framework.Users;
 using FICTFeed.Framework.Map;
+using FICTFeed.Bussines;
 using FICTFeed.Bussines.Models;
 using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.Framework.Strings;
@@ -39,7 +40,7 @@ namespace FICTFeed.MVC.Controllers
                 return View(pageView);
 
             var newUser = pageView.NewUser;
-            userManager.Register(Mapper.Map<User,UserCreateViewModel>(newUser));
+            userManager.Register(Mapper.Map<FICTFeed.Bussines.Models.User,UserCreateViewModel>(newUser));
 
             return RedirectToRoute("Home");
         }

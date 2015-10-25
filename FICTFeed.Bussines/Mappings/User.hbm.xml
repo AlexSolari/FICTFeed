@@ -12,9 +12,6 @@
     <property name="Mail" type="string" not-null="true"/>
     <property name="Online" type="bool" not-null="true"/>
     <property name="Role" type="int" not-null="true"/>
-    <!--<one-to-one name="GroupId"
-                      constrained="true"
-                      foreign-key="none"
-                      class="Group" />-->
+    <property name="GroupId" type="guid" not-null="true"/>
   </class>
 </hibernate-mapping>
