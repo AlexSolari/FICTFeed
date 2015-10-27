@@ -8,7 +8,7 @@
     <ul class="news-list">
         @if (Model.UserData.IsAuthorized && Model.UserData.CurrentUser != null)
         {
-            if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin)
+            if (Model.UserData.CurrentUser.Role != FICTFeed.Bussines.AdditionalData.Roles.User)
             {
                 <li>
                     <a href="@Url.RouteUrl("NewsCreate")">

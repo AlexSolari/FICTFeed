@@ -1,6 +1,8 @@
-﻿using FICTFeed.Bussines.Models;
+﻿using FICTFeed.Bussines.AdditionalData;
+using FICTFeed.Bussines.Models;
 using FICTFeed.DependecyResolver;
 using FICTFeed.Framework.Groups;
+using FICTFeed.Framework.Users;
 using FICTFeed.MVC.Models.ViewModels.News;
 using System;
 using System.Collections.Generic;
@@ -19,11 +21,24 @@ namespace FICTFeed.MVC.Models.PageViews.News
             : base()
         {
             NewNewsItem = new NewsItemViewModel();
+            var userData = new UserDataContainer();
             GroupIds = new Dictionary<string, string>();
-            foreach (var item in Resolver.GetInstance<IGroupsManager>().GetList())
+            if (userData.IsAuthorized)
             {
-                GroupIds.Add(item.Name, item.Id.ToString());
+                if (userData.CurrentUser.Role == Roles.Admin || userData.CurrentUser.Role == Roles.Moderator)
+                {
+                    foreach (var item in Resolver.GetInstance<IGroupsManager>().GetList())
+                    {
+                        GroupIds.Add(item.Name, item.Id.ToString());
+                    }
+                }
+                else if (userData.CurrentUser.Role == Roles.Praepostor)
+                {
+                    var group = Resolver.GetInstance<IGroupsManager>().GetById(userData.CurrentUser.GroupId.ToString());
+                    GroupIds.Add(group.Name, group.Id.ToString());
+                }
             }
+            
         }
 
     }
