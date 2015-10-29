@@ -9,3 +9,23 @@
     <h2>@Model.NewsItem.Title</h2>
     <p>@Model.NewsItem.Description</p>
 </div>
+<hr />
+<ul class="comments-list">
+    @foreach(var item in Model.Comments)
+    {
+        <li>
+            @item.AuthorName : @item.PostingDateString.ToString()
+            <p>
+                @item.Description
+            </p>
+        </li>
+    }
+</ul>
+<div class="commentForm">
+    @if (Model.UserData.IsAuthorized)
+    {
+        <input type="text" name="authorId" class="hidden" value="@Model.UserData.CurrentUser.Id.ToString()"/>
+        <input type="text" name="newsitemId" class="hidden" value="@Model.NewsItem.Id.ToString()" />
+        <input type="text" name="text" /><div class="btn-flat js-sendComment">Send comment</div>
+    }
+</div>

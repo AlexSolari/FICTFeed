@@ -37,6 +37,7 @@ namespace FICTFeed.MVC
             Resolver.RegisterType<UserEditViewModel, UserEditViewModel>();
             Resolver.RegisterType<GroupEditViewModel, GroupEditViewModel>();
             Resolver.RegisterType<CommentCreateModel, CommentCreateModel>();
+            Resolver.RegisterType<CommentViewModel, CommentViewModel>();
             Resolver.RegisterType<IUserManager, UserManager>();
             Resolver.RegisterType<INewsManager, NewsManager>();
             Resolver.RegisterType<IGroupsManager, GroupsManager>();
@@ -67,6 +68,7 @@ namespace FICTFeed.MVC
             Mapper.AddMapping<CommentViewModel, Comment>((result, source) =>
             {
                 result.AuthorName = Resolver.GetInstance<IUserManager>().GetById(source.AuthorId.ToString()).Name;
+                result.PostingDateString = source.PostingDate.ToShortDateString() + " " + source.PostingDate.ToShortTimeString();
 
                 return result;
             });

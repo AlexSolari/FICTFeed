@@ -11,6 +11,6 @@ namespace FICTFeed.MVC.Models.ViewModels.Comments
 
         public virtual string AuthorName { get; set; }
 
-        public virtual DateTime PostingDate { get; set; }
+        public virtual string PostingDateString { get; set; }
     }
 }

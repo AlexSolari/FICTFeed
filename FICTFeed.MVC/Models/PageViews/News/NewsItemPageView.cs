@@ -27,7 +27,7 @@ namespace FICTFeed.MVC.Models.PageViews.News
             newsManager = Resolver.GetInstance<INewsManager>();
             commentsManager = Resolver.GetInstance<ICommentsManager>();
             NewsItem = Mapper.Map<NewsItemViewModel, NewsItem>(newsManager.GetById(id));
-            Comments = Mapper.Map<CommentViewModel, Comment>(commentsManager.GetList(NewsItem.Id.ToString()));
+            Comments = Mapper.Map<CommentViewModel, Comment>(commentsManager.GetList(NewsItem.Id));
         }
 
         public NewsItemPageView()

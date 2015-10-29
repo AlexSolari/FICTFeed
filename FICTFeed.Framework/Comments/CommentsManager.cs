@@ -34,7 +34,7 @@ namespace FICTFeed.Framework.News
             return provider.GetList();
         }
 
-        public IList<Comment> GetList(string newsItemId)
+        public IList<Comment> GetList(Guid newsItemId)
         {
             return provider.GetByNewsId(newsItemId);
         }

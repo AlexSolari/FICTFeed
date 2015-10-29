@@ -11,6 +11,6 @@ namespace FICTFeed.Framework.News
     public interface ICommentsManager : IManager<Comment>
     {
         IList<Comment> GetList();
-        IList<Comment> GetList(string newsItemId);
+        IList<Comment> GetList(Guid newsItemId);
     }
 }

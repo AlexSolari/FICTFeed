@@ -11,7 +11,7 @@ namespace FICTFeed.Framework.News
 {
     public class CommentsDataProvider : DataProvider<Comment>
     {
-        public IList<Comment> GetByAuthorId(string authorId)
+        public IList<Comment> GetByAuthorId(Guid authorId)
         {
             return base.Execute(session =>
                 {
@@ -22,7 +22,7 @@ namespace FICTFeed.Framework.News
                 });
         }
 
-        public IList<Comment> GetByNewsId(string id)
+        public IList<Comment> GetByNewsId(Guid id)
         {
             return base.Execute(session =>
             {

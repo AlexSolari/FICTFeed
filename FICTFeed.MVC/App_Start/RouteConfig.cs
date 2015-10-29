@@ -47,6 +47,12 @@ namespace FICTFeed.MVC
 
             #endregion
 
+            routes.MapRoute(
+                name: "CommentCreate",
+                url: "comment/create",
+                defaults: new { controller = "Comments", action = "Create", id = UrlParameter.Optional }
+            );
+
             #region Admin
 
             routes.MapRoute(
