@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comments\ICommentsManager.cs" />
+    <Compile Include="Comments\CommentsDataProvider.cs" />
+    <Compile Include="Comments\CommentsManager.cs" />
     <Compile Include="Encryptor.cs" />
     <Compile Include="Groups\GroupsDataProvider.cs" />
     <Compile Include="Groups\GroupsManager.cs" />

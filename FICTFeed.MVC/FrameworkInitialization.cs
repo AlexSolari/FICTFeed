@@ -13,6 +13,7 @@ using FICTFeed.Bussines.Models;
 using System.Web.Mvc;
 using FICTFeed.MVC.Components.ModelBinders;
 using FICTFeed.MVC.Models.PageViews.User;
+using FICTFeed.MVC.Models.ViewModels.Comments;
 
 namespace FICTFeed.MVC
 {
@@ -29,14 +30,17 @@ namespace FICTFeed.MVC
         static void MapTypes()
         {
             Resolver.RegisterType<User, User>();
+            Resolver.RegisterType<Comment, Comment>();
+            Resolver.RegisterType<Group, Group>();
             Resolver.RegisterType<NewsItem, NewsItem>();
             Resolver.RegisterType<NewsItemViewModel, NewsItemViewModel>();
             Resolver.RegisterType<UserEditViewModel, UserEditViewModel>();
-            Resolver.RegisterType<Group, Group>();
             Resolver.RegisterType<GroupEditViewModel, GroupEditViewModel>();
+            Resolver.RegisterType<CommentCreateModel, CommentCreateModel>();
             Resolver.RegisterType<IUserManager, UserManager>();
             Resolver.RegisterType<INewsManager, NewsManager>();
             Resolver.RegisterType<IGroupsManager, GroupsManager>();
+            Resolver.RegisterType<ICommentsManager, CommentsManager>();
         }
 
         static void RegisterSingletons()
@@ -56,6 +60,13 @@ namespace FICTFeed.MVC
             Mapper.AddMapping<Group, GroupCreateViewModel>((result, source) =>
             {
                 result.CanBeDeleted = true;
+
+                return result;
+            });
+
+            Mapper.AddMapping<CommentViewModel, Comment>((result, source) =>
+            {
+                result.AuthorName = Resolver.GetInstance<IUserManager>().GetById(source.AuthorId.ToString()).Name;
 
                 return result;
             });
