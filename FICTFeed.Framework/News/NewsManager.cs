@@ -29,9 +29,9 @@ namespace FICTFeed.Framework.News
             return provider.GetById(id);
         }
 
-        public IList<NewsItem> GetList(string orderBy = null)
+        public IList<NewsItem> GetList(string orderBy = null, int? count = null)
         {
-            return provider.GetList(orderBy);
+            return provider.GetList(orderBy, count);
         }
 
         public IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null)

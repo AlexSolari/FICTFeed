@@ -223,6 +223,7 @@
     <Content Include="Views\News\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\GroupsDropdown.cshtml" />
     <Content Include="Views\Shared\CommentPartial.cshtml" />
+    <Content Include="Views\Shared\NewestNewsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

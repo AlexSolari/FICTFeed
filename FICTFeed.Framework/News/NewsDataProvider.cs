@@ -20,5 +20,25 @@ namespace FICTFeed.Framework.News
                     return criteria.UniqueResult<NewsItem>();
                 });
         }
+
+        public IList<NewsItem> GetList(string orderBy = null, List<Guid> groups = null)
+        {
+            return Execute(session =>
+            {
+                var criteria = session.CreateCriteria<NewsItem>();
+                if (!String.IsNullOrWhiteSpace(orderBy))
+                    criteria = criteria.AddOrder(Order.Desc(orderBy));
+                if (groups != null)
+                {
+                    var groupSelector = Restrictions.Disjunction();
+                    foreach (var item in groups)
+                    {
+                        groupSelector.Add(Restrictions.Eq("GroupId", item));
+                    }
+                    criteria.Add(groupSelector);
+                }
+                return criteria.List<NewsItem>();
+            });
+        }
     }
 }

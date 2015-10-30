@@ -68,14 +68,9 @@
                     </div>
                 }
                 <div>
-                    <h3>Most commented</h3>
-                    <ul>
-                        <li>blablabla</li>
-                        <li>blablabla</li>
-                        <li>blablabla</li>
-                        <li>blablabla</li>
-                        <li>blablabla</li>
-                    </ul>
+                    @{
+                        Html.RenderPartial("NewestNewsPartial", new FICTFeed.MVC.Models.PageViews.BasePageView());
+                    }
                 </div>
         </div>
         <div id="main">

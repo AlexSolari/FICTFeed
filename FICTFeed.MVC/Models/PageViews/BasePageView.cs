@@ -1,4 +1,5 @@
-﻿using FICTFeed.Framework.Users;
+﻿using FICTFeed.Framework.News;
+using FICTFeed.Framework.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,18 @@ namespace FICTFeed.MVC.Models.PageViews
 {
     public class BasePageView
     {
-        public UserDataContainer UserData;
+        public UserDataContainer UserData = new UserDataContainer();
+
+        public Dictionary<string, Guid> NewestNews = new Dictionary<string,Guid>();
 
         public BasePageView()
         {
-            UserData = new UserDataContainer();
+            var manager = DependecyResolver.Resolver.GetInstance<INewsManager>();
+
+            foreach (var item in manager.GetList("PostingDate", 5))
+            {
+                NewestNews.Add(item.Title, item.Id);
+            }
         }
     }
 }

@@ -47,22 +47,15 @@ namespace FICTFeed.Framework.NHibernate
             }
         }
 
-        public IList<TEntity> GetList(string orderBy = null, List<Guid> groups = null)
+        public IList<TEntity> GetList(string orderBy = null, int? count = null)
         {
             return Execute(session =>
             {
                 var criteria = session.CreateCriteria<TEntity>();
                 if (!String.IsNullOrWhiteSpace(orderBy))
                     criteria = criteria.AddOrder(Order.Desc(orderBy));
-                if (groups != null)
-                {
-                    var groupSelector = Restrictions.Disjunction();
-                    foreach (var item in groups)
-                    {
-                        groupSelector.Add(Restrictions.Eq("GroupId", item));
-                    }
-                    criteria.Add(groupSelector);
-                }
+                if (count.HasValue)
+                    criteria.SetMaxResults(count.Value);
                 return criteria.List<TEntity>();
             });
         }
