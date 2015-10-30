@@ -6,15 +6,18 @@
         $("#dropdown-navigation").addClass("hidden");
     });
     $('select').material_select();
-    $('.commentForm .js-sendComment').click(function () {
+    $('.js-sendComment').click(function () {
         var model = {
-            Description: $('input[name="text"]').val(),
+            Description: $('textarea#text').val(),
             AuthorId: $('input[name="authorId"]').val(),
             NewsItemId: $('input[name="newsitemId"]').val()
         };
 
         $.post(document.location.origin + "/comment/create", model, function (data) {
-            $('.comments-list').prepend("<li>" + data.AuthorName + " : " + data.PostingDateString + "<p>" + data.Description + "</p></li>");
+            $('.comments-list').prepend(data);
+            $('textarea#text').val("");
+            $($('.comments-list').children()[0]).fadeOut(0);
+            $($('.comments-list').children()[0]).fadeIn(1500);
         });
     });
 });

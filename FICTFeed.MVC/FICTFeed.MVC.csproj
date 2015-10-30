@@ -116,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Comment\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -209,7 +208,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout_OLD.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\RegisterUser.cshtml" />
     <Content Include="Views\User\LoginUser.cshtml" />
@@ -224,6 +222,7 @@
     <Content Include="Views\Admin\CreateGroup.cshtml" />
     <Content Include="Views\News\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\GroupsDropdown.cshtml" />
+    <Content Include="Views\Shared\CommentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

@@ -28,7 +28,7 @@ namespace FICTFeed.MVC.Controllers
 
             var result = Mapper.Map<CommentViewModel,Comment>(manager.GetById(mappedModel.Id.ToString()));
 
-            return Json(result);
+            return PartialView("CommentPartial", result);
         }
     }
 }

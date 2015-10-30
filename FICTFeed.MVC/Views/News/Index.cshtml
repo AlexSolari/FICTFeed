@@ -10,22 +10,19 @@
     <p>@Model.NewsItem.Description</p>
 </div>
 <hr />
+@if (Model.UserData.IsAuthorized)
+{
+    <div class="commentForm">
+        <input type="text" name="authorId" class="hidden" value="@Model.UserData.CurrentUser.Id.ToString()" />
+        <input type="text" name="newsitemId" class="hidden" value="@Model.NewsItem.Id.ToString()" />
+        <textarea id="text" class="materialize-textarea" length="250"></textarea>
+    </div>
+    <div class="btn-flat js-sendComment">Send comment</div>
+}
 <ul class="comments-list">
     @foreach(var item in Model.Comments)
     {
-        <li>
-            @item.AuthorName : @item.PostingDateString.ToString()
-            <p>
-                @item.Description
-            </p>
-        </li>
+        Html.RenderPartial("CommentPartial", item);
     }
 </ul>
-<div class="commentForm">
-    @if (Model.UserData.IsAuthorized)
-    {
-        <input type="text" name="authorId" class="hidden" value="@Model.UserData.CurrentUser.Id.ToString()"/>
-        <input type="text" name="newsitemId" class="hidden" value="@Model.NewsItem.Id.ToString()" />
-        <input type="text" name="text" /><div class="btn-flat js-sendComment">Send comment</div>
-    }
-</div>
+

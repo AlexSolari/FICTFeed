@@ -149,13 +149,20 @@ article .description{
         text-align: justify;
 }
 #jumpup{
-    background: red;
+    padding-left: 0.4em;
+    padding-top: calc(64px + 1em);
+    color: white;
+    background: #ff3939;
     z-index: 500;
     top: 0;
     height: 100%;
     width: 50px;
     float: left;
     position: fixed;
+    opacity: 0.05;
+}
+#jumpup:hover{
+    opacity: 1;
 }
 #sidebar{
   z-index: 800;

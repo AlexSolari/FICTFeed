@@ -1,0 +1,18 @@
+﻿@model FICTFeed.MVC.Models.ViewModels.Comments.CommentViewModel
+<li>
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+            <div>
+                <span class="grey-text">@Model.PostingDateString.ToString()</span>
+                <h6 class="black-text">
+                    @Model.AuthorName
+                </h6>
+            </div>
+            <div>
+                <span class="black-text">
+                    @Model.Description
+                </span>
+            </div>
+        </div>
+    </div>
+</li>
