@@ -21,7 +21,7 @@ namespace FICTFeed.Framework.News
                 });
         }
 
-        public IList<NewsItem> GetList(string orderBy = null, List<Guid> groups = null)
+        public IList<NewsItem> GetList(string orderBy = null, int? count = null, List<Guid> groups = null)
         {
             return Execute(session =>
             {
@@ -37,6 +37,8 @@ namespace FICTFeed.Framework.News
                     }
                     criteria.Add(groupSelector);
                 }
+                if (count.HasValue)
+                    criteria.SetMaxResults(count.Value);
                 return criteria.List<NewsItem>();
             });
         }

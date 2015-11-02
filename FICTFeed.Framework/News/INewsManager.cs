@@ -11,6 +11,6 @@ namespace FICTFeed.Framework.News
     public interface INewsManager : IManager<NewsItem>
     {
         IList<NewsItem> GetList(string orderBy = null, int? count = null);
-        IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null);
+        IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null, int? count = null);
     }
 }

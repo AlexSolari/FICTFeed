@@ -1,8 +1,11 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.BasePageView
-<h3>Newest news</h3>
-<ul>
-    @foreach (var item in Model.NewestNews)
-    {
-        <li><a href="@Url.RouteUrl("NewsItem")?id=@item.Value.ToString()">@item.Key</a></li>
-    }
-</ul>
+@if (Model.NewestNews.Count > 0)
+{
+    <h3>Newest news</h3>
+    <ul>
+        @foreach (var item in Model.NewestNews)
+        {
+            <li><a href="@Url.RouteUrl("NewsItem")?id=@item.Value.ToString()">@item.Key</a></li>
+        }
+    </ul>
+}

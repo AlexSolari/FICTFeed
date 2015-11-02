@@ -34,7 +34,7 @@ namespace FICTFeed.Framework.News
             return provider.GetList(orderBy, count);
         }
 
-        public IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null)
+        public IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null, int? count = null)
         {
             var groupManager = Resolver.GetInstance<IGroupsManager>();
             var groups = new List<Guid>();
@@ -56,7 +56,7 @@ namespace FICTFeed.Framework.News
                 }
             }
             groups.Add(groupManager.GetByName("Global").Id);
-            return provider.GetList(orderBy, groups);
+            return provider.GetList(orderBy, count, groups);
         }
     }
 }

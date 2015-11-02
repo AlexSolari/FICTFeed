@@ -17,7 +17,7 @@ namespace FICTFeed.MVC.Models.PageViews
         {
             var manager = DependecyResolver.Resolver.GetInstance<INewsManager>();
 
-            foreach (var item in manager.GetList("PostingDate", 5))
+            foreach (var item in manager.GetListMatchingUserGroups(UserData, "PostingDate", 5))
             {
                 NewestNews.Add(item.Title, item.Id);
             }
