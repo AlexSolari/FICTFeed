@@ -52,6 +52,7 @@
     <Compile Include="Comments\CommentsDataProvider.cs" />
     <Compile Include="Comments\CommentsManager.cs" />
     <Compile Include="Encryptor.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Groups\GroupsDataProvider.cs" />
     <Compile Include="Groups\GroupsManager.cs" />
     <Compile Include="Groups\IGroupsManager.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="NHibernate\Providers\DataProvider.cs" />
     <Compile Include="NHibernate\SessionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shedule\Shedule.cs" />
     <Compile Include="Strings\CookiesNames.cs" />
     <Compile Include="Users\OperationResult.cs" />
     <Compile Include="Users\IUserManager.cs" />

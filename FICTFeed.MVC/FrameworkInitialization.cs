@@ -14,6 +14,7 @@ using System.Web.Mvc;
 using FICTFeed.MVC.Components.ModelBinders;
 using FICTFeed.MVC.Models.PageViews.User;
 using FICTFeed.MVC.Models.ViewModels.Comments;
+using FICTFeed.Framework.Extensions;
 
 namespace FICTFeed.MVC
 {
@@ -24,7 +25,7 @@ namespace FICTFeed.MVC
             RegisterBinders();
             MapTypes();
             RegisterSingletons();
-            SetupMappings();         
+            SetupMappings(); 
         }
 
         static void MapTypes()
@@ -46,7 +47,7 @@ namespace FICTFeed.MVC
 
         static void RegisterSingletons()
         {
-            Resolver.RegisterSingleton<Encryptor>(new Encryptor());
+            Resolver.RegisterSingleton(new Encryptor());
         }
 
         static void SetupMappings()
@@ -61,6 +62,7 @@ namespace FICTFeed.MVC
             Mapper.AddMapping<Group, GroupCreateViewModel>((result, source) =>
             {
                 result.CanBeDeleted = true;
+                result.Shedule = source.Shedule.ToXmlString();
 
                 return result;
             });

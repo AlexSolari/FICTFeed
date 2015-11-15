@@ -13,5 +13,7 @@ namespace FICTFeed.Bussines.Models
         public virtual IList<User> Users { get; set; }
 
         public virtual bool CanBeDeleted { get; set; }
+
+        public virtual string Shedule { get; set; }
     }
 }

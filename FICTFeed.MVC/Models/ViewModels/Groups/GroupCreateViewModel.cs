@@ -1,4 +1,5 @@
-﻿using FICTFeed.Framework.Validation;
+﻿using FICTFeed.Framework.Shedule;
+using FICTFeed.Framework.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,9 +14,15 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
         [Required]
         public virtual string Name { get; set; }
 
-        public GroupCreateViewModel() { }
+        public Shedule Shedule { get; set; }
+
+        public GroupCreateViewModel()
+        {
+            Shedule = new Shedule();
+        }
 
         public GroupCreateViewModel(string name)
+            : this()
         {
             Guard.ThrowIfEmptyString(name);
 
