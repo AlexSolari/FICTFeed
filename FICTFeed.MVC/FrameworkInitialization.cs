@@ -15,6 +15,8 @@ using FICTFeed.MVC.Components.ModelBinders;
 using FICTFeed.MVC.Models.PageViews.User;
 using FICTFeed.MVC.Models.ViewModels.Comments;
 using FICTFeed.Framework.Extensions;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace FICTFeed.MVC
 {
@@ -62,7 +64,8 @@ namespace FICTFeed.MVC
             Mapper.AddMapping<Group, GroupCreateViewModel>((result, source) =>
             {
                 result.CanBeDeleted = true;
-                result.Shedule = source.Shedule.ToXmlString();
+                result.Shedule = new XmlDocument();
+                result.Shedule.LoadXml(source.GroupShedule.ToXmlString());
 
                 return result;
             });

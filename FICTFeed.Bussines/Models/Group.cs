@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace FICTFeed.Bussines.Models
 {
@@ -14,6 +15,6 @@ namespace FICTFeed.Bussines.Models
 
         public virtual bool CanBeDeleted { get; set; }
 
-        public virtual string Shedule { get; set; }
+        public virtual XmlDocument Shedule { get; set; }
     }
 }
