@@ -18,31 +18,29 @@ namespace FICTFeed.Framework.Shedule
 
     public class Shedule
     {
-        public WeekShedule FirstWeek { get; set; }
-        public WeekShedule SecondWeek { get; set; }
-        public WeekShedule ThirdWeek { get; set; }
-        public WeekShedule FourthWeek { get; set; }
+        public List<WeekShedule> Weeks { get; set; }
 
         public Shedule()
         {
-            FirstWeek = new WeekShedule();
-            SecondWeek = new WeekShedule();
-            ThirdWeek = new WeekShedule();
-            FourthWeek = new WeekShedule();
+            Weeks = new List<WeekShedule>();
+            for (int i = 0; i < 4; i++)
+            {
+                Weeks.Add(new WeekShedule());
+            }
         }
     }
 
 
     public class WeekShedule
     {
-        public List<DayShedule> Day { get; set; }
+        public List<DayShedule> Days { get; set; }
 
         public WeekShedule()
         {
-            Day = new List<DayShedule>();
+            Days = new List<DayShedule>();
             for (int i = 0; i < 7; i++)
             {
-                Day.Add(new DayShedule());
+                Days.Add(new DayShedule());
             }
         }
     }

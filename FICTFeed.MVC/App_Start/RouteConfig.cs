@@ -109,6 +109,17 @@ namespace FICTFeed.MVC
 
             #endregion
 
+
+            #region Groups
+
+            routes.MapRoute(
+                name: "GroupShedule",
+                url: "groups/shedule",
+                defaults: new { controller = "Group", action = "Shedule", id = UrlParameter.Optional }
+            );
+
+            #endregion
+
             #region Errors
 
             routes.MapRoute(
@@ -118,6 +129,7 @@ namespace FICTFeed.MVC
             );
 
             #endregion
+
 
         }
     }

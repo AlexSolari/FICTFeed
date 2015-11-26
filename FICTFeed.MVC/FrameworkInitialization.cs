@@ -65,7 +65,7 @@ namespace FICTFeed.MVC
             {
                 result.CanBeDeleted = true;
                 result.Shedule = new XmlDocument();
-                result.Shedule.LoadXml(source.GroupShedule.ToXmlString());
+                result.Shedule.LoadXml(source.GroupShedule.Serialize());
 
                 return result;
             });

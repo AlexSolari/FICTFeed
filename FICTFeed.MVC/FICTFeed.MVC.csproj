@@ -129,6 +129,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -224,6 +225,7 @@
     <Content Include="Views\Shared\EditorTemplates\GroupsDropdown.cshtml" />
     <Content Include="Views\Shared\CommentPartial.cshtml" />
     <Content Include="Views\Shared\NewestNewsPartial.cshtml" />
+    <Content Include="Views\Group\Shedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
