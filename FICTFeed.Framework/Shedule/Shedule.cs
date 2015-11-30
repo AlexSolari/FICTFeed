@@ -23,7 +23,7 @@ namespace FICTFeed.Framework.Shedule
         public Shedule()
         {
             Weeks = new List<WeekShedule>();
-            for (int i = 0; i < 4; i++)
+            while(Weeks.Count < 4)
             {
                 Weeks.Add(new WeekShedule());
             }
@@ -38,7 +38,7 @@ namespace FICTFeed.Framework.Shedule
         public WeekShedule()
         {
             Days = new List<DayShedule>();
-            for (int i = 0; i < 7; i++)
+            while (Days.Count < 7)
             {
                 Days.Add(new DayShedule());
             }
@@ -52,7 +52,7 @@ namespace FICTFeed.Framework.Shedule
         public DayShedule()
         {
             Lessons = new List<Lesson>();
-            for (int i = 0; i < 8; i++)
+            while (Lessons.Count < 8)
             {
                 Lessons.Add(new Lesson());
             }

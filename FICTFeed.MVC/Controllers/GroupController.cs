@@ -28,5 +28,11 @@ namespace FICTFeed.MVC.Controllers
 
             return View(shedule);
         }
+
+        [HttpPost]
+        public ActionResult Shedule(Shedule shedule)
+        {
+            return View(shedule);
+        }
     }
 }
