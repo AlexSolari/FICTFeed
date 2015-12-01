@@ -20,12 +20,17 @@ namespace FICTFeed.Framework.Shedule
     {
         public List<WeekShedule> Weeks { get; set; }
 
-        public Shedule()
+        public Shedule() : this(0, 0, 0)
+        {
+
+        }
+
+        public Shedule(int weeksCount, int daysCount, int lessonsCount)
         {
             Weeks = new List<WeekShedule>();
-            while(Weeks.Count < 4)
+            while(Weeks.Count < weeksCount)
             {
-                Weeks.Add(new WeekShedule());
+                Weeks.Add(new WeekShedule(daysCount, lessonsCount));
             }
         }
     }
@@ -35,12 +40,17 @@ namespace FICTFeed.Framework.Shedule
     {
         public List<DayShedule> Days { get; set; }
 
-        public WeekShedule()
+        public WeekShedule() : this(0, 0)
+        {
+                
+        }
+
+        public WeekShedule(int daysCount, int lessonsCount)
         {
             Days = new List<DayShedule>();
-            while (Days.Count < 7)
+            while (Days.Count < daysCount)
             {
-                Days.Add(new DayShedule());
+                Days.Add(new DayShedule(lessonsCount));
             }
         }
     }
@@ -49,10 +59,15 @@ namespace FICTFeed.Framework.Shedule
     {
         public List<Lesson> Lessons { get; set; }
 
-        public DayShedule()
+        public DayShedule() : this(0)
+        {
+
+        }
+
+        public DayShedule(int lessonsCount)
         {
             Lessons = new List<Lesson>();
-            while (Lessons.Count < 8)
+            while (Lessons.Count < lessonsCount)
             {
                 Lessons.Add(new Lesson());
             }

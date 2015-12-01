@@ -18,7 +18,7 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
 
         public GroupCreateViewModel()
         {
-            GroupShedule = new Shedule();
+            GroupShedule = new Shedule(4, 7, 8);
         }
 
         public GroupCreateViewModel(string name)
