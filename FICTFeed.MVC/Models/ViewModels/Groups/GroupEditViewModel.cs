@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FICTFeed.Framework.Shedule;
+using FICTFeed.Framework.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,10 +16,19 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
         [Required]
         public virtual string Name { get; set; }
 
-        public GroupEditViewModel() { }
+        [UIHint("Shedule")]
+        public Shedule GroupShedule { get; set; }
 
-        public GroupEditViewModel(string name)
+        public GroupEditViewModel() 
         {
+            GroupShedule = new Shedule(4, 7, 8);
+        }
+
+        public GroupEditViewModel(string name) 
+            : this()
+        {
+            Guard.ThrowIfEmptyString(name);
+
             this.Name = name;
         }
     }

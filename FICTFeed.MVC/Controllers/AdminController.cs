@@ -19,6 +19,8 @@ using FICTFeed.Framework.Groups;
 using FICTFeed.MVC.Models.PageViews.Groups;
 using FICTFeed.MVC.Models.ViewModels.Groups;
 using FICTFeed.Bussines.Models;
+using FICTFeed.Framework.Shedule;
+using FICTFeed.Framework.Extensions;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -69,16 +71,6 @@ namespace FICTFeed.MVC.Controllers
             return View(model);
         }
 
-        public ActionResult EditGroupName(GroupEditViewModel model)
-        {
-            var group = groupsManager.GetById(model.Id.ToString());
-            if (group != null && groupsManager.GetByName(model.Name) == null)
-            {
-                group.Name = model.Name;
-                groupsManager.Update(group);
-            }
-            return RedirectToRoute("GetGroups");
-        }
 
         [HttpGet]
         public ActionResult CreateGroup()
@@ -98,5 +90,27 @@ namespace FICTFeed.MVC.Controllers
             return RedirectToRoute("GetGroups");
         }
 
+        [HttpGet]
+        public ActionResult EditGroup(string id)
+        {
+            var groupRaw = groupsManager.GetById(id);
+
+            if (groupRaw == null)
+                return RedirectToRoute("NotFound");
+
+            var group = Mapper.Map<GroupEditViewModel, Group>(groupRaw);
+
+            return View(new GroupEditPageView(group));
+        }
+
+        [HttpPost]
+        public ActionResult EditGroup(GroupEditPageView model)
+        {
+            var group = Mapper.Map<Group, GroupEditViewModel>(model.Group);
+
+            groupsManager.Update(group);
+            
+            return RedirectToRoute("GetGroups");
+        }
     }
 }

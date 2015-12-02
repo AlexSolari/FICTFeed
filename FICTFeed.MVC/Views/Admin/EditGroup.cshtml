@@ -1,0 +1,45 @@
+﻿@model FICTFeed.MVC.Models.PageViews.Groups.GroupEditPageView
+
+@{
+    ViewBag.Title = "EditGroup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditGroup</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>EditGroupsPageView</h4>
+        <hr />
+        @Html.HiddenFor(m => m.Group.Id);
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div>
+                    @Html.LabelFor(m => m.Group.Name)
+                </div>
+                <div>
+                    @Html.EditorFor(m => m.Group.Name)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.LabelFor(m => m.Group.GroupShedule)
+                @Html.EditorFor(m => m.Group.GroupShedule)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

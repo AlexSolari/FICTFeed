@@ -116,13 +116,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Group\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Components\HtmlExtensions\HtmlHelperExtensions.cs" />
-    <Compile Include="Components\ModelBinders\GroupEditViewModelBinder.cs" />
     <Compile Include="Components\ModelBinders\RegisterUserPageViewBinder.cs" />
     <Compile Include="Components\ModelBinders\UserEditViewModelBinder.cs" />
     <Compile Include="Components\User\AllowToAttribute.cs" />
@@ -139,6 +139,7 @@
     </Compile>
     <Compile Include="Models\PageViews\BasePageView.cs" />
     <Compile Include="Models\PageViews\Groups\CreateGroupPageView.cs" />
+    <Compile Include="Models\PageViews\Groups\GroupEditPageView.cs" />
     <Compile Include="Models\PageViews\Groups\EditGroupsPageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemCreatePageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemPageView.cs" />
@@ -225,7 +226,8 @@
     <Content Include="Views\Shared\EditorTemplates\GroupsDropdown.cshtml" />
     <Content Include="Views\Shared\CommentPartial.cshtml" />
     <Content Include="Views\Shared\NewestNewsPartial.cshtml" />
-    <Content Include="Views\Group\Shedule.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Shedule.cshtml" />
+    <Content Include="Views\Admin\EditGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

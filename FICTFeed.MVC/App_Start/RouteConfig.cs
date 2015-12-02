@@ -86,9 +86,9 @@ namespace FICTFeed.MVC
             );
 
             routes.MapRoute(
-                name: "EditGroupName",
+                name: "EditGroup",
                 url: "admin/editgroup",
-                defaults: new { controller = "Admin", action = "EditGroupName" }
+                defaults: new { controller = "Admin", action = "EditGroup" }
             );
 
             #endregion
@@ -105,17 +105,6 @@ namespace FICTFeed.MVC
                 name: "Default",
                 url: "",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-
-            #endregion
-
-
-            #region Groups
-
-            routes.MapRoute(
-                name: "GroupShedule",
-                url: "groups/shedule",
-                defaults: new { controller = "Group", action = "Shedule", id = UrlParameter.Optional }
             );
 
             #endregion

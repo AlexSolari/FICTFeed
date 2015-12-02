@@ -17,6 +17,7 @@ using FICTFeed.MVC.Models.ViewModels.Comments;
 using FICTFeed.Framework.Extensions;
 using System.Xml.Linq;
 using System.Xml;
+using FICTFeed.Framework.Shedule;
 
 namespace FICTFeed.MVC
 {
@@ -70,6 +71,22 @@ namespace FICTFeed.MVC
                 return result;
             });
 
+            Mapper.AddMapping<GroupEditViewModel, Group>((result, source) =>
+            {
+                result.GroupShedule = source.Shedule.DeserializeAs<Shedule>();
+
+                return result;
+            });
+
+            Mapper.AddMapping<Group, GroupEditViewModel>((result, source) =>
+            {
+                result.CanBeDeleted = true;
+                result.Shedule = new XmlDocument();
+                result.Shedule.LoadXml(source.GroupShedule.Serialize());
+
+                return result;
+            });
+
             Mapper.AddMapping<CommentViewModel, Comment>((result, source) =>
             {
                 result.AuthorName = Resolver.GetInstance<IUserManager>().GetById(source.AuthorId.ToString()).Name;
@@ -82,7 +99,6 @@ namespace FICTFeed.MVC
         static void RegisterBinders()
         {
             ModelBinders.Binders.Add(typeof(UserEditViewModel), new UserEditViewModelBinder());
-            ModelBinders.Binders.Add(typeof(GroupEditViewModel), new GroupEditViewModelBinder());
             ModelBinders.Binders.Add(typeof(RegisterUserPageView), new RegisterUserPageViewBinder());
         }
     }

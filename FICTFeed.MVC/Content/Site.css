@@ -247,6 +247,11 @@ article .description{
 .news-item p, .news-list li p{
     text-align: justify;
 }
+.spoiler-body {
+    display:none;
+    margin-left: 2em;
+}
+.spoiler-link {cursor:pointer;}
 @media (max-width: 1024px) {
   #sidebar{
     display: none;

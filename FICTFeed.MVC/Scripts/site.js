@@ -1,4 +1,11 @@
-﻿$(window).load(function () {
+﻿var InitializeSpoilers = function () {
+    $('.spoiler-link').click(function () {
+        $(this).next('.spoiler-body').toggle('normal');
+        return false;
+    });
+};
+
+$(window).load(function () {
     $("#navigation-button").click(function () {
         $("#dropdown-navigation").toggleClass("hidden");
     });
@@ -20,4 +27,6 @@
             $($('.comments-list').children()[0]).fadeIn(1500);
         });
     });
+
+    InitializeSpoilers();
 });
