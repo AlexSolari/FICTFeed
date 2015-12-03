@@ -24,7 +24,7 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult Shedule(string id)
         {
             var group = manager.GetById(id);
-            var shedule = group.Shedule.DeserializeAs<Shedule>();
+            var shedule = group.Schedule.DeserializeAs<Shedule>();
 
             return View(shedule);
         }
