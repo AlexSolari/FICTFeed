@@ -109,6 +109,16 @@ namespace FICTFeed.MVC
 
             #endregion
 
+            #region Group
+
+            routes.MapRoute(
+                name: "GetSchedulePDF",
+                url: "group/schedule",
+                defaults: new { controller = "Group", action = "Schedule", id = UrlParameter.Optional }
+            );
+
+            #endregion
+
             #region Errors
 
             routes.MapRoute(

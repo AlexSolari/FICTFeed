@@ -21,18 +21,12 @@ namespace FICTFeed.MVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult Shedule(string id)
+        public ActionResult Schedule(string id)
         {
             var group = manager.GetById(id);
             var shedule = group.Shedule.DeserializeAs<Shedule>();
 
-            return View(shedule);
-        }
-
-        [HttpPost]
-        public ActionResult Shedule(Shedule shedule)
-        {
-            return View(shedule);
+            return /*View("SchedulePDF", shedule);*/new RazorPDF.PdfActionResult("SchedulePDF", shedule);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -76,7 +77,9 @@ namespace FICTFeed.Framework.Shedule
 
     public class Lesson
     {
+        [UIHint("Time")]
         public DateTime Start { get; set; }
+        [UIHint("Time")]
         public DateTime End { get; set; }
         public string Name { get; set; }
         public string Teacher { get; set; }
