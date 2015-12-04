@@ -11,6 +11,14 @@ namespace FICTFeed.Framework.Groups
     {
         protected GroupsDataProvider provider = new GroupsDataProvider();
 
+        public GroupsManager()
+        {
+            if (GetByName("Global") == null)
+            {
+                Create(Group.Global);
+            }
+        }
+
         public Group GetById(string id)
         {
             return provider.GetById(id);
