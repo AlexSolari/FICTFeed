@@ -41,6 +41,7 @@ namespace FICTFeed.MVC.Controllers
 
             var newUser = pageView.NewUser;
             userManager.Register(Mapper.Map<FICTFeed.Bussines.Models.User,UserCreateViewModel>(newUser));
+            userManager.Login(pageView.NewUser.Mail, pageView.NewUser.Password);
 
             return RedirectToRoute("Home");
         }
