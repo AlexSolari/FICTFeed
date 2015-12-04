@@ -1,0 +1,24 @@
+﻿@model FICTFeed.Framework.Shedule.Shedule
+@for (int i = 0; i < Model.Weeks.Count; i++)
+{
+    <h4 title="Click to expand" class="spoiler-link">Week @i</h4>
+    <div class="spoiler-body">
+        @for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
+        {
+            <h5 title="Click to expand" class="spoiler-link">Day @q</h5>
+            <div class="spoiler-body">
+                @for (int j = 0; j < Model.Weeks[i].Days[q].Lessons.Count; j++)
+                {
+                    <div title="Click to expand" class="spoiler-link">Lesson @j</div>
+                    <div class="spoiler-body">
+                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Name)</div>
+                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Room)</div>
+                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Teacher)</div>
+                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Start)</div>
+                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].End)</div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}
