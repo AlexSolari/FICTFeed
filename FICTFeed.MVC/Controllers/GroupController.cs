@@ -26,7 +26,8 @@ namespace FICTFeed.MVC.Controllers
             var group = manager.GetById(id);
             var shedule = group.Shedule.DeserializeAs<Shedule>();
 
-            return /*View("SchedulePDF", shedule);*/new RazorPDF.PdfActionResult("SchedulePDF", shedule);
+
+            return File(this.ViewAsBytes("Schedule", null, shedule), "application/x-www-form-urlencoded", group.Name + ".html");
         }
     }
 }

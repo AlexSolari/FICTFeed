@@ -240,8 +240,9 @@
     <Content Include="Views\Shared\NewestNewsPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Shedule.cshtml" />
     <Content Include="Views\Admin\EditGroup.cshtml" />
-    <Content Include="Views\Group\SchedulePDF.cshtml" />
+    <Content Include="Views\Group\Schedule.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\ScheduleForToday.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

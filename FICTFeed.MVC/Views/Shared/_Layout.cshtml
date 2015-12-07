@@ -66,6 +66,9 @@
                             <li>Role: @UserData.CurrentUser.Role</li>
                         </ul>
                     </div>
+                    <div>
+                        @{Html.RenderPartial("ScheduleForToday", UserData.CurrentUser);}
+                    </div>
                 }
                 <div>
                     @{

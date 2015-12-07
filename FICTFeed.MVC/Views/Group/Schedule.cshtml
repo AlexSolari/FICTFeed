@@ -2,25 +2,48 @@
 @{
     Layout = null;
 }
-<!DOCTYPE html>
-<html>
 <style>
     body{
         font-size: 8pt;
         text-align: center;
     }
+    .lesson {
+        padding: .7em;
+        margin: .3em;
+        border-bottom: 1px solid;
+        min-height: 50px;
+    }
+    .table, .td, .tr {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    .table{
+        display: table;
+    }
+    .td{
+        display: table-cell;
+        padding: .2em;
+    }
+    .tr{
+        display: table-row;
+    }
+    .tr :first-child{
+        vertical-align: middle;
+    }
+    .td :last-child{
+        border: none;
+    }
 </style>
-<body>
 <div class="table">
     @for (int i = 0; i < Model.Weeks.Count; i++)
     {
         <div class="tr">
             <div class="td">
-                Неділя <b>@(i+1)</b>
+                Week <b>@(i+1)</b>
             </div>
             @for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
             {
-                <div class="td" width="120px">
+                <div class="td">
                     @for (int j = 0; j < Model.Weeks[i].Days[q].Lessons.Count; j++)
                     {
                         if (string.IsNullOrWhiteSpace(Model.Weeks[i].Days[q].Lessons[j].Name))
@@ -33,13 +56,9 @@
                             <div><i>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].Teacher)</i></div>
                             <div>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].Start)<span> - </span>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].End)</div>
                         </div>
-                        <hr />
                     }
                 </div>
             }
         </div>
     }
 </div>
-
-</body>
-</html>

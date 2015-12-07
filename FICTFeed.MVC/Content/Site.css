@@ -171,8 +171,8 @@ article .description{
   position: relative;
   top: 50px;
 }
-#sidebar div{
-  height: 200px;
+#sidebar > div{
+  min-height: 200px;
 }
 #sidebar div:last-child{
   margin: 0;
