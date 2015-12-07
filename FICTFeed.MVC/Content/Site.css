@@ -89,27 +89,6 @@ header a{
         display: inline-block;
         padding-top: 0.5em;
 }
-#search{
-        height: 100%;
-        width: 300px;
-        float: right;
-        text-align: center;
-}
-#search form{
-    max-width: 300px;
-}
-#search input[type="submit"]{
-    padding-left: 0;
-    color: white;
-}
-#search input[type="search"]{
-    float: left;
-    width: 175px;
-}
-#search input[type="search"]:active, #search input[type="search"]:focus{
-    border-bottom: 1px solid white;
-    box-shadow: 0 1px 0 0 white;
-}
 #main{
         padding-top: 50px;
         position: relative;
@@ -266,9 +245,6 @@ article .description{
 @media (max-width: 764px){
     #navigation *:not(#logo){
         display: none;
-    }
-    #search{
-        width: 300px;
     }
     #navigation-button{
         display: inline-block;
