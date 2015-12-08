@@ -65,15 +65,15 @@ namespace FICTFeed.MVC
             Mapper.AddMapping<Group, GroupCreateViewModel>((result, source) =>
             {
                 result.CanBeDeleted = true;
-                result.Shedule = new XmlDocument();
-                result.Shedule.LoadXml(source.GroupShedule.Serialize());
+                result.Schedule = new XmlDocument();
+                result.Schedule.LoadXml(source.GroupShedule.Serialize());
 
                 return result;
             });
 
             Mapper.AddMapping<GroupEditViewModel, Group>((result, source) =>
             {
-                result.GroupShedule = source.Shedule.DeserializeAs<Shedule>();
+                result.GroupSchedule = source.Schedule.DeserializeAs<Schedule>();
 
                 return result;
             });
@@ -81,8 +81,8 @@ namespace FICTFeed.MVC
             Mapper.AddMapping<Group, GroupEditViewModel>((result, source) =>
             {
                 result.CanBeDeleted = true;
-                result.Shedule = new XmlDocument();
-                result.Shedule.LoadXml(source.GroupShedule.Serialize());
+                result.Schedule = new XmlDocument();
+                result.Schedule.LoadXml(source.GroupSchedule.Serialize());
 
                 return result;
             });

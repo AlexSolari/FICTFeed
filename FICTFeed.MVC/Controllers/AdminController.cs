@@ -106,7 +106,8 @@ namespace FICTFeed.MVC.Controllers
         [HttpPost]
         public ActionResult EditGroup(GroupEditPageView model)
         {
-            var group = Mapper.Map<Group, GroupEditViewModel>(model.Group);
+            var basic = groupsManager.GetById(model.Group.Id.ToString());
+            var group = Mapper.MapAndMerge<Group, GroupEditViewModel>(model.Group, basic);
 
             groupsManager.Update(group);
             

@@ -17,11 +17,11 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
         public virtual string Name { get; set; }
 
         [UIHint("Shedule")]
-        public Shedule GroupShedule { get; set; }
+        public Schedule GroupSchedule { get; set; }
 
         public GroupEditViewModel() 
         {
-            GroupShedule = new Shedule(4, 7, 8);
+            GroupSchedule = new Schedule(4, 7, 8);
         }
 
         public GroupEditViewModel(string name) 

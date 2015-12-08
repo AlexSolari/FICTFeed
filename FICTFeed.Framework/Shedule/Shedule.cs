@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -17,55 +18,77 @@ namespace FICTFeed.Framework.Shedule
      * - implement group page and shedule editing
      */
 
-    public class Shedule
+    public class Schedule
     {
-        public List<WeekShedule> Weeks { get; set; }
+        public List<WeekSchedule> Weeks { get; set; }
 
-        public Shedule() : this(0, 0, 0)
+        public Schedule() : this(0, 0, 0)
         {
 
         }
 
-        public Shedule(int weeksCount, int daysCount, int lessonsCount)
+        public DaySchedule GetScheduleForToday()
         {
-            Weeks = new List<WeekShedule>();
+            var today = DateTime.Today;
+            var yearWhenStudyStarted = (DateTime.Now.Month < 9) ? DateTime.Today.Year - 1 : DateTime.Today.Year;
+            var firstWeek = new DateTime(yearWhenStudyStarted, 9, 1);
+            while (firstWeek.DayOfWeek != DayOfWeek.Monday)
+            {
+                firstWeek = firstWeek.AddDays(1);
+            }
+            var firstWeekNumber = CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(firstWeek, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            var currentWeekNumber = 1 + CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(DateTime.Today, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            if (DateTime.Today.Year > firstWeek.Year)
+            {
+                currentWeekNumber += CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(new DateTime(firstWeek.Year, 12, 31), CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            }
+            var delta = currentWeekNumber - firstWeekNumber;
+            var dayofweek = (int)DateTime.Today.DayOfWeek - 1;
+            var weeknumber = delta % 4;
+
+            return Weeks[weeknumber].Days[dayofweek];
+        }
+
+        public Schedule(int weeksCount, int daysCount, int lessonsCount)
+        {
+            Weeks = new List<WeekSchedule>();
             while(Weeks.Count < weeksCount)
             {
-                Weeks.Add(new WeekShedule(daysCount, lessonsCount));
+                Weeks.Add(new WeekSchedule(daysCount, lessonsCount));
             }
         }
     }
 
 
-    public class WeekShedule
+    public class WeekSchedule
     {
-        public List<DayShedule> Days { get; set; }
+        public List<DaySchedule> Days { get; set; }
 
-        public WeekShedule() : this(0, 0)
+        public WeekSchedule() : this(0, 0)
         {
                 
         }
 
-        public WeekShedule(int daysCount, int lessonsCount)
+        public WeekSchedule(int daysCount, int lessonsCount)
         {
-            Days = new List<DayShedule>();
+            Days = new List<DaySchedule>();
             while (Days.Count < daysCount)
             {
-                Days.Add(new DayShedule(lessonsCount));
+                Days.Add(new DaySchedule(lessonsCount));
             }
         }
     }
 
-    public class DayShedule
+    public class DaySchedule
     {
         public List<Lesson> Lessons { get; set; }
 
-        public DayShedule() : this(0)
+        public DaySchedule() : this(0)
         {
 
         }
 
-        public DayShedule(int lessonsCount)
+        public DaySchedule(int lessonsCount)
         {
             Lessons = new List<Lesson>();
             while (Lessons.Count < lessonsCount)

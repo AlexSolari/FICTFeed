@@ -7,12 +7,13 @@
 <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @Styles.Render("~/Content/materialize/css/materialize.css")
     @Styles.Render("~/Content/css")
 </head>
 <body>
     <nav class="primary dark">
-        <div id="logo">LOGO</div>
+        <div id="logo" class="material-icons">dashboard</div>
         <div id="navigation">
             <ul class="inline-list inline-block">
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -27,7 +28,7 @@
                 }
             </ul>
         </div>
-        <div id="dropdown-navigation" class="hidden primary primary-text">
+        <div id="dropdown-navigation" class="card hidden primary primary-text">
             <ul>
                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 @if (UserData.IsAuthorized)
@@ -42,7 +43,7 @@
             </ul>
         </div>
         
-        <div id="navigation-button" class="primary light"></div>
+        <div id="navigation-button" class="primary light material-icons">reorder</div>
         
     </nav>
     <a href="#top"><div id="jumpup" class="primary light">Угору</div></a>

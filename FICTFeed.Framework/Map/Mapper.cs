@@ -33,6 +33,25 @@ namespace FICTFeed.Framework.Map
             return result;
         }
 
+        public static TDestination MapAndMerge<TDestination, TSource>(TSource source, TDestination result)
+        {
+            foreach (var fieldR in typeof(TDestination).GetProperties())
+            {
+                foreach (var fieldS in typeof(TSource).GetProperties())
+                {
+                    if (fieldR.Name == fieldS.Name)
+                    {
+                        fieldR.SetValue(result, fieldS.GetValue(source));
+                    }
+                }
+            }
+
+            if (CustomMappings.ContainsKey(typeof(TSource)))
+                result = (TDestination)CustomMappings[typeof(TSource)](result, source);
+
+            return result;
+        }
+
         public static IEnumerable<TDestination> Map<TDestination, TSource>(IEnumerable<TSource> source)
         {
             var result = new List<TDestination>();

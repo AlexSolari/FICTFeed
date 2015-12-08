@@ -1,21 +1,19 @@
 ﻿@model FICTFeed.Bussines.Models.User
 @{
     var group = FICTFeed.DependecyResolver.Resolver.GetInstance<FICTFeed.Framework.Groups.IGroupsManager>().GetById(Model.GroupId.ToString());
-    var schedule = FICTFeed.Framework.Extensions.ObjectExtensions.DeserializeAs<FICTFeed.Framework.Shedule.Shedule>(group.Shedule);
-    var q = (int)DateTime.Now.DayOfWeek - 1;
-    var i = 0;
+    var schedule = FICTFeed.Framework.Extensions.ObjectExtensions.DeserializeAs<FICTFeed.Framework.Shedule.Schedule>(group.Schedule).GetScheduleForToday();
 }           
 <h3>Lessons</h3>
 @for (int j = 0; j < 8; j++)
 {
-    if(string.IsNullOrWhiteSpace(schedule.Weeks[i].Days[q].Lessons[j].Name))
+    if(string.IsNullOrWhiteSpace(schedule.Lessons[j].Name))
     {
         continue;
     }
     <div class="lesson">
-        @Html.DisplayFor(m => schedule.Weeks[i].Days[q].Lessons[j].Name), 
-        <b>@Html.DisplayFor(m => schedule.Weeks[i].Days[q].Lessons[j].Room)</b> :
-        @Html.DisplayFor(m => schedule.Weeks[i].Days[q].Lessons[j].Start)
+        @Html.DisplayFor(m => schedule.Lessons[j].Name), 
+        <b>@Html.DisplayFor(m => schedule.Lessons[j].Room)</b> :
+        @Html.DisplayFor(m => schedule.Lessons[j].Start)
     </div>
 }
 <a href="@(Url.RouteUrl("GetSchedulePDF") + "?id=" + group.Id.ToString())">Get full schedule</a>

@@ -24,9 +24,9 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult Schedule(string id)
         {
             var group = manager.GetById(id);
-            var shedule = group.Shedule.DeserializeAs<Shedule>();
+            var shedule = group.Schedule.DeserializeAs<Schedule>();
 
-
+            shedule.GetScheduleForToday();
             return File(this.ViewAsBytes("Schedule", null, shedule), "application/x-www-form-urlencoded", group.Name + ".html");
         }
     }

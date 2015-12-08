@@ -14,11 +14,11 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
         [Required]
         public virtual string Name { get; set; }
 
-        public Shedule GroupShedule { get; set; }
+        public Schedule GroupShedule { get; set; }
 
         public GroupCreateViewModel()
         {
-            GroupShedule = new Shedule(4, 7, 8);
+            GroupShedule = new Schedule(4, 7, 8);
         }
 
         public GroupCreateViewModel(string name)

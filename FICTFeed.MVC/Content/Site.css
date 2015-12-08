@@ -78,16 +78,21 @@ header a{
     max-width: 724px;
     display: inline;
     position:relative;
+    margin-left: 70px;
 }
 #navigation li{
     margin: 0 5px;
 }
 #logo{
-        padding-left: 5px;
-        height: 100%;
-        width: 160px;
-        display: inline-block;
-        padding-top: 0.5em;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-left: 5px;
+    height: 100%;
+    width: 64px;
+    display: inline-block;
+    font-size: 3rem;
+    padding: .25em;
 }
 #main{
         padding-top: 50px;
@@ -150,25 +155,22 @@ article .description{
   position: relative;
   top: 50px;
 }
-#sidebar > div{
-  min-height: 200px;
-}
 #sidebar div:last-child{
   margin: 0;
 }
 #navigation-button{
     margin: 0;
     float: right;
-    width: 50px;
-    height:100%;
+    width: 64px;
+    height: 100%;
     display: none;
-}
-#navigation-button::after {
-    content: "menu";
+    font-size: 3rem;
+    padding: .25em;
+    cursor: pointer;
 }
 #dropdown-navigation{
     min-width: 100px;
-    padding: 20px;
+    padding: 1em;
     position:absolute;
     right:0;
     top: 50px;
@@ -180,6 +182,9 @@ article .description{
 }
 #dropdown-navigation ul li{
    margin: 10px 5px;
+}
+#dropdown-navigation ul li a{
+   color: black;
 }
 #add-news{
     text-align: center;
@@ -231,6 +236,9 @@ article .description{
     margin-left: 2em;
 }
 .spoiler-link {cursor:pointer;}
+nav{
+    height: 64px;
+}
 @media (max-width: 1024px) {
   #sidebar{
     display: none;
