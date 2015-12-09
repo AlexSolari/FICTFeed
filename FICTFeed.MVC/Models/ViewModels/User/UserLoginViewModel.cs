@@ -9,7 +9,7 @@ namespace FICTFeed.MVC.Models.ViewModels.User
         [Required]
         public virtual string Mail { get; set; }
 
-        [StringLength(20, ErrorMessage="Must be between 5 and 20 characters", MinimumLength=5)]
+        [StringLength(20, MinimumLength = 5)]
         [Required]
         [DataType(DataType.Password)]
         public virtual string Password { get; set; }

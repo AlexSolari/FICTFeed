@@ -1,7 +1,7 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.BasePageView
 @if (Model.NewestNews.Count > 0)
 {
-    <h3>Newest news</h3>
+    <h3>@Html.ResourceString("NewestNews")</h3>
     <ul>
         @foreach (var item in Model.NewestNews)
         {

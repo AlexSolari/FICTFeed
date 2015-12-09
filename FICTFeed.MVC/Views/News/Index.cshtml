@@ -17,7 +17,7 @@
         <input type="text" name="newsitemId" class="hidden" value="@Model.NewsItem.Id.ToString()" />
         <textarea id="text" class="materialize-textarea" length="250"></textarea>
     </div>
-    <div class="btn-flat js-sendComment">Send comment</div>
+    <div class="btn-flat js-sendComment">@Html.ResourceString("SendComment")</div>
 }
 <ul class="comments-list">
     @foreach(var item in Model.Comments)

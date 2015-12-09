@@ -3,8 +3,8 @@
     var group = FICTFeed.DependecyResolver.Resolver.GetInstance<FICTFeed.Framework.Groups.IGroupsManager>().GetById(Model.GroupId.ToString());
     var schedule = FICTFeed.Framework.Extensions.ObjectExtensions.DeserializeAs<FICTFeed.Framework.Shedule.Schedule>(group.Schedule).GetScheduleForToday();
 }           
-<h3>Lessons</h3>
-<div><b>Now is week #@(FICTFeed.Framework.Shedule.Schedule.GetWeekNumber()+1)</b></div>
+<h3>@Html.ResourceString("Lessons")</h3>
+<div><b>@Html.ResourceString("CurrentWeekNo").FormatWith(FICTFeed.Framework.Shedule.Schedule.GetWeekNumber()+1)</b></div>
 @for (int j = 0; j < 8; j++)
 {
     if(string.IsNullOrWhiteSpace(schedule.Lessons[j].Name))
@@ -17,4 +17,4 @@
         @Html.DisplayFor(m => schedule.Lessons[j].Start)
     </div>
 }
-<a href="@(Url.RouteUrl("GetSchedulePDF") + "?id=" + group.Id.ToString())">Get full schedule</a>
+<a href="@(Url.RouteUrl("GetSchedulePDF") + "?id=" + group.Id.ToString())">@Html.ResourceString("GetFullSchedule")</a>

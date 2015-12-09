@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - @Html.ResourceString("SiteTitle")</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @Styles.Render("~/Content/materialize/css/materialize.css")
     @Styles.Render("~/Content/css")
@@ -16,29 +16,29 @@
         <div id="logo" class="material-icons">dashboard</div>
         <div id="navigation">
             <ul class="inline-list inline-block">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink(Html.ResourceString("Home"), "Index", "Home")</li>
                 @if (UserData.IsAuthorized)
                 {
-                    <li>@Html.RouteLink("Log out", "LogoutUser")</li>
+                    <li>@Html.RouteLink(Html.ResourceString("Logout"), "LogoutUser")</li>
                 }
                 else
                 {
-                    <li>@Html.RouteLink("Log in", "LoginUser")</li>
-                    <li>@Html.RouteLink("Registration", "RegisterUser")</li>
+                    <li>@Html.RouteLink(Html.ResourceString("Login"), "LoginUser")</li>
+                    <li>@Html.RouteLink(Html.ResourceString("Registration"), "RegisterUser")</li>
                 }
             </ul>
         </div>
         <div id="dropdown-navigation" class="card hidden primary primary-text">
             <ul>
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink(Html.ResourceString("Home"), "Index", "Home")</li>
                 @if (UserData.IsAuthorized)
                 {
-                    <li>@Html.RouteLink("Log out", "LogoutUser")</li>
+                    <li>@Html.RouteLink(Html.ResourceString("Logout"), "LogoutUser")</li>
                 }
                 else
                 {
-                    <li>@Html.RouteLink("Log in", "LoginUser")</li>
-                    <li>@Html.RouteLink("Registration", "RegisterUser")</li>
+                    <li>@Html.RouteLink(Html.ResourceString("Login"), "LoginUser")</li>
+                    <li>@Html.RouteLink(Html.ResourceString("Registration"), "RegisterUser")</li>
                 }
             </ul>
         </div>

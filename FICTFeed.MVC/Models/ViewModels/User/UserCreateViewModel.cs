@@ -11,16 +11,16 @@ namespace FICTFeed.MVC.Models.ViewModels.User
 {
     public class UserCreateViewModel
     {
-        [StringLength(50, ErrorMessage = "Must be between 3 and 50 characters", MinimumLength = 3)]
+        [StringLength(50, MinimumLength = 3)]
         [Required]
         public virtual string Name { get; set; }
 
-        [StringLength(20, ErrorMessage="Must be between 5 and 20 characters", MinimumLength=5)]
+        [StringLength(20, MinimumLength=5)]
         [Required]
         [DataType(DataType.Password)]
         public virtual string Password { get; set; }
 
-        [StringLength(20, ErrorMessage = "Must be between 5 and 20 characters", MinimumLength = 5)]
+        [StringLength(20, MinimumLength = 5)]
         [Required]
         [DataType(DataType.Password)]
         [Compare("Password")]

@@ -12,7 +12,7 @@
             {
                 <li>
                     <a href="@Url.RouteUrl("NewsCreate")">
-                        <div id="add-news" class="btn">Add news</div>
+                        <div id="add-news" class="btn">@Html.ResourceString("AddNewsItem")</div>
                     </a>
                 </li>
                 
@@ -30,7 +30,7 @@
                         <p>@item.ShortDescription</p>
                     </div>
                     <div class="card-action">
-                        <a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">Read more</a>
+                        <a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@Html.ResourceString("ReadMore")</a>
                     </div>
                 </div>     
             </li>

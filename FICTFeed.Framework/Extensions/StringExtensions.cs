@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FICTFeed.Framework.Extensions
 {
-    public class StringExtensions
+    public static class StringExtensions
     {
         public static string FormatWith(this string value, params object[] args)
         {

@@ -10,6 +10,7 @@ using FICTFeed.MVC.Models.ViewModels.User;
 using FICTFeed.Framework.Groups;
 using FICTFeed.MVC.Models.ViewModels.Groups;
 using FICTFeed.Bussines.Models;
+using FICTFeed.Resources;
 using System.Web.Mvc;
 using FICTFeed.MVC.Components.ModelBinders;
 using FICTFeed.MVC.Models.PageViews.User;
@@ -18,6 +19,7 @@ using FICTFeed.Framework.Extensions;
 using System.Xml.Linq;
 using System.Xml;
 using FICTFeed.Framework.Shedule;
+using FICTFeed.Framework.Validation;
 
 namespace FICTFeed.MVC
 {
@@ -28,7 +30,8 @@ namespace FICTFeed.MVC
             RegisterBinders();
             MapTypes();
             RegisterSingletons();
-            SetupMappings(); 
+            SetupMappings();
+            TestResourceAccess();
         }
 
         static void MapTypes()
@@ -100,6 +103,13 @@ namespace FICTFeed.MVC
         {
             ModelBinders.Binders.Add(typeof(UserEditViewModel), new UserEditViewModelBinder());
             ModelBinders.Binders.Add(typeof(RegisterUserPageView), new RegisterUserPageViewBinder());
+        }
+
+        static void TestResourceAccess()
+        {
+            var result = ResourceAccessor.Instance.Get("TestString");
+
+            Guard.ThrowIfEmptyString(result);
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.User.RegisterUserPageView
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = Html.ResourceString("Registration");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RegisterUser</h2>
+<h2>@Html.ResourceString("Registration")</h2>
 
 
 @using (Html.BeginForm()) 
@@ -13,7 +13,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>RegisterUserPageView</h4>
         <hr />
         @Html.ValidationSummary(true)
 
@@ -21,21 +20,9 @@
 
         @Html.DropDownListFor(m => m.NewUser.GroupId, Model.NewUser.Groups)
 
-        @*@Html.DisplayFor(m => m.NewUser.Name)
-        @Html.EditorFor(m => m.NewUser.Name)
-
-        @Html.DisplayFor(m => m.NewUser.Mail)
-        @Html.EditorFor(m => m.NewUser.Mail)
-
-        @Html.DisplayFor(m => m.NewUser.Password)
-        @Html.EditorFor(m => m.NewUser.Password)
-
-        @Html.DisplayFor(m => m.NewUser.ConfirmPassword)
-        @Html.EditorFor(m => m.NewUser.ConfirmPassword)*@
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="@Html.ResourceString("Registration")" class="btn btn-default" />
             </div>
         </div>
     </div>

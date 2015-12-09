@@ -55,6 +55,7 @@
     <Compile Include="Comments\CommentsManager.cs" />
     <Compile Include="Encryptor.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Groups\GroupsDataProvider.cs" />
@@ -86,6 +87,10 @@
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
       <Project>{440268c1-3c8c-4d9f-9e59-2b7a6d8dd3ff}</Project>
       <Name>FICTFeed.Bussines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FICTFeed.Resources\FICTFeed.Resources.csproj">
+      <Project>{643f88e1-77a8-4021-b003-957053866e11}</Project>
+      <Name>FICTFeed.Resources</Name>
     </ProjectReference>
     <ProjectReference Include="..\Resolver\FICTFeed.DependecyResolver.csproj">
       <Project>{57f7ba96-4ac6-479d-b402-dd09dad1d29b}</Project>
