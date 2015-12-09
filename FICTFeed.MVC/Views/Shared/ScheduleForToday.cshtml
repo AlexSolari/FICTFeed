@@ -4,6 +4,7 @@
     var schedule = FICTFeed.Framework.Extensions.ObjectExtensions.DeserializeAs<FICTFeed.Framework.Shedule.Schedule>(group.Schedule).GetScheduleForToday();
 }           
 <h3>Lessons</h3>
+<div><b>Now is week #@(FICTFeed.Framework.Shedule.Schedule.GetWeekNumber()+1)</b></div>
 @for (int j = 0; j < 8; j++)
 {
     if(string.IsNullOrWhiteSpace(schedule.Lessons[j].Name))

@@ -27,7 +27,7 @@ namespace FICTFeed.Framework.Shedule
 
         }
 
-        public DaySchedule GetScheduleForToday()
+        public static int GetWeekNumber()
         {
             var today = DateTime.Today;
             var yearWhenStudyStarted = (DateTime.Now.Month < 9) ? DateTime.Today.Year - 1 : DateTime.Today.Year;
@@ -43,10 +43,16 @@ namespace FICTFeed.Framework.Shedule
                 currentWeekNumber += CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(new DateTime(firstWeek.Year, 12, 31), CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
             }
             var delta = currentWeekNumber - firstWeekNumber;
-            var dayofweek = (int)DateTime.Today.DayOfWeek - 1;
             var weeknumber = delta % 4;
 
-            return Weeks[weeknumber].Days[dayofweek];
+            return weeknumber;
+        }
+
+        public DaySchedule GetScheduleForToday()
+        {
+            var dayofweek = (int)DateTime.Today.DayOfWeek - 1;
+
+            return Weeks[GetWeekNumber()].Days[dayofweek];
         }
 
         public Schedule(int weeksCount, int daysCount, int lessonsCount)

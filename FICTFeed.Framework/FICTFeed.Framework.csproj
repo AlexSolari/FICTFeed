@@ -56,6 +56,7 @@
     <Compile Include="Encryptor.cs" />
     <Compile Include="Extensions\ControllerExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Groups\GroupsDataProvider.cs" />
     <Compile Include="Groups\GroupsManager.cs" />
     <Compile Include="Groups\IGroupsManager.cs" />
