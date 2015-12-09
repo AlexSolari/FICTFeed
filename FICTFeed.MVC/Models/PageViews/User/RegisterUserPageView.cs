@@ -1,5 +1,6 @@
 ﻿using FICTFeed.MVC.Models.ViewModels;
 using FICTFeed.MVC.Models.ViewModels.User;
+using FICTFeed.Framework.Validation;
 using System.Web;
 
 namespace FICTFeed.MVC.Models.PageViews.User

@@ -4,6 +4,7 @@ using FICTFeed.Framework.Strings;
 using FICTFeed.Framework.Validation;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,13 +96,15 @@ namespace FICTFeed.Framework.Users
             return OperationResult.Success;
         }
 
-        //public async Task<OperationResult> UpdateAsync(User user)
-        //{
-        //    return await Task.Run(() => 
-        //        {
-        //            provider.Update(user);
-        //            return OperationResult.Success;
-        //        });
-        //}
+        public bool IsAvalibleForCreation(string mail)
+        {
+            Guard.ThrowIfEmptyString(mail);
+
+            var result = true;
+
+            result = result && (provider.GetByMail(mail) == null);
+
+            return result;
+        }
     }
 }

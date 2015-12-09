@@ -27,6 +27,7 @@ namespace FICTFeed.MVC.Models.ViewModels.User
         public virtual string ConfirmPassword { get; set; }
 
         [DataType(DataType.EmailAddress)]
+        [UserMailValidation]
         [Required]
         public virtual string Mail { get; set; }
 

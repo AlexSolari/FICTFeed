@@ -52,6 +52,27 @@ namespace FICTFeed.Framework.Map
             return result;
         }
 
+        public static TDestination MapAs<TDestination>(object source)
+        {
+            var result = Resolver.GetInstance<TDestination>();
+
+            foreach (var fieldR in typeof(TDestination).GetProperties())
+            {
+                foreach (var fieldS in source.GetType().GetProperties())
+                {
+                    if (fieldR.Name == fieldS.Name)
+                    {
+                        fieldR.SetValue(result, fieldS.GetValue(source));
+                    }
+                }
+            }
+
+            if (CustomMappings.ContainsKey(source.GetType()))
+                result = (TDestination)CustomMappings[source.GetType()](result, source);
+
+            return result;
+        }
+
         public static IEnumerable<TDestination> Map<TDestination, TSource>(IEnumerable<TSource> source)
         {
             var result = new List<TDestination>();

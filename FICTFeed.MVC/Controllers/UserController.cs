@@ -34,8 +34,6 @@ namespace FICTFeed.MVC.Controllers
         [HttpPost]
         public ActionResult RegisterUser(RegisterUserPageView pageView)
         {
-            //TODO: Add Dropdown list for choosing group when register
-            // Map/set GroupId on chosen group when register (one-to-many should work)
             if (!ModelState.IsValid)
                 return View(pageView);
 

@@ -76,6 +76,7 @@
     <Compile Include="Users\Provider.cs" />
     <Compile Include="Users\UserDataContainer.cs" />
     <Compile Include="Validation\Guard.cs" />
+    <Compile Include="Validation\UserMailValidationAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

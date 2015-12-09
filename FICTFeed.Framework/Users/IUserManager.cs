@@ -1,6 +1,7 @@
 ﻿using FICTFeed.Bussines.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,6 @@ namespace FICTFeed.Framework.Users
 
         OperationResult Update(User user);
 
-        //Task<OperationResult> UpdateAsync(User user);
+        bool IsAvalibleForCreation(string mail);
     }
 }
