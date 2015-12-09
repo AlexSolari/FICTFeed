@@ -136,7 +136,7 @@ article .description{
     padding-left: 0.4em;
     padding-top: calc(64px + 1em);
     color: white;
-    background: #ff3939;
+    background: #03A9F4;
     z-index: 500;
     top: 0;
     height: 100%;
@@ -238,6 +238,18 @@ article .description{
 .spoiler-link {cursor:pointer;}
 nav{
     height: 64px;
+}
+.select-wrapper{
+    display: inline-block;
+}
+textarea.input-validation-error {
+    border: 1px solid #b94a48;
+}
+.btn{
+    background: #0277BD;
+}
+.btn:hover{
+    background: #0288D1;
 }
 @media (max-width: 1024px) {
   #sidebar{
