@@ -23,9 +23,6 @@ namespace FICTFeed.MVC.Models.ViewModels.User
 
         public UserEditViewModel(string name, string mail, Roles role = Roles.User)
         {
-            Guard.ThrowIfEmptyString(name);
-            Guard.ThrowIfEmptyString(mail);
-
             Name = name;
             Mail = mail;
             Role = role;

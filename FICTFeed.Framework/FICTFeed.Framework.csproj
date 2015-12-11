@@ -77,6 +77,7 @@
     <Compile Include="Users\Manager.cs" />
     <Compile Include="Users\Provider.cs" />
     <Compile Include="Users\UserDataContainer.cs" />
+    <Compile Include="Validation\CustomizebleCompareAttribute.cs" />
     <Compile Include="Validation\CustomizebleStringLengthAttribute.cs" />
     <Compile Include="Validation\Guard.cs" />
     <Compile Include="Validation\UserMailValidationAttribute.cs" />

@@ -2,6 +2,7 @@
 using FICTFeed.DependecyResolver;
 using FICTFeed.Framework.Map;
 using FICTFeed.Framework.Users;
+using FICTFeed.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,7 +19,7 @@ namespace FICTFeed.Framework.Validation
         {
             var manager = Resolver.GetInstance<IUserManager>();
 
-            ErrorMessage = "User with this mail already registered";
+            ErrorMessage = ResourceAccessor.Instance.Get("AlreadyRegistered");
             
             return manager.IsAvalibleForCreation((string)obj);
         }

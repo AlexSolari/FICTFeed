@@ -27,8 +27,6 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
         public GroupEditViewModel(string name) 
             : this()
         {
-            Guard.ThrowIfEmptyString(name);
-
             this.Name = name;
         }
     }

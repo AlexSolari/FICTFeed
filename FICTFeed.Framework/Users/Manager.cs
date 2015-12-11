@@ -98,7 +98,8 @@ namespace FICTFeed.Framework.Users
 
         public bool IsAvalibleForCreation(string mail)
         {
-            Guard.ThrowIfEmptyString(mail);
+            if (String.IsNullOrWhiteSpace(mail))
+                return true;
 
             var result = true;
 

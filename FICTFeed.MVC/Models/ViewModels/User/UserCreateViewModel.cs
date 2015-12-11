@@ -23,7 +23,7 @@ namespace FICTFeed.MVC.Models.ViewModels.User
         [CustomizebleStringLength(20, 5)]
         [СustomizebleRequired]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [CustomizebleCompare("Password")]
         public virtual string ConfirmPassword { get; set; }
 
         [DataType(DataType.EmailAddress)]
@@ -54,11 +54,6 @@ namespace FICTFeed.MVC.Models.ViewModels.User
 
         public UserCreateViewModel(string name, string password, string confirmPassword, string mail)
         {
-            Guard.ThrowIfEmptyString(name);
-            Guard.ThrowIfEmptyString(password);
-            Guard.ThrowIfEmptyString(confirmPassword);
-            Guard.ThrowIfEmptyString(mail);
-
             var manager = Resolver.GetInstance<IGroupsManager>();
             groups = (List<Group>)manager.GetList();
             Name = name;

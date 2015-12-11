@@ -41,11 +41,6 @@ namespace FICTFeed.MVC.Models.ViewModels.News
 
         public NewsItemViewModel(string title, string shortDescription, string description, Guid authorId)
         {
-            Guard.ThrowIfEmptyString(title);
-            Guard.ThrowIfEmptyString(shortDescription);
-            Guard.ThrowIfEmptyString(description);
-            Guard.ThrowIfEmptyGuid(authorId);
-
             Title = title;
             ShortDescription = shortDescription;
             Description = description;
