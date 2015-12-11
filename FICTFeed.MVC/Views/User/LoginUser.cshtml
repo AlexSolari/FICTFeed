@@ -13,6 +13,7 @@
 
     <div class="form-horizontal">
         <hr />
+        @Html.ValidationSummary()
         @if (!Model.Valid)
         {
             <span class="validation-summary-errors">@Html.ResourceString("InvalidMailOrPass")</span>
