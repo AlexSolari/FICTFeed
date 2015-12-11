@@ -20,11 +20,9 @@ $(window).load(function () {
             NewsItemId: $('input[name="newsitemId"]').val()
         };
 
-        if (model.Description == "") {
-            return;
-        }
-
         $.post(document.location.origin + "/comment/create", model, function (data) {
+            if (data == "")
+                return;
             $('.comments-list').prepend(data);
             $('textarea#text').val("");
             $($('.comments-list').children()[0]).fadeOut(0);
