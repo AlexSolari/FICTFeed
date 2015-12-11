@@ -1,7 +1,7 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.News.NewsItemPageView
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Model.NewsItem.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="primary light secondary-text news-item">

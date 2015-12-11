@@ -11,24 +11,24 @@ namespace FICTFeed.MVC.Models.ViewModels.User
 {
     public class UserCreateViewModel
     {
-        [StringLength(50, MinimumLength = 3)]
-        [Required]
+        [CustomizebleStringLength(50, 3)]
+        [СustomizebleRequired]
         public virtual string Name { get; set; }
 
-        [StringLength(20, MinimumLength=5)]
-        [Required]
+        [CustomizebleStringLength(20, 5)]
+        [СustomizebleRequired]
         [DataType(DataType.Password)]
         public virtual string Password { get; set; }
 
-        [StringLength(20, MinimumLength = 5)]
-        [Required]
+        [CustomizebleStringLength(20, 5)]
+        [СustomizebleRequired]
         [DataType(DataType.Password)]
         [Compare("Password")]
         public virtual string ConfirmPassword { get; set; }
 
         [DataType(DataType.EmailAddress)]
         [UserMailValidation]
-        [Required]
+        [СustomizebleRequired]
         public virtual string Mail { get; set; }
 
         protected readonly List<Group> groups;

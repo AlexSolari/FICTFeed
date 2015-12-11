@@ -12,8 +12,8 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
     {
         public virtual Guid Id { get; set; }
 
-        [StringLength(50, ErrorMessage = "Must be between 3 and 50 characters", MinimumLength = 3)]
-        [Required]
+        [CustomizebleStringLength(50, 3)]
+        [СustomizebleRequired]
         public virtual string Name { get; set; }
 
         [UIHint("Shedule")]

@@ -97,6 +97,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Створити группу.
+        /// </summary>
+        internal static string CreateGroup {
+            get {
+                return ResourceManager.GetString("CreateGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Зараз неділя №{0}.
         /// </summary>
         internal static string CurrentWeekNo {
@@ -124,11 +133,38 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to День.
+        /// </summary>
+        internal static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Деталі.
         /// </summary>
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагувати.
+        /// </summary>
+        internal static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування группи.
+        /// </summary>
+        internal static string EditGroup {
+            get {
+                return ResourceManager.GetString("EditGroup", resourceCulture);
             }
         }
         
@@ -151,6 +187,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Группи.
+        /// </summary>
+        internal static string Groups {
+            get {
+                return ResourceManager.GetString("Groups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Головна.
         /// </summary>
         internal static string Home {
@@ -165,6 +210,15 @@ namespace FICTFeed.Resources {
         internal static string InvalidMailOrPass {
             get {
                 return ResourceManager.GetString("InvalidMailOrPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пара.
+        /// </summary>
+        internal static string Lesson {
+            get {
+                return ResourceManager.GetString("Lesson", resourceCulture);
             }
         }
         
@@ -259,6 +313,24 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Роль.
+        /// </summary>
+        internal static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Зберегти.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Комментувати.
         /// </summary>
         internal static string SendComment {
@@ -291,6 +363,24 @@ namespace FICTFeed.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Користувачі.
+        /// </summary>
+        internal static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неділя.
+        /// </summary>
+        internal static string Week {
+            get {
+                return ResourceManager.GetString("Week", resourceCulture);
             }
         }
     }

@@ -1,10 +1,10 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.User.EditUserPageView
 @{
-    ViewBag.Title = "GetUsers";
+    ViewBag.Title = Html.ResourceString("Users");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Пользователи</h2>
+<h2>@Html.ResourceString("Users")</h2>
 
 @if (Model != null)
 {
@@ -15,8 +15,8 @@
                 <span class="card-title grey-text">@Html.DisplayFor(m => item.Name)</span>
                 <p>
                     <ul>
-                        <li>Mail: @Html.DisplayFor(m => item.Mail)</li>
-                        <li>Current role: @Html.DisplayFor(m => item.Role)</li>
+                        <li>@Html.ResourceLabelFor(m => item.Mail) @Html.DisplayFor(m => item.Mail)</li>
+                        <li>@Html.ResourceLabelFor(m => item.Role) @Html.DisplayFor(m => item.Role)</li>
                     </ul>
                     
                     <div class="default-input-width">
@@ -27,7 +27,7 @@
                             @Html.HiddenFor(m => item.Name)
                             @Html.EditorFor(m => item.Role)
                             <div class="card-action">
-                                <button type="submit" class="btn-flat grey-text">Save</button>
+                                <button type="submit" class="btn-flat grey-text">@Html.ResourceString("Save")</button>
                             </div>
                         }
                     </div>
