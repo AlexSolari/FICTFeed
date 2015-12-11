@@ -24,6 +24,11 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
     box-shadow: 0 1px 0 0 #03A9F4;
 }
 
+.btn-flat:focus, .btn-flat:active {
+    outline: none;
+    background-color: #03A9F4;
+}
+
 .hidden{ display: none;}
 
 /* styles for validation helpers */
