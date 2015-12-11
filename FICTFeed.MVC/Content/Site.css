@@ -19,6 +19,11 @@ label{
     display: block;
 }
 
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #03A9F4;
+    box-shadow: 0 1px 0 0 #03A9F4;
+}
+
 .hidden{ display: none;}
 
 /* styles for validation helpers */
