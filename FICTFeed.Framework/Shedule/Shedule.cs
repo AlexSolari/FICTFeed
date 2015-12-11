@@ -99,30 +99,99 @@ namespace FICTFeed.Framework.Shedule
             Lessons = new List<Lesson>();
             while (Lessons.Count < lessonsCount)
             {
-                Lessons.Add(new Lesson());
+                Lessons.Add(new Lesson() { Number = Lessons.Count + 1 });
             }
         }
     }
 
     public class Lesson
     {
+        private int _number;
+
+        [XmlIgnore]
         [UIHint("Time")]
         public DateTime Start { get; set; }
+        [XmlIgnore]
         [UIHint("Time")]
         public DateTime End { get; set; }
         public string Name { get; set; }
         public string Teacher { get; set; }
         public int? Room { get; set; }
-
-        public Lesson() { }
-
-        public Lesson(DateTime start, DateTime end, string name, string teacher, int? room)
+        public int Number
         {
-            Start = start;
-            End = end;
-            Name = name;
-            Teacher = teacher;
-            Room = room;
+            get
+            {
+                return _number;
+            }
+            set
+            {
+                _number = value;
+                MapStartTimes();
+            }
+        }
+
+        public Lesson()
+    	{
+
+    	}
+
+        public void MapStartTimes() 
+        {
+            Start = DateTime.Today;
+            End = DateTime.Today;
+            switch (Number)
+            {
+                case 1:
+                    Start = Start.AddHours(8);
+                    Start = Start.AddMinutes(0);
+                    End = End.AddHours(9);
+                    End = End.AddMinutes(20);
+                    break;
+                case 2:
+                    Start = Start.AddHours(9);
+                    Start = Start.AddMinutes(30);
+                    End = End.AddHours(10);
+                    End = End.AddMinutes(50);
+                    break;
+                case 3:
+                    Start = Start.AddHours(11);
+                    Start = Start.AddMinutes(10);
+                    End = End.AddHours(12);
+                    End = End.AddMinutes(30);
+                    break;
+                case 4:
+                    Start = Start.AddHours(12);
+                    Start = Start.AddMinutes(40);
+                    End = End.AddHours(14);
+                    End = End.AddMinutes(0);
+                    break;
+                case 5:
+                    Start = Start.AddHours(14);
+                    Start = Start.AddMinutes(10);
+                    End = End.AddHours(15);
+                    End = End.AddMinutes(30);
+                    break;
+                case 6:
+                    Start = Start.AddHours(15);
+                    Start = Start.AddMinutes(40);
+                    End = End.AddHours(17);
+                    End = End.AddMinutes(0);
+                    break;
+                case 7:
+                    Start = Start.AddHours(17);
+                    Start = Start.AddMinutes(20);
+                    End = End.AddHours(18);
+                    End = End.AddMinutes(40);
+                    break;
+                case 8:
+                    Start = Start.AddHours(18);
+                    Start = Start.AddMinutes(50);
+                    End = End.AddHours(20);
+                    End = End.AddMinutes(10);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

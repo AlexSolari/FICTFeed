@@ -248,6 +248,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Time.cshtml" />
     <Content Include="Views\Shared\ScheduleForToday.cshtml" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">
