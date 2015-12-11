@@ -9,6 +9,7 @@ namespace FICTFeed.MVC.Models.ViewModels.Comments
     {
         public virtual Guid Id { get; set; }
 
+        [System.ComponentModel.DataAnnotations.Required]
         public virtual string Description { get; set; }
 
         public virtual Guid AuthorId { get; set; }
