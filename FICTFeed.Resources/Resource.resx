@@ -120,11 +120,23 @@
   <data name="AddNewsItem" xml:space="preserve">
     <value>Додати новину</value>
   </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Підтвердження паролю</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Створити</value>
   </data>
   <data name="CurrentWeekNo" xml:space="preserve">
     <value>Зараз неділя №{0}</value>
+  </data>
+  <data name="CustomizebleRequiredErrorMessage" xml:space="preserve">
+    <value>Поле "{0}" має бути заповнене.</value>
+  </data>
+  <data name="CustomizebleStringLengthErrorMessage" xml:space="preserve">
+    <value>Поле "{0}" має бути не довше ніж {1}, та не менше ніж {2} символів.</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Деталі</value>
   </data>
   <data name="Error404" xml:space="preserve">
     <value>Такої сторінки не існує. =(</value>
@@ -147,11 +159,20 @@
   <data name="Logout" xml:space="preserve">
     <value>Вихід</value>
   </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Електронна адресса</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
   <data name="NewestNews" xml:space="preserve">
     <value>Свіжі новини</value>
   </data>
   <data name="NewsItemCreate" xml:space="preserve">
     <value>Створення новини</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
   </data>
   <data name="ReadMore" xml:space="preserve">
     <value>Читати далі</value>
@@ -162,10 +183,16 @@
   <data name="SendComment" xml:space="preserve">
     <value>Комментувати</value>
   </data>
+  <data name="ShortDescription" xml:space="preserve">
+    <value>Опис</value>
+  </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>FICT Feed</value>
   </data>
-  <data name="TestString" xml:space="preserve">
+  <data name="Title" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="_TestString" xml:space="preserve">
     <value>Тестовий рядок</value>
     <comment>Не удалять</comment>
   </data>

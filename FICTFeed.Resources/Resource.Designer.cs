@@ -61,11 +61,29 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Тестовий рядок.
+        /// </summary>
+        internal static string _TestString {
+            get {
+                return ResourceManager.GetString("_TestString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Додати новину.
         /// </summary>
         internal static string AddNewsItem {
             get {
                 return ResourceManager.GetString("AddNewsItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Підтвердження паролю.
+        /// </summary>
+        internal static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
             }
         }
         
@@ -84,6 +102,33 @@ namespace FICTFeed.Resources {
         internal static string CurrentWeekNo {
             get {
                 return ResourceManager.GetString("CurrentWeekNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поле &quot;{0}&quot; має бути заповнене..
+        /// </summary>
+        internal static string CustomizebleRequiredErrorMessage {
+            get {
+                return ResourceManager.GetString("CustomizebleRequiredErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поле &quot;{0}&quot; має бути не довше ніж {1}, та не менше ніж {2} символів..
+        /// </summary>
+        internal static string CustomizebleStringLengthErrorMessage {
+            get {
+                return ResourceManager.GetString("CustomizebleStringLengthErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Деталі.
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -151,6 +196,24 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Електронна адресса.
+        /// </summary>
+        internal static string Mail {
+            get {
+                return ResourceManager.GetString("Mail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ім&apos;я.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Свіжі новини.
         /// </summary>
         internal static string NewestNews {
@@ -165,6 +228,15 @@ namespace FICTFeed.Resources {
         internal static string NewsItemCreate {
             get {
                 return ResourceManager.GetString("NewsItemCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пароль.
+        /// </summary>
+        internal static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
@@ -196,6 +268,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Опис.
+        /// </summary>
+        internal static string ShortDescription {
+            get {
+                return ResourceManager.GetString("ShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FICT Feed.
         /// </summary>
         internal static string SiteTitle {
@@ -205,11 +286,11 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Тестовий рядок.
+        ///   Looks up a localized string similar to Заголовок.
         /// </summary>
-        internal static string TestString {
+        internal static string Title {
             get {
-                return ResourceManager.GetString("TestString", resourceCulture);
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

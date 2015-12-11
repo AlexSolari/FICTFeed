@@ -16,7 +16,30 @@
         <hr />
         @Html.ValidationSummary(true)
 
-        @Html.EditorFor(m => m.NewUser)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewUser.Name)
+                @Html.EditorFor(m => m.NewUser.Name)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewUser.Mail)
+                @Html.EditorFor(m => m.NewUser.Mail)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewUser.Password)
+                @Html.EditorFor(m => m.NewUser.Password)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewUser.ConfirmPassword)
+                @Html.EditorFor(m => m.NewUser.ConfirmPassword)
+            </div>
+        </div>
 
         @Html.DropDownListFor(m => m.NewUser.GroupId, Model.NewUser.Groups)
 

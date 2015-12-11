@@ -107,7 +107,7 @@ namespace FICTFeed.MVC
 
         static void TestResourceAccess()
         {
-            var result = ResourceAccessor.Instance.Get("TestString");
+            var result = ResourceAccessor.Instance.Get("_TestString");
 
             Guard.ThrowIfEmptyString(result);
         }

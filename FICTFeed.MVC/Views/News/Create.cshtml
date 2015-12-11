@@ -17,25 +17,25 @@
         @Html.ValidationSummary()
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.LabelFor(m => m.NewNewsItem.Title)
+                @Html.ResourceLabelFor(m => m.NewNewsItem.Title)
                 @Html.EditorFor(m => m.NewNewsItem.Title)
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.LabelFor(m => m.NewNewsItem.ShortDescription)
+                @Html.ResourceLabelFor(m => m.NewNewsItem.ShortDescription)
                 @Html.EditorFor(m => m.NewNewsItem.ShortDescription)
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.LabelFor(m => m.NewNewsItem.Description)
+                @Html.ResourceLabelFor(m => m.NewNewsItem.Description)
                 @Html.EditorFor(m => m.NewNewsItem.Description)
             </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                @Html.LabelFor(m => m.NewNewsItem.GroupId)
+                @Html.ResourceLabelFor(m => m.NewNewsItem.GroupId)
                 @Html.DropDownListFor(m => m.NewNewsItem.GroupId,
                 new SelectList(Model.GroupIds,
                                "Value", "Key",

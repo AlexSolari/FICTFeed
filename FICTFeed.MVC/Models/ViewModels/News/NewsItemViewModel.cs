@@ -11,19 +11,19 @@ namespace FICTFeed.MVC.Models.ViewModels.News
         [HiddenInput(DisplayValue = false)]
         public virtual Guid Id { get; set; }
 
-        [StringLength(100, ErrorMessage = "Title must be between 3 and 100 characters", MinimumLength = 3)]
-        [Required]
+        [CustomizebleStringLength(100, 3)]
+        [СustomizebleRequired]
         [AllowHtml]
         public virtual string Title { get; set; }
 
-        [StringLength(300, ErrorMessage = "Short description must be lesser than 300 characters")]
-        [Required]
+        [CustomizebleStringLength(300, 3)]
+        [СustomizebleRequired]
         [DataType(DataType.MultilineText)]
         [AllowHtml]
         public virtual string ShortDescription { get; set; }
 
-        [StringLength(1000, ErrorMessage = "Description must be lesser than 1000 characters")]
-        [Required]
+        [CustomizebleStringLength(1000, 3)]
+        [СustomizebleRequired]
         [DataType(DataType.MultilineText)]
         [AllowHtml]
         public virtual string Description { get; set; }

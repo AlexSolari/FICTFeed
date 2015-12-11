@@ -15,6 +15,10 @@ textarea {
     max-width: 280px;
 }
 
+label{
+    display: block;
+}
+
 .hidden{ display: none;}
 
 /* styles for validation helpers */
