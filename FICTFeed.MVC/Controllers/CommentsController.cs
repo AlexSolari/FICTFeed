@@ -23,7 +23,11 @@ namespace FICTFeed.MVC.Controllers
         [HttpPost]
         public ActionResult Create(CommentCreateModel model)
         {
+            if (String.IsNullOrWhiteSpace(model.Description))
+                return null;
+
             var mappedModel = Mapper.Map<Comment, CommentCreateModel>(model);
+
             manager.Create(mappedModel);
 
             var result = Mapper.Map<CommentViewModel,Comment>(manager.GetById(mappedModel.Id.ToString()));
