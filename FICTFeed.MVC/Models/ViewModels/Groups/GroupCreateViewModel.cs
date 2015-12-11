@@ -14,6 +14,7 @@ namespace FICTFeed.MVC.Models.ViewModels.Groups
         [Required]
         public virtual string Name { get; set; }
 
+        [UIHint("Shedule")]
         public Schedule GroupShedule { get; set; }
 
         public GroupCreateViewModel()
