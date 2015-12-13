@@ -10,7 +10,7 @@ var InitializeNewsFilters = function () {
 
     $filter.change(function () {
         setTimeout(function () {
-            model = $('.select-dropdown').val()
+            model = $('select#filter').val()
             $.post(document.location.origin + "/news/listforgroup", { groupName: model }, function (data) {
                 $('.news-wraper').html(data);
             });

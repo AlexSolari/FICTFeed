@@ -7,17 +7,17 @@
         var manager = FICTFeed.DependecyResolver.Resolver.GetInstance<FICTFeed.Framework.Groups.IGroupsManager>();
         var usergroup = (manager.GetById(Model.UserData.CurrentUser.GroupId.ToString()).Name);
 
-        groups.Add(new SelectListItem() { Text = "All", Value = "All", Selected = true });
+        groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("AllNews"), Value = "All", Selected = true });
 
         if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.User || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Praepostor)
         {
-            groups.Add(new SelectListItem() { Text = usergroup, Value = usergroup });
+            groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("NewsFor").FormatWith(usergroup), Value = usergroup });
         }
         else
         {
             foreach (var item in manager.GetList())
             {
-                groups.Add(new SelectListItem() { Text = item.Name, Value = item.Name });
+                groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("NewsFor").FormatWith(item.Name), Value = item.Name });
             }
         }
 
@@ -28,7 +28,7 @@
     {
         <div class="controls">
             <div id="filters" class="news">
-                Show mews for:
+                @Html.ResourceString("NewsFilters")
                 @Html.DropDownList("filter", groups)
             </div>
             @if (Model.UserData.IsAuthorized && Model.UserData.CurrentUser != null)

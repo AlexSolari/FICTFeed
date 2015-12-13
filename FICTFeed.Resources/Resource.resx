@@ -241,4 +241,13 @@
   <data name="NoNews" xml:space="preserve">
     <value>На жаль, новин немає =(</value>
   </data>
+  <data name="AllNews" xml:space="preserve">
+    <value>Всі новини</value>
+  </data>
+  <data name="NewsFilters" xml:space="preserve">
+    <value>Відображення новин: </value>
+  </data>
+  <data name="NewsFor" xml:space="preserve">
+    <value>Новини для {0}</value>
+  </data>
 </root>
