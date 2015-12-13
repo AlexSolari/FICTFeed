@@ -79,6 +79,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Адміністратор.
+        /// </summary>
+        internal static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Користувач з такою адресою вже зареєстрованний..
         /// </summary>
         internal static string AlreadyRegistered {
@@ -295,6 +304,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Модератор.
+        /// </summary>
+        internal static string Moderator {
+            get {
+                return ResourceManager.GetString("Moderator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ім&apos;я.
         /// </summary>
         internal static string Name {
@@ -336,6 +354,15 @@ namespace FICTFeed.Resources {
         internal static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Староста.
+        /// </summary>
+        internal static string Praepostor {
+            get {
+                return ResourceManager.GetString("Praepostor", resourceCulture);
             }
         }
         
@@ -408,6 +435,15 @@ namespace FICTFeed.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Студент.
+        /// </summary>
+        internal static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
             }
         }
         

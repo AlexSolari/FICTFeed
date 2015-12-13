@@ -241,4 +241,16 @@
   <data name="NoNews" xml:space="preserve">
     <value>На жаль, новин немає =(</value>
   </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Адміністратор</value>
+  </data>
+  <data name="Moderator" xml:space="preserve">
+    <value>Модератор</value>
+  </data>
+  <data name="Praepostor" xml:space="preserve">
+    <value>Староста</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Студент</value>
+  </data>
 </root>

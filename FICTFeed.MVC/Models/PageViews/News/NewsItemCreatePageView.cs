@@ -15,7 +15,7 @@ namespace FICTFeed.MVC.Models.PageViews.News
     {
         public NewsItemViewModel NewNewsItem { get; set; }
 
-        public Dictionary<string, string> GroupIds { get; set; }
+        //public Dictionary<string, string> GroupIds { get; set; }
 
         protected readonly List<Group> groups;
 
@@ -23,7 +23,10 @@ namespace FICTFeed.MVC.Models.PageViews.News
         {
             get
             {
-                groups.First(x => x.Name == "Global").Name = Resources.ResourceAccessor.Instance.Get("Global");
+                if (groups.Any(x=>x.Name == "Global"))
+                {
+                    groups.First(x => x.Name == "Global").Name = Resources.ResourceAccessor.Instance.Get("Global");
+                }
                 return new System.Web.Mvc.SelectList(groups, "Id", "Name");
             }
         }
@@ -34,7 +37,6 @@ namespace FICTFeed.MVC.Models.PageViews.News
             NewNewsItem = new NewsItemViewModel();
             var userData = new UserDataContainer();
             groups = new List<Group>();
-            //GroupIds = new Dictionary<string, string>();
             if (userData.IsAuthorized)
             {
                 if (userData.CurrentUser.Role == Roles.Admin || userData.CurrentUser.Role == Roles.Moderator)
@@ -42,14 +44,12 @@ namespace FICTFeed.MVC.Models.PageViews.News
                     foreach (var item in Resolver.GetInstance<IGroupsManager>().GetList())
                     {
                         groups.Add(item);
-                        //GroupIds.Add(item.Name, item.Id.ToString());
                     }
                 }
                 else if (userData.CurrentUser.Role == Roles.Praepostor)
                 {
                     var group = Resolver.GetInstance<IGroupsManager>().GetById(userData.CurrentUser.GroupId.ToString());
                     groups.Add(group);
-                    //GroupIds.Add(group.Name, group.Id.ToString());
                 }
             }
             
