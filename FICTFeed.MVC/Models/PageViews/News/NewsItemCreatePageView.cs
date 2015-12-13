@@ -17,25 +17,39 @@ namespace FICTFeed.MVC.Models.PageViews.News
 
         public Dictionary<string, string> GroupIds { get; set; }
 
+        protected readonly List<Group> groups;
+
+        public IEnumerable<System.Web.Mvc.SelectListItem> Groups
+        {
+            get
+            {
+                groups.First(x => x.Name == "Global").Name = Resources.ResourceAccessor.Instance.Get("Global");
+                return new System.Web.Mvc.SelectList(groups, "Id", "Name");
+            }
+        }
+
         public NewsItemCreatePageView()
             : base()
         {
             NewNewsItem = new NewsItemViewModel();
             var userData = new UserDataContainer();
-            GroupIds = new Dictionary<string, string>();
+            groups = new List<Group>();
+            //GroupIds = new Dictionary<string, string>();
             if (userData.IsAuthorized)
             {
                 if (userData.CurrentUser.Role == Roles.Admin || userData.CurrentUser.Role == Roles.Moderator)
                 {
                     foreach (var item in Resolver.GetInstance<IGroupsManager>().GetList())
                     {
-                        GroupIds.Add(item.Name, item.Id.ToString());
+                        groups.Add(item);
+                        //GroupIds.Add(item.Name, item.Id.ToString());
                     }
                 }
                 else if (userData.CurrentUser.Role == Roles.Praepostor)
                 {
                     var group = Resolver.GetInstance<IGroupsManager>().GetById(userData.CurrentUser.GroupId.ToString());
-                    GroupIds.Add(group.Name, group.Id.ToString());
+                    groups.Add(group);
+                    //GroupIds.Add(group.Name, group.Id.ToString());
                 }
             }
             
