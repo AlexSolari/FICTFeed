@@ -201,9 +201,13 @@ article .description{
    color: black;
 }
 #add-news{
+    margin: 0.9em;
     text-align: center;
     height: 50px;
-    width: 100%;
+    max-width: 100%;
+}
+.controls{
+    text-align: center;
 }
 .news-creation input[type="text"]{
     width: 100%;
@@ -259,11 +263,22 @@ nav{
 textarea.input-validation-error {
     border: 1px solid #b94a48;
 }
+div.btn{
+    padding-top: .5em;
+}
 .btn{
     background: #0277BD;
 }
 .btn:hover{
     background: #0288D1;
+}
+#filters{
+    margin-top: 1em;
+    font-size: 0.9em;
+    display: inline-block;
+}
+.dropdown-content li > span {
+    color: #0277BD;
 }
 @media (max-width: 1024px) {
   #sidebar{

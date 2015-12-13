@@ -5,6 +5,19 @@
     });
 };
 
+var InitializeNewsFilters = function () {
+    var $filter = $("#filters > div > select");
+
+    $filter.change(function () {
+        setTimeout(function () {
+            model = $('.select-dropdown').val()
+            $.post(document.location.origin + "/news/listforgroup", { groupName: model }, function (data) {
+                $('.news-wraper').html(data);
+            });
+        }, 10);
+    });
+};
+
 $(window).load(function () {
     $("#navigation-button").click(function () {
         $("#dropdown-navigation").toggleClass("hidden");
@@ -31,4 +44,5 @@ $(window).load(function () {
     });
 
     InitializeSpoilers();
+    InitializeNewsFilters();
 });

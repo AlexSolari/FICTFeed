@@ -5,7 +5,7 @@
     <ul>
         @foreach (var item in Model.NewestNews)
         {
-            <li><a href="@Url.RouteUrl("NewsItem")?id=@item.Value.ToString()">@item.Key</a></li>
+            <li><a href="@Url.RouteUrl("NewsItem")?id=@item.Key.ToString()">@item.Value</a></li>
         }
     </ul>
 }

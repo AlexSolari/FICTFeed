@@ -1,0 +1,31 @@
+﻿@using FICTFeed.MVC.Models.ViewModels.News
+@model FICTFeed.MVC.Models.PageViews.News.NewsListPageView
+<ul class="news-list">
+
+
+    @if (Model.News.Count == 0)
+    {
+        <li class="primary light secondary-text">
+            <div class="center">
+                <h2>@Html.ResourceString("NoNews")</h2>
+            </div>
+        </li>
+    }
+    @foreach (var item in Model.News)
+    {
+        <li class="primary light secondary-text">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <div class="posting-date">@item.PostingDate.ToShortDateString()</div>
+                    <h3><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@item.Title</a></h3>
+                </div>
+                <div class="card-content">
+                    <p>@item.ShortDescription</p>
+                </div>
+                <div class="card-action">
+                    <a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@Html.ResourceString("ReadMore")</a>
+                </div>
+            </div>
+        </li>
+    }
+</ul>
