@@ -45,6 +45,7 @@ namespace FICTFeed.MVC.Controllers
         public ActionResult GetUsers()
         {
             var users = userManager.GetList();
+            users.Remove(users.First(x => x.Id == new UserDataContainer().CurrentUser.Id));
             var model = new EditUserPageView(Mapper.Map<UserEditViewModel, User>(users));
             return View(model);
         }

@@ -5,7 +5,7 @@
     var list = new List<SelectListItem>();
     foreach (var item in values)
     {
-        var it = new SelectListItem { Selected = item.Equals(Model), Text = item.ToString(), Value = item.ToString() };
+        var it = new SelectListItem { Selected = item.Equals(Model), Text = @Html.ResourceString(item.ToString()), Value = item.ToString() };
         list.Add(it); 
     }
 }

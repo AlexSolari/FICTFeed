@@ -38,7 +38,10 @@ namespace FICTFeed.MVC.Models.ViewModels.User
         {
             get
             {
-                groups.First(x => x.Name == "Global").Name = Resources.ResourceAccessor.Instance.Get("Global");
+                if (groups.Any(x => x.Name == "Global"))
+                {
+                    groups.First(x => x.Name == "Global").Name = Resources.ResourceAccessor.Instance.Get("Global");
+                }
                 return new System.Web.Mvc.SelectList(groups, "Id", "Name");
             }
         }
