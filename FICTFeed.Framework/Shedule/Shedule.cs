@@ -51,7 +51,7 @@ namespace FICTFeed.Framework.Shedule
         public DaySchedule GetScheduleForToday()
         {
             var dayofweek = (int)DateTime.Today.DayOfWeek - 1;
-
+            dayofweek = (dayofweek == -1) ? 6 : dayofweek;
             return Weeks[GetWeekNumber()].Days[dayofweek];
         }
 

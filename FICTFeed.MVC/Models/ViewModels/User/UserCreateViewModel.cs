@@ -6,6 +6,7 @@ using FICTFeed.Framework.Validation;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.WebPages.Html;
+using System.Linq;
 
 namespace FICTFeed.MVC.Models.ViewModels.User
 {
@@ -37,6 +38,7 @@ namespace FICTFeed.MVC.Models.ViewModels.User
         {
             get
             {
+                groups.First(x => x.Name == "Global").Name = Resources.ResourceAccessor.Instance.Get("Global");
                 return new System.Web.Mvc.SelectList(groups, "Id", "Name");
             }
         }
