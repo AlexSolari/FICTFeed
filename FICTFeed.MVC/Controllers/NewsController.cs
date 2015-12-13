@@ -32,6 +32,25 @@ namespace FICTFeed.MVC.Controllers
             return View(new NewsItemPageView(id));
         }
 
+        [HttpPost]
+        public ActionResult GetList(string groupName)
+        {
+            
+
+            var userdata = new UserDataContainer();
+
+            IEnumerable<NewsItemViewModel> news;
+
+            if (groupName != "All")
+                news = Mapper.Map<NewsItemViewModel, NewsItem>(newsManager.GetListForGroup(groupName));
+            else
+                news = Mapper.Map<NewsItemViewModel, NewsItem>(newsManager.GetListMatchingUserGroups(userdata));
+
+            var result = new NewsListPageView(news);
+
+            return PartialView("NewsList", result);
+        }
+
         [HttpGet]
         public ActionResult Create()
         {

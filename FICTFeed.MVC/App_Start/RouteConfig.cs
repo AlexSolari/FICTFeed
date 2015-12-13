@@ -40,6 +40,12 @@ namespace FICTFeed.MVC
             );
 
             routes.MapRoute(
+                name: "NewsGetListForGroup",
+                url: "news/listforgroup",
+                defaults: new { controller = "News", action = "GetList", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "NewsItem",
                 url: "news",
                 defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional }

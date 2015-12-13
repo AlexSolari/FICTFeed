@@ -1,47 +1,52 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.News.NewsListPageView
 @{
     ViewBag.Title = Html.ResourceString("Home");
-}
-<div class="home-content">
+    var groups = new List<SelectListItem>();
+    if (Model.UserData.IsAuthorized)
+    {
+        var manager = FICTFeed.DependecyResolver.Resolver.GetInstance<FICTFeed.Framework.Groups.IGroupsManager>();
+        var usergroup = (manager.GetById(Model.UserData.CurrentUser.GroupId.ToString()).Name);
 
-    
-    <ul class="news-list">
-        @if (Model.UserData.IsAuthorized && Model.UserData.CurrentUser != null)
+        groups.Add(new SelectListItem() { Text = "All", Value = "All", Selected = true });
+
+        if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.User || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Praepostor)
         {
-            if (Model.UserData.CurrentUser.Role != FICTFeed.Bussines.AdditionalData.Roles.User)
+            groups.Add(new SelectListItem() { Text = usergroup, Value = usergroup });
+        }
+        else
+        {
+            foreach (var item in manager.GetList())
             {
-                <li>
-                    <a href="@Url.RouteUrl("NewsCreate")">
-                        <div id="add-news" class="btn">@Html.ResourceString("AddNewsItem")</div>
-                    </a>
-                </li>
-                
+                groups.Add(new SelectListItem() { Text = item.Name, Value = item.Name });
             }
         }
-        @if(Model.News.Count == 0)
-        {
-            <li class="primary light secondary-text">
-                <div>
-                    <p>@Html.ResourceString("NoNews")</p>
-                </div>   
-            </li>
+
+    }
+}
+<div class="home-content">
+    @if (Model.UserData.IsAuthorized)
+    {
+        <div class="controls">
+            <div id="filters" class="news">
+                Show mews for:
+                @Html.DropDownList("filter", groups)
+            </div>
+            @if (Model.UserData.IsAuthorized && Model.UserData.CurrentUser != null)
+            {
+                if (Model.UserData.CurrentUser.Role != FICTFeed.Bussines.AdditionalData.Roles.User)
+                {
+                <a href="@Url.RouteUrl("NewsCreate")">
+                    <div id="add-news" class="btn">@Html.ResourceString("AddNewsItem")</div>
+                </a>
+                }
+            }
+        </div>
+        
+    }
+    <div class="news-wraper">
+        @{
+            Html.RenderPartial("NewsList", Model);
         }
-        @foreach (var item in Model.News)
-        {
-            <li class="primary light secondary-text">
-                <div class="card hoverable">
-                    <div class="card-image">
-                        <div class="posting-date">@item.PostingDate.ToShortDateString()</div>
-                        <h3><a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@item.Title</a></h3>
-                    </div>
-                    <div class="card-content">
-                        <p>@item.ShortDescription</p>
-                    </div>
-                    <div class="card-action">
-                        <a class="read-more secondary-text" href="@Url.RouteUrl("NewsItem")?id=@item.Id">@Html.ResourceString("ReadMore")</a>
-                    </div>
-                </div>     
-            </li>
-        }
-    </ul>
+    </div>
+    
 </div>

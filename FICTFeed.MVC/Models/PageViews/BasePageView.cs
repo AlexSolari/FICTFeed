@@ -11,7 +11,7 @@ namespace FICTFeed.MVC.Models.PageViews
     {
         public UserDataContainer UserData = new UserDataContainer();
 
-        public Dictionary<string, Guid> NewestNews = new Dictionary<string,Guid>();
+        public Dictionary<Guid, string> NewestNews = new Dictionary<Guid, string>();
 
         public BasePageView()
         {
@@ -19,7 +19,7 @@ namespace FICTFeed.MVC.Models.PageViews
 
             foreach (var item in manager.GetListMatchingUserGroups(UserData, "PostingDate", 5))
             {
-                NewestNews.Add(item.Title, item.Id);
+                NewestNews.Add(item.Id, item.Title);
             }
         }
     }
