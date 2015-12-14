@@ -1,27 +1,11 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.News.NewsListPageView
 @{
     ViewBag.Title = Html.ResourceString("Home");
-    var groups = new List<SelectListItem>();
-    if (Model.UserData.IsAuthorized)
-    {
-        var manager = FICTFeed.DependecyResolver.Resolver.GetInstance<FICTFeed.Framework.Groups.IGroupsManager>();
-        var usergroup = (manager.GetById(Model.UserData.CurrentUser.GroupId.ToString()).Name);
+    //var groups = new List<SelectListItem>();
+    //if (Model.UserData.IsAuthorized)
+    //{
 
-        groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("AllNews"), Value = "All", Selected = true });
-
-        if (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.User || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Praepostor)
-        {
-            groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("NewsFor").FormatWith(usergroup), Value = usergroup });
-        }
-        else
-        {
-            foreach (var item in manager.GetList())
-            {
-                groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("NewsFor").FormatWith(item.Name), Value = item.Name });
-            }
-        }
-
-    }
+    //}
 }
 <div class="home-content">
     @if (Model.UserData.IsAuthorized)
@@ -29,7 +13,7 @@
         <div class="controls">
             <div id="filters" class="news">
                 @Html.ResourceString("NewsFilters")
-                @Html.DropDownList("filter", groups)
+                @Html.DropDownList("filter", Model.Groups)
             </div>
             @if (Model.UserData.IsAuthorized && Model.UserData.CurrentUser != null)
             {

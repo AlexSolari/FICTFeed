@@ -2,11 +2,10 @@
 
 @{
     ViewBag.Title = Html.ResourceString("CreateGroup");
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>@Html.ResourceString("CreateGroup")</h2>
-
 
 @using (Html.BeginForm("CreateGroup", "Admin", FormMethod.Post))
 {

@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y">
+            <li class="bold">
+                <a class="waves-effect waves-cyan"></a>
+            </li>
+            <li class="bold">
+                @Html.RouteLink(@Html.ResourceString("AllUsers"), "GetUsers", new { @class = "waves-effect waves-cyan" })
+            </li>
+            <li class="bold">
+                @Html.RouteLink(@Html.ResourceString("AllGroups"), "GetGroups", new { @class = "waves-effect waves-cyan" })
+            </li>
+        </ul>
+    </aside>
+
+    @RenderBody()
+</div>
+
+@RenderSection("scripts", required: false)
