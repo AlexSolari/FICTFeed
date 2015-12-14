@@ -79,6 +79,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Адміністратор.
+        /// </summary>
+        internal static string Admin {
+            get {
+                return ResourceManager.GetString("Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Всі новини.
         /// </summary>
         internal static string AllNews {
@@ -304,6 +313,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Модератор.
+        /// </summary>
+        internal static string Moderator {
+            get {
+                return ResourceManager.GetString("Moderator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ім&apos;я.
         /// </summary>
         internal static string Name {
@@ -363,6 +381,15 @@ namespace FICTFeed.Resources {
         internal static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Староста.
+        /// </summary>
+        internal static string Praepostor {
+            get {
+                return ResourceManager.GetString("Praepostor", resourceCulture);
             }
         }
         
@@ -435,6 +462,15 @@ namespace FICTFeed.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Студент.
+        /// </summary>
+        internal static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
             }
         }
         
