@@ -10,10 +10,10 @@
                 <a class="waves-effect waves-cyan"></a>
             </li>
             <li class="bold">
-                @Html.RouteLink("Все пользователи", "GetUsers", new { @class = "waves-effect waves-cyan" })
+                @Html.RouteLink(@Html.ResourceString("AllUsers"), "GetUsers", new { @class = "waves-effect waves-cyan" })
             </li>
             <li class="bold">
-                @Html.RouteLink("Все группы", "GetGroups", new { @class = "waves-effect waves-cyan" })
+                @Html.RouteLink(@Html.ResourceString("AllGroups"), "GetGroups", new { @class = "waves-effect waves-cyan" })
             </li>
         </ul>
     </aside>

@@ -88,11 +88,29 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Всі групи.
+        /// </summary>
+        internal static string AllGroups {
+            get {
+                return ResourceManager.GetString("AllGroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Всі новини.
         /// </summary>
         internal static string AllNews {
             get {
                 return ResourceManager.GetString("AllNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Всі користувачі.
+        /// </summary>
+        internal static string AllUsers {
+            get {
+                return ResourceManager.GetString("AllUsers", resourceCulture);
             }
         }
         

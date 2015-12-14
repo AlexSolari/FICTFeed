@@ -253,6 +253,12 @@
   <data name="Admin" xml:space="preserve">
     <value>Адміністратор</value>
   </data>
+  <data name="AllGroups" xml:space="preserve">
+    <value>Всі групи</value>
+  </data>
+  <data name="AllUsers" xml:space="preserve">
+    <value>Всі користувачі</value>
+  </data>
   <data name="Moderator" xml:space="preserve">
     <value>Модератор</value>
   </data>
