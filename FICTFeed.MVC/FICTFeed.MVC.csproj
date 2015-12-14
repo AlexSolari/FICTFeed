@@ -158,12 +158,14 @@
     <Compile Include="Models\PageViews\News\NewsListPageView.cs" />
     <Compile Include="Models\PageViews\User\EditUserPageView.cs" />
     <Compile Include="Models\PageViews\User\LoginUserPageView.cs" />
+    <Compile Include="Models\PageViews\User\RestorePasswordPageView.cs" />
     <Compile Include="Models\PageViews\User\RegisterUserPageView.cs" />
     <Compile Include="Models\ViewModels\Comments\CommentViewModel.cs" />
     <Compile Include="Models\ViewModels\Comments\CommentCreateModel.cs" />
     <Compile Include="Models\ViewModels\Groups\GroupCreateViewModel.cs" />
     <Compile Include="Models\ViewModels\Groups\GroupEditViewModel.cs" />
     <Compile Include="Models\ViewModels\News\NewsItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\User\PasswordRestoreViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserEditViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserLoginViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserCreateViewModel.cs" />
@@ -249,6 +251,10 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
     <Content Include="Views\Shared\NewsList.cshtml" />
+    <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\RestorePassword.cshtml" />
+    <Content Include="Views\User\MailSent.cshtml" />
+    <Content Include="Views\User\Updated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

@@ -11,6 +11,7 @@ using FICTFeed.Framework.Strings;
 using FICTFeed.MVC.Models.PageViews.User;
 using FICTFeed.MVC.Models.ViewModels.User;
 using FICTFeed.Framework.Groups;
+using FICTFeed.Framework;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -73,6 +74,51 @@ namespace FICTFeed.MVC.Controllers
             if (result == OperationResult.Success)
                 Response.Cookies[CookiesNames.LoginCookie].Expires = DateTime.Now.AddDays(-1d);
             return RedirectToRoute("Home");
+        }
+
+
+        [HttpGet]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ForgotPassword(string mail)
+        {
+            userManager.RestorePassword(mail);
+            return View("MailSent");
+        }
+        [HttpGet]
+        public ActionResult RestorePassword(string user, string token)
+        {
+            var usermodel = userManager.GetById(user);
+
+            if (usermodel == null)
+                return RedirectToRoute("NotFound");
+
+            var expectedToken = Resolver.GetSingleton<Encryptor>().GenerateToken(usermodel);
+
+            if (expectedToken != token)
+                return RedirectToRoute("NotFound");
+
+            return View(new RestorePasswordPageView(usermodel.Id.ToString()));
+        }
+
+        [HttpPost]
+        public ActionResult RestorePassword(RestorePasswordPageView model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = userManager.GetById(model.UserId);
+
+            user.PasswordCrypted = Resolver.GetSingleton<Encryptor>()
+                .CryptPassword(model.NewPass.Password);
+
+            userManager.Update(user);
+
+            return View("Updated");
         }
     }
 }

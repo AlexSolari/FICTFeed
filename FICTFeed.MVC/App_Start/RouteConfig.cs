@@ -29,6 +29,18 @@ namespace FICTFeed.MVC
                 defaults: new { controller = "User", action = "LogoutUser", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                name: "ForgotPassword",
+                url: "forgotpassword",
+                defaults: new { controller = "User", action = "ForgotPassword", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "RestorePassword",
+                url: "restore",
+                defaults: new { controller = "User", action = "RestorePassword", id = UrlParameter.Optional }
+            );
+
             #endregion
 
             #region News

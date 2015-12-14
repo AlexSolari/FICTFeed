@@ -1,4 +1,5 @@
 ﻿using FICTFeed.Bussines.Models;
+using FICTFeed.Framework.Extensions;
 using FICTFeed.DependecyResolver;
 using FICTFeed.Framework.Strings;
 using FICTFeed.Framework.Validation;
@@ -9,6 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Net.Mail;
+using System.Web.UI;
+using System.IO;
+using System.Net.Mime;
 
 namespace FICTFeed.Framework.Users
 {
@@ -106,6 +111,42 @@ namespace FICTFeed.Framework.Users
             result = result && (provider.GetByMail(mail) == null);
 
             return result;
+        }
+
+
+        public void RestorePassword(string mail)
+        {
+            var user = provider.GetByMail(mail);
+
+            if (user == null)
+                return;
+
+            using (var client = new SmtpClient())
+            {
+                var token = Resolver.GetSingleton<Encryptor>().GenerateToken(user);
+                var host = System.Web.HttpContext.Current.Request.Url.Authority;
+                var subject = Resources.ResourceAccessor
+                    .Instance.Get("ForgotPasswordPage");
+                var style = Resources.ResourceAccessor
+                    .Instance.Get("ForgotMailTemplateStyle");
+                var body = Resources.ResourceAccessor
+                    .Instance.Get("ForgotMailTemplate")
+                    .FormatWith(user.Name, host, user.Id, token);
+
+                MailMessage msg = new MailMessage();
+                msg.From = new MailAddress("fict.feed@gmail.com");
+                msg.To.Add(mail);
+                msg.Subject = subject;
+                msg.IsBodyHtml = true;
+                msg.Body = style + body;
+                ContentType mimeType = new System.Net.Mime.ContentType("text/html");
+                AlternateView alternate = AlternateView.CreateAlternateViewFromString(body, mimeType);
+                msg.AlternateViews.Add(alternate);
+                msg.Priority = MailPriority.High;
+
+                client.Send(msg);
+            }
+
         }
     }
 }

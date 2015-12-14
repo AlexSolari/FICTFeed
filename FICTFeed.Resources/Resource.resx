@@ -187,7 +187,7 @@
     <value>Вихід</value>
   </data>
   <data name="Mail" xml:space="preserve">
-    <value>Електронна адресса</value>
+    <value>Електрона адреса</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Ім'я</value>
@@ -249,5 +249,80 @@
   </data>
   <data name="NewsFor" xml:space="preserve">
     <value>Новини для {0}</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Забув пароль?</value>
+  </data>
+  <data name="ForgotPasswordPage" xml:space="preserve">
+    <value>Відновлення паролю</value>
+  </data>
+  <data name="SendPass2Mail" xml:space="preserve">
+    <value>Відновити</value>
+  </data>
+  <data name="ForgotMailTemplate" xml:space="preserve">
+    <value>&lt;div class="card hoverable"&gt;
+                &lt;div class="card-image"&gt;
+                    &lt;h3&gt;Відновлення паролю&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="card-content"&gt;
+                    	&lt;p&gt;Шановний {0}!&lt;br/&gt;
+			Тільки що був запит на відновлення паролю до вашого аккаунту на FICT Feed.&lt;br/&gt;
+			Якщо це були не ви -- проігноруйте цей лист.&lt;br/&gt;
+			З повагою, команда FICT Feed.&lt;br/&gt;
+			&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="card-action light"&gt;
+			Для того щоб встановити новий пароль натисніть 
+
+                    &lt;a class="read-more secondary-text" href="http://{1}/restore?user={2}&amp;amp;token={3}"&gt;сюди&lt;/a&gt;.
+                &lt;/div&gt;
+            &lt;/div&gt;</value>
+  </data>
+  <data name="ForgotMailTemplateStyle" xml:space="preserve">
+    <value>&lt;style&gt;
+div {
+    padding: 0.5em;
+}
+.card .card-image {
+    position: relative;
+}
+h3 {
+    padding-top: 15px;
+    font-size: 2.92rem;
+    line-height: 3.212rem;
+    margin: 1.46rem 0 1.168rem 0;
+    margin-top: 0;
+}
+.card {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    border-radius: 2px;
+}
+.card-content {
+    padding: 20px;
+    border-radius: 0 0 2px 2px;
+}
+.card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 20px;
+}
+.card, .btn, .btn-large, .btn-floating, .dropdown-content{
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.light{
+    font-weight: 300;
+}
+&lt;/style&gt;</value>
+  </data>
+  <data name="MailSent" xml:space="preserve">
+    <value>Лист з інструкціями надіслано</value>
+  </data>
+  <data name="PasswordUpdated" xml:space="preserve">
+    <value>Пароль успішно оновлено.</value>
   </data>
 </root>

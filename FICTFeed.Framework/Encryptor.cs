@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using FICTFeed.Bussines.Models;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace FICTFeed.Framework
@@ -29,6 +30,11 @@ namespace FICTFeed.Framework
         public string CryptPassword(string password)
         {
             return MD5Hash(password + salt);
+        }
+
+        public string GenerateToken(User user)
+        {
+            return MD5Hash(user.Name + user.Id + salt);
         }
     }
 }

@@ -22,5 +22,7 @@ namespace FICTFeed.Framework.Users
         OperationResult Update(User user);
 
         bool IsAvalibleForCreation(string mail);
+
+        void RestorePassword(string mail);
     }
 }
