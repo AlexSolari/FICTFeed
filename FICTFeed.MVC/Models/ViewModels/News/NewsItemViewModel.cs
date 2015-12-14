@@ -16,13 +16,13 @@ namespace FICTFeed.MVC.Models.ViewModels.News
         [AllowHtml]
         public virtual string Title { get; set; }
 
-        [CustomizebleStringLength(300, 3)]
+        [CustomizebleStringLength(1000, 3)]
         [СustomizebleRequired]
         [DataType(DataType.MultilineText)]
         [AllowHtml]
         public virtual string ShortDescription { get; set; }
 
-        [CustomizebleStringLength(1000, 3)]
+        [CustomizebleStringLength(4000, 3)]
         [СustomizebleRequired]
         [DataType(DataType.MultilineText)]
         [AllowHtml]

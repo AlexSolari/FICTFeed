@@ -8,8 +8,8 @@
       <generator class="guid" />
     </id>
     <property name="Title" type="string" not-null="true" length="100"/>
-    <property name="ShortDescription" type="string" not-null="true" length="300"/>
-    <property name="Description" type="string" not-null="true" length="1000"/>
+    <property name="ShortDescription" type="string" not-null="true" length="1000"/>
+    <property name="Description" type="string" not-null="true" length="4000"/>
     <property name="AuthorId" type="guid" not-null="true"/>
     <property name="GroupId" type="guid" not-null="true"/>
     <property name="PostingDate" type="datetime" not-null="true"/>
