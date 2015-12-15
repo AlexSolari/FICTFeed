@@ -23,6 +23,8 @@ namespace FICTFeed.MVC.Controllers
         [HttpPost]
         public ActionResult Create(CommentCreateModel model)
         {
+            if (!ModelState.IsValid)
+                return null;
             if (String.IsNullOrWhiteSpace(model.Description))
                 return null;
 

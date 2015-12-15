@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FICTFeed.Framework.Validation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace FICTFeed.MVC.Models.ViewModels.Comments
         public virtual Guid Id { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required]
+        [CustomizebleStringLength(250, 1)]
         public virtual string Description { get; set; }
 
         public virtual Guid AuthorId { get; set; }
