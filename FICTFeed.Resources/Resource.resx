@@ -343,4 +343,28 @@ h3 {
   <data name="User" xml:space="preserve">
     <value>Студент</value>
   </data>
+  <data name="Friday" xml:space="preserve">
+    <value>П'ятниця</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Понеділок</value>
+  </data>
+  <data name="Room" xml:space="preserve">
+    <value>Аудиторія</value>
+  </data>
+  <data name="Teacher" xml:space="preserve">
+    <value>Викладач</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Четвер</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Час</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Вівторок</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Середа</value>
+  </data>
 </root>

@@ -1,0 +1,68 @@
+﻿@model FICTFeed.Framework.Shedule.Schedule
+
+@{
+    ViewBag.Title = "SchedulePDF";
+}
+
+<table>
+    @for (int i = 0; i < Model.Weeks.Count; i++)
+    {
+        <thead>
+            <tr>
+                <th colspan="4">@Html.ResourceString("Week") @(i + 1)</th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ResourceString("Time")
+                </td>
+                <td>
+                    @Html.ResourceString("Lesson")
+                </td>
+                <td>
+                    @Html.ResourceString("Room")
+                </td>
+                <td>
+                    @Html.ResourceString("Teacher")
+                </td>
+            </tr>
+        </thead>
+        for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
+        {
+            <tr>
+                <td colspan="4">
+                    @switch (q)
+                    {
+                        case 0:
+                            @Html.ResourceString("Monday")
+                            break;
+                        case 1:
+                            @Html.ResourceString("Tuesday")
+                            break;
+                        case 2:
+                            @Html.ResourceString("Wednesday")
+                            break;
+                        case 3:
+                            @Html.ResourceString("Thursday")
+                            break;
+                        case 4:
+                            @Html.ResourceString("Friday")
+                            break;
+                    }
+                </td>
+            </tr>
+                for (int j = 0; j < Model.Weeks[i].Days[q].Lessons.Count; j++)
+                {
+                    if (string.IsNullOrWhiteSpace(Model.Weeks[i].Days[q].Lessons[j].Name))
+                    {
+                        continue;
+                    }
+                    <tr>
+                        <td>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].Start)<span> - </span>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].End)</td>
+                        <td>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].Name)</td>
+                        <td><b>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].Room)</b></td>
+                        <td><i>@Html.DisplayFor(m => m.Weeks[i].Days[q].Lessons[j].Teacher)</i></td>
+                    </tr>
+                }
+        }
+    }
+</table>
