@@ -1,11 +1,14 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.BasePageView
+
 @if (Model.NewestNews.Count > 0)
 {
     <h3>@Html.ResourceString("NewestNews")</h3>
-    <ul>
+    <ul class="section table-of-contents">
         @foreach (var item in Model.NewestNews)
         {
-            <li><a href="@Url.RouteUrl("NewsItem")?id=@item.Key.ToString()">@item.Value</a></li>
+            <li>
+                <a class="" href="@Url.RouteUrl("NewsItem")?id=@item.Key.ToString()">@item.Value</a>
+            </li>
         }
     </ul>
 }
