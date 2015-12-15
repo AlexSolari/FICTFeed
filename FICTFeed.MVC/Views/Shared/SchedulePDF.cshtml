@@ -7,28 +7,26 @@
 <table>
     @for (int i = 0; i < Model.Weeks.Count; i++)
     {
-        <thead>
-            <tr>
-                <th colspan="4">@Html.ResourceString("Week") @(i + 1)</th>
-            </tr>
-            <tr>
-                <td>
-                    @Html.ResourceString("Time")
-                </td>
-                <td>
-                    @Html.ResourceString("Lesson")
-                </td>
-                <td>
-                    @Html.ResourceString("Room")
-                </td>
-                <td>
-                    @Html.ResourceString("Teacher")
-                </td>
-            </tr>
-        </thead>
+        <tr>
+            <td>@Html.ResourceString("Week") @(i + 1)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ResourceString("Time")
+            </td>
+            <td>
+                @Html.ResourceString("Lesson")
+            </td>
+            <td>
+                @Html.ResourceString("Room")
+            </td>
+            <td>
+                @Html.ResourceString("Teacher")
+            </td>
+        </tr>
         for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
         {
-            <tr>
+            <tr rowspan="@Model.Weeks[i].Days[q].Lessons.Count">
                 <td colspan="4">
                     @switch (q)
                     {
@@ -36,16 +34,16 @@
                             @Html.ResourceString("Monday")
                             break;
                         case 1:
-                            @Html.ResourceString("Tuesday")
+                        @Html.ResourceString("Tuesday")
                             break;
                         case 2:
-                            @Html.ResourceString("Wednesday")
+                        @Html.ResourceString("Wednesday")
                             break;
                         case 3:
-                            @Html.ResourceString("Thursday")
+                        @Html.ResourceString("Thursday")
                             break;
                         case 4:
-                            @Html.ResourceString("Friday")
+                        @Html.ResourceString("Friday")
                             break;
                     }
                 </td>
