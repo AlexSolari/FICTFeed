@@ -5,8 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="primary light secondary-text news-item">
-    <div class="posting-date">@Model.NewsItem.PostingDate</div>
+    <div class="posting-date">@Model.NewsItem.PostingDate</div>  
     <h2>@Model.NewsItem.Title</h2>
+    <div>
+        @if (Model.UserData.IsAuthorized && (Model.UserData.CurrentUser.Id == Model.NewsItem.AuthorId
+                || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin
+                || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Moderator
+                || (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Praepostor && Model.UserData.CurrentUser.GroupId == Model.NewsItem.GroupId)))
+        {
+            <a href="@(Url.RouteUrl("NewsEdit") + "?id=" + Model.NewsItem.Id.ToString())">
+               @Html.ResourceString("Edit")
+            </a>
+        }
+    </div>
     <p>@Model.NewsItem.Description</p>
 </div>
 <hr />

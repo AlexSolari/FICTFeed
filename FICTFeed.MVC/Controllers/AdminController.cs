@@ -21,6 +21,9 @@ using FICTFeed.MVC.Models.ViewModels.Groups;
 using FICTFeed.Bussines.Models;
 using FICTFeed.Framework.Shedule;
 using FICTFeed.Framework.Extensions;
+using FICTFeed.Framework.News;
+using FICTFeed.MVC.Models.PageViews.News;
+using FICTFeed.MVC.Models.ViewModels.News;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -29,11 +32,13 @@ namespace FICTFeed.MVC.Controllers
     {
         IUserManager userManager;
         IGroupsManager groupsManager;
+        INewsManager newsManager;
 
         public AdminController()
         {
             userManager = Resolver.GetInstance<IUserManager>();
             groupsManager = Resolver.GetInstance<IGroupsManager>();
+            newsManager = Resolver.GetInstance<INewsManager>();
         }
 
         // GET: Admin
@@ -113,6 +118,16 @@ namespace FICTFeed.MVC.Controllers
             groupsManager.Update(group);
             
             return RedirectToRoute("GetGroups");
+        }
+
+        [HttpGet]
+        public ActionResult GetNewsItem()
+        {
+            var newsitem = newsManager.GetList();
+
+            var mapped = Mapper.Map<NewsItemViewModel, NewsItem>(newsitem);
+
+            return View(new NewsListPageView(mapped));
         }
     }
 }

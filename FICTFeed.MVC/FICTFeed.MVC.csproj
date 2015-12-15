@@ -157,6 +157,7 @@
     <Compile Include="Models\PageViews\Groups\CreateGroupPageView.cs" />
     <Compile Include="Models\PageViews\Groups\GroupEditPageView.cs" />
     <Compile Include="Models\PageViews\Groups\EditGroupsPageView.cs" />
+    <Compile Include="Models\PageViews\News\NewsItemEditPageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemCreatePageView.cs" />
     <Compile Include="Models\PageViews\News\NewsItemPageView.cs" />
     <Compile Include="Models\PageViews\News\NewsListPageView.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Models\ViewModels\Comments\CommentCreateModel.cs" />
     <Compile Include="Models\ViewModels\Groups\GroupCreateViewModel.cs" />
     <Compile Include="Models\ViewModels\Groups\GroupEditViewModel.cs" />
+    <Compile Include="Models\ViewModels\News\NewsItemEditViewModel.cs" />
     <Compile Include="Models\ViewModels\News\NewsItemViewModel.cs" />
     <Compile Include="Models\ViewModels\User\PasswordRestoreViewModel.cs" />
     <Compile Include="Models\ViewModels\User\UserEditViewModel.cs" />
@@ -263,6 +265,9 @@
     <Content Include="Views\User\Updated.cshtml" />
     <Content Include="Views\Shared\PDF.cshtml" />
     <Content Include="Views\Shared\SchedulePDF.cshtml" />
+    <Content Include="Views\Admin\GetNewsItem.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FICTFeed.Bussines\FICTFeed.Bussines.csproj">

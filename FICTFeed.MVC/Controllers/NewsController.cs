@@ -10,6 +10,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FICTFeed.Framework.Map;
+using FICTFeed.Bussines.AdditionalData;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -68,6 +69,37 @@ namespace FICTFeed.MVC.Controllers
             newNewsItem.PrapareToPosting(userdata.CurrentUser.Id);
             newsManager.Create(Mapper.Map<NewsItem, NewsItemViewModel>(newNewsItem));
 
+            return RedirectToRoute("Home");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+            var userdata = new UserDataContainer();
+            var newsItem = newsManager.GetById(id);
+
+            if (newsItem == null || !userdata.IsAuthorized)
+                return RedirectToRoute("NotFound");
+
+            if (userdata.CurrentUser.Id == newsItem.AuthorId 
+                || userdata.CurrentUser.Role == Roles.Admin 
+                || userdata.CurrentUser.Role == Roles.Moderator
+                || (userdata.CurrentUser.Role == Roles.Praepostor && userdata.CurrentUser.GroupId == newsItem.GroupId))
+            {
+                var mapped = Mapper.Map<NewsItemEditViewModel, NewsItem>(newsItem);
+                return View(new NewsItemEditPageView() { NewsItem = mapped });
+            }
+            else
+            {
+                return RedirectToRoute("NotFound");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Edit(NewsItemEditPageView model)
+        {
+            var mapped = Mapper.Map<NewsItem, NewsItemEditViewModel>(model.NewsItem);
+            newsManager.Update(mapped);
             return RedirectToRoute("Home");
         }
     }

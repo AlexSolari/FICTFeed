@@ -373,4 +373,10 @@ h3 {
   <data name="Wednesday" xml:space="preserve">
     <value>Середа</value>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>Новини</value>
+  </data>
+  <data name="NewsItemEditing" xml:space="preserve">
+    <value>Редагування новини</value>
+  </data>
 </root>

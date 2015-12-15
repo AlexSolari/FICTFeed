@@ -67,6 +67,9 @@ namespace FICTFeed.Framework.News
             return provider.GetList(orderBy, count, groups);
         }
 
-
+        public void Update(NewsItem obj)
+        {
+            provider.Update(obj);
+        }
     }
 }

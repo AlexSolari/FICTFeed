@@ -13,5 +13,7 @@ namespace FICTFeed.Framework.News
         IList<NewsItem> GetList(string orderBy = null, int? count = null);
         IList<NewsItem> GetListMatchingUserGroups(UserDataContainer userData, string orderBy = null, int? count = null);
         IList<NewsItem> GetListForGroup(string groupName, string orderBy = "PostingDate", int? count = null);
+
+        void Update(NewsItem obj);
     }
 }

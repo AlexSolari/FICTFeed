@@ -41,6 +41,7 @@ namespace FICTFeed.MVC
             Resolver.RegisterType<Group, Group>();
             Resolver.RegisterType<NewsItem, NewsItem>();
             Resolver.RegisterType<NewsItemViewModel, NewsItemViewModel>();
+            Resolver.RegisterType<NewsItemEditViewModel, NewsItemEditViewModel>();
             Resolver.RegisterType<UserEditViewModel, UserEditViewModel>();
             Resolver.RegisterType<GroupEditViewModel, GroupEditViewModel>();
             Resolver.RegisterType<CommentCreateModel, CommentCreateModel>();

@@ -1,0 +1,31 @@
+﻿@model FICTFeed.MVC.Models.PageViews.News.NewsListPageView
+@{
+    ViewBag.Title = Html.ResourceString("News");
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@Html.ResourceString("News")</h2>
+
+@if (Model != null)
+{
+    foreach (var item in Model.News)
+    {
+        <div class="custom-card small z-depth-2">
+            <div class="card-content">
+                <h5 class="card-title grey-text">@Html.DisplayFor(m => item.Title)</h5>
+                <p>
+                    @Html.DisplayFor(m => item.ShortDescription)
+                </p>
+            </div>
+            <hr />
+            <div class="card-action">
+                <a href="@(Url.RouteUrl("NewsEdit") + "?id=" + item.Id.ToString())">
+                    <div class="btn-flat">@Html.ResourceString("Edit")</div>
+                </a>
+            </div>
+        </div>
+    }
+    <a href="@Url.RouteUrl("NewsCreate")">
+        <div id="add-news" class="btn">@Html.ResourceString("AddNewsItem")</div>
+    </a>
+}

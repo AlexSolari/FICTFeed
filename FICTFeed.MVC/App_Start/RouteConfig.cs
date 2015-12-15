@@ -52,6 +52,12 @@ namespace FICTFeed.MVC
             );
 
             routes.MapRoute(
+                name: "NewsEdit",
+                url: "news/edit",
+                defaults: new { controller = "News", action = "Edit", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "NewsGetListForGroup",
                 url: "news/listforgroup",
                 defaults: new { controller = "News", action = "GetList", id = UrlParameter.Optional }
@@ -89,6 +95,12 @@ namespace FICTFeed.MVC
                 name: "GetGroups",
                 url: "admin/groups",
                 defaults: new { controller = "Admin", action = "GetGroups" }
+            );
+
+            routes.MapRoute(
+                name: "GetNews",
+                url: "admin/news",
+                defaults: new { controller = "Admin", action = "GetNewsItem" }
             );
 
             routes.MapRoute(

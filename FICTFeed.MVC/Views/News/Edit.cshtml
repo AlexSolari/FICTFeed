@@ -1,0 +1,49 @@
+﻿@model FICTFeed.MVC.Models.PageViews.News.NewsItemEditPageView
+
+@{
+    ViewBag.Title = Html.ResourceString("NewsItemEditing");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.ResourceString("NewsItemEditing")</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal news-creation">
+        <hr />
+        @Html.ValidationSummary()
+        @Html.HiddenFor(m => m.NewsItem.GroupId)
+        @Html.HiddenFor(m => m.NewsItem.AuthorId)
+        @Html.HiddenFor(m => m.NewsItem.PostingDate)
+        @Html.HiddenFor(m => m.NewsItem.Id)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewsItem.Title)
+                @Html.EditorFor(m => m.NewsItem.Title)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewsItem.ShortDescription)
+                @Html.EditorFor(m => m.NewsItem.ShortDescription)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ResourceLabelFor(m => m.NewsItem.Description)
+                @Html.EditorFor(m => m.NewsItem.Description)
+            </div>
+        </div>   
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@Html.ResourceString("Save")" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
