@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+    @Html.Hidden("returnUrl", HttpContext.Current.Request.UrlReferrer)
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

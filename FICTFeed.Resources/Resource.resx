@@ -163,7 +163,7 @@
     <value>Завантажити повну версію</value>
   </data>
   <data name="Groups" xml:space="preserve">
-    <value>Группи</value>
+    <value>Групи</value>
   </data>
   <data name="GroupSchedule" xml:space="preserve">
     <value>Розклад</value>
@@ -251,7 +251,7 @@
     <value>Новини для {0}</value>
   </data>
   <data name="ForgotPassword" xml:space="preserve">
-    <value>Забув пароль?</value>
+    <value>Забули пароль?</value>
   </data>
   <data name="ForgotPasswordPage" xml:space="preserve">
     <value>Відновлення паролю</value>

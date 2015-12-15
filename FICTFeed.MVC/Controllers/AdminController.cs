@@ -44,7 +44,7 @@ namespace FICTFeed.MVC.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            return View(new BasePageView());
+            return RedirectToRoute("GetUsers");
         }
 
         public ActionResult GetUsers()
