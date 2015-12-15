@@ -286,6 +286,10 @@ div.btn{
     color: #0277BD;
     font-size: 1em;
 }
+span, h2, p, a {
+    word-break: break-all;
+    word-wrap: break-word;
+}
 @media (max-width: 1024px) {
   #sidebar{
     display: none;
