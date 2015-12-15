@@ -101,7 +101,7 @@ namespace FICTFeed.MVC.Controllers
             var mapped = Mapper.Map<NewsItem, NewsItemEditViewModel>(model.NewsItem);
             newsManager.Update(mapped);
             var returnUrl = Request.Form.Get("returnUrl");
-            if (returnUrl == null)
+            if (string.IsNullOrEmpty(returnUrl))
                 return RedirectToRoute("Home");
 
             return Redirect(returnUrl);
