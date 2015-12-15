@@ -259,6 +259,11 @@ nav{
 }
 .select-wrapper{
     display: inline-block;
+    display: -moz-inline-box;
+}
+.select-wrapper input.select-dropdown{
+    display: inline-block;
+    display: -moz-inline-box;
 }
 textarea.input-validation-error {
     border: 1px solid #b94a48;
