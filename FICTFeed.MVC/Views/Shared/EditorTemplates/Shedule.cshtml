@@ -1,25 +1,96 @@
 ﻿@model FICTFeed.Framework.Shedule.Schedule
-@for (int i = 0; i < Model.Weeks.Count; i++)
+@*@for (int i = 0; i < model.weeks.count; i++)
 {
-    <h4 title="Click to expand" class="spoiler-link">@Html.ResourceString("Week") @(i + 1)</h4>
+    <h4 title="click to expand" class="spoiler-link">@html.resourcestring("week") @(i + 1)</h4>
     <div class="spoiler-body">
-        @for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
+        @for (int q = 0; q < model.weeks[i].days.count; q++)
         {
-            <h5 title="Click to expand" class="spoiler-link">@Html.ResourceString("Day") @(q + 1)</h5>
+            <h5 title="click to expand" class="spoiler-link">@html.resourcestring("day") @(q + 1)</h5>
             <div class="spoiler-body">
-                @for (int j = 0; j < Model.Weeks[i].Days[q].Lessons.Count; j++)
+                @for (int j = 0; j < model.weeks[i].days[q].lessons.count; j++)
                 {
-                    <div title="Click to expand" class="spoiler-link">@Html.ResourceString("Lesson") @(j + 1)</div>
+                    <div title="click to expand" class="spoiler-link">@html.resourcestring("lesson") @(j + 1)</div>
                     <div class="spoiler-body">
-                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Name)</div>
-                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Room)</div>
-                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Teacher)</div>
-                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Start)</div>
-                        <div>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].End)</div>
-                        @Html.HiddenFor(m=>m.Weeks[i].Days[q].Lessons[j].Number)
+                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].name)</div>
+                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].room)</div>
+                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].teacher)</div>
+                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].start)</div>
+                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].end)</div>
+                        @html.hiddenfor(m=>m.weeks[i].days[q].lessons[j].number)
                     </div>
                 }
             </div>
         }
     </div>
-}
+}*@
+<table>
+    <tr>
+        <td>
+            @Html.ResourceString("Time")
+        </td>
+        <td>
+            @Html.ResourceString("Lesson")
+        </td>
+        <td>
+            @Html.ResourceString("Room")
+        </td>
+        <td>
+            @Html.ResourceString("Teacher")
+        </td>
+    </tr>
+</table>
+    @for (int i = 0; i < Model.Weeks.Count; i++)
+    {
+        <div class="spoiler-link">@Html.ResourceString("Week") @(i + 1)</div>
+
+    <table class="spoiler-body">
+        @for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
+        {
+            <thead class="spoiler-link">
+                <tr>
+                    <td>
+                        @switch (q)
+                        {
+                            case 0:
+                                @Html.ResourceString("Monday")
+                                break;
+                            case 1:
+                                @Html.ResourceString("Tuesday")
+                                break;
+                            case 2:
+                                @Html.ResourceString("Wednesday")
+                                break;
+                            case 3:
+                                @Html.ResourceString("Thursday")
+                                break;
+                            case 4:
+                                @Html.ResourceString("Friday")
+                                break;
+                            case 5:
+                                {
+                                    @Html.ResourceString("Saturday")
+                                    break;
+                                }
+                            case 6:
+                                {
+                                    @Html.ResourceString("Sunday")
+                                    break;
+                                }
+                        }
+                    </td>
+                </tr>
+            </thead>
+            <tbody class="spoiler-body">
+                @for (int j = 0; j < Model.Weeks[i].Days[q].Lessons.Count; j++)
+                {
+                    <tr>
+                        <td>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Start)<span> - </span>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].End)</td>
+                        <td>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Name)</td>
+                        <td>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Room)</td>
+                        <td><i>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Teacher)</i></td>
+                    </tr>
+                }
+            </tbody>
+        }
+    </table>
+    }

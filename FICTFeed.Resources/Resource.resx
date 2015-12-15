@@ -229,7 +229,7 @@
     <value>Користувачі</value>
   </data>
   <data name="Week" xml:space="preserve">
-    <value>Неділя</value>
+    <value>Тиждень</value>
   </data>
   <data name="_TestString" xml:space="preserve">
     <value>Тестовий рядок</value>
@@ -351,6 +351,12 @@ h3 {
   </data>
   <data name="Room" xml:space="preserve">
     <value>Аудиторія</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Субота</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Неділя</value>
   </data>
   <data name="Teacher" xml:space="preserve">
     <value>Викладач</value>

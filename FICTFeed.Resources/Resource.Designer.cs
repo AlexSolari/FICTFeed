@@ -559,6 +559,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Субота.
+        /// </summary>
+        internal static string Saturday {
+            get {
+                return ResourceManager.GetString("Saturday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Зберегти.
         /// </summary>
         internal static string Save {
@@ -600,6 +609,15 @@ namespace FICTFeed.Resources {
         internal static string SiteTitle {
             get {
                 return ResourceManager.GetString("SiteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неділя.
+        /// </summary>
+        internal static string Sunday {
+            get {
+                return ResourceManager.GetString("Sunday", resourceCulture);
             }
         }
         
@@ -676,7 +694,7 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Неділя.
+        ///   Looks up a localized string similar to Тиждень.
         /// </summary>
         internal static string Week {
             get {

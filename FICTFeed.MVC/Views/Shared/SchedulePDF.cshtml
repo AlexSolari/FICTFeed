@@ -26,25 +26,33 @@
         </tr>
         for (int q = 0; q < Model.Weeks[i].Days.Count; q++)
         {
-            <tr rowspan="@Model.Weeks[i].Days[q].Lessons.Count">
-                <td colspan="4">
+            <tr>
+                <td>
                     @switch (q)
                     {
                         case 0:
                             @Html.ResourceString("Monday")
                             break;
                         case 1:
-                        @Html.ResourceString("Tuesday")
+                            @Html.ResourceString("Tuesday")
                             break;
                         case 2:
-                        @Html.ResourceString("Wednesday")
+                            @Html.ResourceString("Wednesday")
                             break;
                         case 3:
-                        @Html.ResourceString("Thursday")
+                            @Html.ResourceString("Thursday")
                             break;
                         case 4:
-                        @Html.ResourceString("Friday")
+                            @Html.ResourceString("Friday")
                             break;
+                        case 5:
+                            {
+                                if (Model.Weeks[i].Days[q].Lessons.Any(x => !string.IsNullOrEmpty(x.Name)))
+                                { 
+                                    @Html.ResourceString("Saturday")
+                                }
+                                break;
+                            }
                     }
                 </td>
             </tr>
