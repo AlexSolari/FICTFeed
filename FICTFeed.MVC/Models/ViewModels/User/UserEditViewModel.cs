@@ -1,4 +1,6 @@
 ﻿using FICTFeed.Bussines.AdditionalData;
+using FICTFeed.DependecyResolver;
+using FICTFeed.Framework.Groups;
 using FICTFeed.Framework.Validation;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,9 @@ namespace FICTFeed.MVC.Models.ViewModels.User
     public class UserEditViewModel
     {
         public virtual Guid Id { get; set; }
+
+        [UIHint("GroupsDropdown")]
+        public virtual Guid GroupId { get; set; }
 
         public virtual string Name { get; set; }
 
@@ -26,6 +31,7 @@ namespace FICTFeed.MVC.Models.ViewModels.User
             Name = name;
             Mail = mail;
             Role = role;
+            GroupId = Resolver.GetInstance<IGroupsManager>().GetByName("Global").Id;
         }
     }
 }

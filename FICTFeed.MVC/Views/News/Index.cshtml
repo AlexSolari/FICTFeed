@@ -4,36 +4,39 @@
     ViewBag.Title = Model.NewsItem.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="primary light secondary-text news-item">
-    <div class="posting-date">@Model.NewsItem.PostingDate</div>  
-    <h2>@Model.NewsItem.Title</h2>
-    <div>
-        @if (Model.UserData.IsAuthorized && (Model.UserData.CurrentUser.Id == Model.NewsItem.AuthorId
+<div class="content">
+    <div class="primary light secondary-text news-item">
+        <div class="posting-date">@Model.NewsItem.PostingDate</div>
+        <h2>@Model.NewsItem.Title</h2>
+        <div>
+            @if (Model.UserData.IsAuthorized && (Model.UserData.CurrentUser.Id == Model.NewsItem.AuthorId
                 || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Admin
                 || Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Moderator
                 || (Model.UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Praepostor && Model.UserData.CurrentUser.GroupId == Model.NewsItem.GroupId)))
-        {
-            <a href="@(Url.RouteUrl("NewsEdit") + "?id=" + Model.NewsItem.Id.ToString())">
-               @Html.ResourceString("Edit")
-            </a>
-        }
+            {
+                <a href="@(Url.RouteUrl("NewsEdit") + "?id=" + Model.NewsItem.Id.ToString())">
+                    @Html.ResourceString("Edit")
+                </a>
+            }
+        </div>
+        <p>@Model.NewsItem.Description</p>
     </div>
-    <p>@Model.NewsItem.Description</p>
-</div>
-<hr />
-@if (Model.UserData.IsAuthorized)
-{
-    <div class="commentForm">
-        <input type="text" name="authorId" class="hidden" value="@Model.UserData.CurrentUser.Id.ToString()" />
-        <input type="text" name="newsitemId" class="hidden" value="@Model.NewsItem.Id.ToString()" />
-        <textarea id="text" class="materialize-textarea" length="250"></textarea>
-    </div>
-    <div class="btn-flat js-sendComment">@Html.ResourceString("SendComment")</div>
-}
-<ul class="comments-list">
-    @foreach(var item in Model.Comments)
+    <hr />
+    @if (Model.UserData.IsAuthorized)
     {
-        Html.RenderPartial("CommentPartial", item);
+        <div class="commentForm">
+            <input type="text" name="authorId" class="hidden" value="@Model.UserData.CurrentUser.Id.ToString()" />
+            <input type="text" name="newsitemId" class="hidden" value="@Model.NewsItem.Id.ToString()" />
+            <textarea id="text" class="materialize-textarea" length="250"></textarea>
+        </div>
+        <div class="btn-flat js-sendComment">@Html.ResourceString("SendComment")</div>
     }
-</ul>
+    <ul class="comments-list">
+        @foreach (var item in Model.Comments)
+        {
+            Html.RenderPartial("CommentPartial", item);
+        }
+    </ul>
+</div>
+
 

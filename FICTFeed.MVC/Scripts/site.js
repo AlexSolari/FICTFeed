@@ -11,6 +11,7 @@ var InitializeNewsFilters = function () {
     $filter.change(function () {
         setTimeout(function () {
             model = $('select#filter').val()
+            $('.news-wraper').html('<div class="three-quarters-loader">Loading…</div>');
             $.post(document.location.origin + "/news/listforgroup", { groupName: model }, function (data) {
                 $('.news-wraper').html(data);
             });

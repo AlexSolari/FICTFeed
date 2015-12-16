@@ -62,11 +62,10 @@ namespace FICTFeed.MVC.Controllers
                 return View();
 
             user.Role = model.Role;
-            if (userManager.Update(user) == OperationResult.Success)
-            {
-                return RedirectToRoute("GetUsers");
-            }
-            //show error
+            user.GroupId = model.GroupId;
+
+            userManager.Update(user);
+            
             return RedirectToRoute("GetUsers");
         }
 

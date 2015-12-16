@@ -27,6 +27,7 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
 .btn-flat:focus, .btn-flat:active {
     outline: none;
     background-color: #03A9F4;
+    color: white !important;
 }
 
 .hidden{ display: none;}
@@ -126,6 +127,10 @@ header a{
     width: calc(100% - 350px);
     height: auto;
     margin-left: 50px;
+    text-align: center;
+}
+#body .content{
+    text-align: left;
 }
 #articles li {
         margin-bottom: 1em;
@@ -287,7 +292,7 @@ div.btn{
     font-size: 1em;
 }
 span, h2, h5, p, a {
-    word-break: normal;
+    word-break: break-word;
     word-wrap: break-word;
 }
 .admin-nav {
@@ -306,6 +311,13 @@ span, h2, h5, p, a {
 }
 .grey-text a{
     color: gray;
+}
+.three-quarters-loader:not(:required){
+    margin: 5em auto;
+    display: block !important;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
 }
 @media (max-width: 1024px) {
   #sidebar{

@@ -13,6 +13,7 @@ namespace FICTFeed.MVC.Components.ModelBinders
         public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
             string id = controllerContext.HttpContext.Request.Form.Get("item.Id");
+            string groupId = controllerContext.HttpContext.Request.Form.Get("item.GroupId");
             string role = controllerContext.HttpContext.Request.Form.Get("item.Role");
             string mail = controllerContext.HttpContext.Request.Form.Get("item.Mail");
             string name = controllerContext.HttpContext.Request.Form.Get("item.Name");
@@ -20,6 +21,7 @@ namespace FICTFeed.MVC.Components.ModelBinders
             
             var model = new UserEditViewModel(name, mail, userRole);
             model.Id = Guid.Parse(id);
+            model.GroupId = Guid.Parse(groupId);
             return model;
         }
     }

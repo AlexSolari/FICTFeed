@@ -22,10 +22,19 @@
                     <div class="default-input-width">
                         @using (Html.BeginForm("EditUserRole", "Admin"))
                         {
+                            var currentList = Model.Groups.ToList();
+                            for (int i = 0; i < currentList.Count(); i++)
+                            {
+                                if (currentList[i].Value == item.GroupId.ToString())
+                                {
+                                    currentList[i].Selected = true;
+                                }
+                            }
                             @Html.HiddenFor(m => item.Id)
                             @Html.HiddenFor(m => item.Mail)
                             @Html.HiddenFor(m => item.Name)
                             @Html.EditorFor(m => item.Role)
+                            @Html.DropDownListFor(m => item.GroupId, currentList)
                             <div class="card-action">
                                 <button type="submit" class="btn-flat grey-text">@Html.ResourceString("Save")</button>
                             </div>

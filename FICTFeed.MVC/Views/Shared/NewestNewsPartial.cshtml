@@ -3,7 +3,7 @@
 @if (Model.NewestNews.Count > 0)
 {
     <h3>@Html.ResourceString("NewestNews")</h3>
-    <ul class="section table-of-contents">
+    <ul id="nevest-news">
         @foreach (var item in Model.NewestNews)
         {
             <li>
