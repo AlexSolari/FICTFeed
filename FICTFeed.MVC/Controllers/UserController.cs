@@ -117,6 +117,7 @@ namespace FICTFeed.MVC.Controllers
                 .CryptPassword(model.NewPass.Password);
 
             userManager.Update(user);
+            userManager.Login(user.Mail, model.NewPass.Password);
 
             return View("Updated");
         }
