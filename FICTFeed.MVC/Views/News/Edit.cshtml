@@ -12,7 +12,6 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal news-creation">
-            <hr />
             @Html.ValidationSummary()
             @Html.HiddenFor(m => m.NewsItem.GroupId)
             @Html.HiddenFor(m => m.NewsItem.AuthorId)
