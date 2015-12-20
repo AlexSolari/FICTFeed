@@ -1,0 +1,9 @@
+﻿@model FICTFeed.Bussines.Models.User
+@{
+    var group = FICTFeed.DependecyResolver.Resolver.GetInstance<FICTFeed.Framework.Groups.IGroupsManager>().GetById(Model.GroupId.ToString());
+    var groupName = (group.Name == "Global") ? Html.ResourceString("Global") : group.Name;
+}           
+<h3>@Html.ResourceString("Greetings")</h3>
+<div>@Html.ResourceString("YouAreLoginedAs").FormatWith(Model.Name)</div>
+<div>@Html.ResourceString("YourGroupIs").FormatWith(groupName, Html.ResourceString(Model.Role.ToString()))</div>
+<div class="grey-text">@Model.Mail</div>

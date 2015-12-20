@@ -133,7 +133,7 @@
     <value>Створити группу</value>
   </data>
   <data name="CurrentWeekNo" xml:space="preserve">
-    <value>Зараз неділя №{0}</value>
+    <value>Сьогодні неділя №{0}</value>
   </data>
   <data name="CustomizebleCompareErrorMessage" xml:space="preserve">
     <value>Поля "{0}" та "{1}" повинні співпадати.</value>
@@ -378,5 +378,17 @@ h3 {
   </data>
   <data name="NewsItemEditing" xml:space="preserve">
     <value>Редагування новини</value>
+  </data>
+  <data name="CurrentDayIs" xml:space="preserve">
+    <value>{0}, {1}</value>
+  </data>
+  <data name="Greetings" xml:space="preserve">
+    <value>Доброго дня!</value>
+  </data>
+  <data name="YouAreLoginedAs" xml:space="preserve">
+    <value>Ви увійшли як {0}.</value>
+  </data>
+  <data name="YourGroupIs" xml:space="preserve">
+    <value>Группа {0}, роль {1}.</value>
   </data>
 </root>

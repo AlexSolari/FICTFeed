@@ -4,7 +4,10 @@
     var schedule = FICTFeed.Framework.Extensions.ObjectExtensions.DeserializeAs<FICTFeed.Framework.Shedule.Schedule>(group.Schedule).GetScheduleForToday();
 }           
 <h3>@Html.ResourceString("Lessons")</h3>
-<div><b>@Html.ResourceString("CurrentWeekNo").FormatWith(FICTFeed.Framework.Shedule.Schedule.GetWeekNumber()+1)</b></div>
+<b>
+    <div>@Html.ResourceString("CurrentWeekNo").FormatWith(FICTFeed.Framework.Shedule.Schedule.GetWeekNumber() + 1)</div>
+    <div>@Html.ResourceString("CurrentDayIs").FormatWith(Html.ResourceString(DateTime.Today.DayOfWeek.ToString()), DateTime.Today.ToShortDateString())</div>
+</b>
 @for (int j = 0; j < 8; j++)
 {
     if(string.IsNullOrWhiteSpace(schedule.Lessons[j].Name))

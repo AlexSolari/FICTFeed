@@ -151,7 +151,16 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Зараз неділя №{0}.
+        ///   Looks up a localized string similar to {0}, {1}.
+        /// </summary>
+        internal static string CurrentDayIs {
+            get {
+                return ResourceManager.GetString("CurrentDayIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сьогодні неділя №{0}.
         /// </summary>
         internal static string CurrentWeekNo {
             get {
@@ -330,6 +339,15 @@ namespace FICTFeed.Resources {
         internal static string Global {
             get {
                 return ResourceManager.GetString("Global", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Доброго дня!.
+        /// </summary>
+        internal static string Greetings {
+            get {
+                return ResourceManager.GetString("Greetings", resourceCulture);
             }
         }
         
@@ -717,6 +735,24 @@ namespace FICTFeed.Resources {
         internal static string Week {
             get {
                 return ResourceManager.GetString("Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ви увійшли як {0}..
+        /// </summary>
+        internal static string YouAreLoginedAs {
+            get {
+                return ResourceManager.GetString("YouAreLoginedAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Группа {0}, роль {1}..
+        /// </summary>
+        internal static string YourGroupIs {
+            get {
+                return ResourceManager.GetString("YourGroupIs", resourceCulture);
             }
         }
     }

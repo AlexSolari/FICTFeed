@@ -52,24 +52,15 @@
         <div id="sidebar" class="primary light primary-text">
                 @if (UserData.IsAuthorized && UserData.CurrentUser != null)
                 {
-                    <div class="border-divider">
-                        <h3>UserData</h3>
-                        <ul>
-                            <li>Id: @UserData.CurrentUser.Id</li>
-                            <li>Mail: @UserData.CurrentUser.Mail</li>
-                            <li>Name: @UserData.CurrentUser.Name</li>
-                            <li>PasswordCrypted: @UserData.CurrentUser.PasswordCrypted</li>
-                            <li>Role: @UserData.CurrentUser.Role</li>
-                        </ul>
+                    <div>
+                        @{Html.RenderPartial("UserData", UserData.CurrentUser);}
                     </div>
                     <div>
                         @{Html.RenderPartial("ScheduleForToday", UserData.CurrentUser);}
                     </div>
                 }
                 <div>
-                    @{
-                        Html.RenderPartial("NewestNewsPartial", new FICTFeed.MVC.Models.PageViews.BasePageView());
-                    }
+                    @{Html.RenderPartial("NewestNews", new FICTFeed.MVC.Models.PageViews.BasePageView());}
                 </div>
         </div>
         <div id="main">
