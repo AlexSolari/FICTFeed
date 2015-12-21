@@ -24,6 +24,10 @@ input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly
     box-shadow: 0 1px 0 0 #03A9F4;
 }
 
+.card .card-action a:hover {
+    color: #03A9F4;
+}
+
 .btn-flat:focus, .btn-flat:active {
     outline: none;
     background-color: #03A9F4;
@@ -109,7 +113,7 @@ header a{
     padding: .25em;
 }
 #main{
-        padding-top: 50px;
+        padding-top: 64px;
         position: relative;
         text-align: left;
 }
@@ -151,7 +155,6 @@ article .description{
         text-align: justify;
 }
 #jumpup{
-    padding-left: 0.4em;
     padding-top: calc(64px + 1em);
     color: white;
     background: #03A9F4;
@@ -162,6 +165,12 @@ article .description{
     float: left;
     position: fixed;
     opacity: 0.05;
+    text-align: center;
+
+    -webkit-transition: opacity 1s ease-out 0.1s;
+    -moz-transition: opacity 1s ease-out 0.1s;
+    -o-transition: opacity 1s ease-out 0.1s;
+    transition: opacity 1s ease-out 0.1s;
 }
 #jumpup:hover{
     opacity: 1;
@@ -171,7 +180,6 @@ article .description{
   float: right;
   width: 300px;
   position: relative;
-  top: 50px;
 }
 #sidebar div:last-child{
   margin: 0;
@@ -325,6 +333,20 @@ span, h2, h5, p, a {
 }
 .js-group-delete:active, .js-group-delete:focus{
     background-color: rgba(255, 0, 0, 0.15);
+}
+.forgot-pass{
+    padding: 1em;
+}
+.ns-popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+.ns-popup > .ns-popup-content{
+    text-align: center;
 }
 @media (max-width: 1024px) {
   #sidebar{
