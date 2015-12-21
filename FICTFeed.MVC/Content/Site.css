@@ -76,7 +76,6 @@ body{margin: 0}
 
 #content{
         max-width: 1300px;
-        min-width: 460px;
         height: 100%;
         margin: 0 auto;
 }
@@ -344,5 +343,14 @@ span, h2, h5, p, a {
     }
     #navigation-button{
         display: inline-block;
+    }
+}
+@media (max-width: 460px){
+    #jumpup{
+        display: none;
+    }
+    #body{
+        margin-left: 0;
+        width: 100%;
     }
 }
