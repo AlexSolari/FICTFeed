@@ -7,6 +7,8 @@ namespace FICTFeed.MVC.Models.ViewModels.Comments
 {
     public class CommentViewModel
     {
+        public virtual Guid Id { get; set; }
+
         public virtual string Description { get; set; }
 
         public virtual string AuthorName { get; set; }

@@ -1,18 +1,24 @@
-﻿@model FICTFeed.MVC.Models.ViewModels.Comments.CommentViewModel
+﻿@model FICTFeed.MVC.Models.PageViews.Comments.CommentPartialViewModel
 <li>
     <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card-panel grey lighten-5 z-depth-1">
             <div>
-                <span class="grey-text">@Model.PostingDateString.ToString()</span>
+                <span class="grey-text">@Model.Item.PostingDateString.ToString()</span>
                 <h6 class="black-text">
-                    @Model.AuthorName
+                    @Model.Item.AuthorName
                 </h6>
             </div>
             <div>
                 <span class="black-text">
-                    @Model.Description
+                    @Model.Item.Description
                 </span>
             </div>
+            @if (Model.UserData.IsAuthorized && Model.UserData.IsInRole(FICTFeed.Bussines.AdditionalData.Roles.Moderator))
+            {
+                <div>
+                    <a href="#" class="red-text js-delete-comment" data-id="@Model.Item.Id.ToString()">@Html.ResourceString("Delete")</a>
+                </div>
+            }
         </div>
     </div>
 </li>

@@ -1,5 +1,4 @@
 ﻿@model FICTFeed.MVC.Models.PageViews.News.NewsItemPageView
-
 @{
     ViewBag.Title = Model.NewsItem.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -33,7 +32,7 @@
     <ul class="comments-list">
         @foreach (var item in Model.Comments)
         {
-            Html.RenderPartial("CommentPartial", item);
+            Html.RenderPartial("CommentPartial", new FICTFeed.MVC.Models.PageViews.Comments.CommentPartialViewModel() { Item = item });
         }
     </ul>
 </div>

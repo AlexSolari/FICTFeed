@@ -38,5 +38,11 @@ namespace FICTFeed.Framework.News
         {
             return provider.GetByNewsId(newsItemId);
         }
+
+
+        public void Delete(Comment comment)
+        {
+            provider.Delete(comment);
+        }
     }
 }
