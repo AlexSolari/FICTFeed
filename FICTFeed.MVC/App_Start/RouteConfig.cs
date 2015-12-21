@@ -120,6 +120,12 @@ namespace FICTFeed.MVC
                 url: "admin/editgroup",
                 defaults: new { controller = "Admin", action = "EditGroup" }
             );
+            
+            routes.MapRoute(
+                name: "DeleteGroup",
+                url: "admin/deletegroup",
+                defaults: new { controller = "Admin", action = "DeleteGroup" }
+            );
 
             #endregion
 

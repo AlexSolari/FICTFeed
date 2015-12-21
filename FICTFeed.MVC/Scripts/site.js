@@ -44,6 +44,22 @@ $(window).load(function () {
         });
     });
 
+    $('.js-group-delete').click(function () {
+        var $this = $(this);
+        var confirmationMsg = $this.data("confirmation-msg");
+        var confirmationData = $this.data("confirmation");
+        var id = $this.data("confirmation-id");
+        if (prompt(confirmationMsg) == confirmationData)
+        {
+            $this.parents(".custom-card").fadeOut(500);
+            $.post(document.location.origin + "/admin/deletegroup", { id: id });
+        }
+        else
+        {
+            alert("Неверно введений код підтвердження");
+        }
+    });
+
     InitializeSpoilers();
     InitializeNewsFilters();
 });

@@ -391,4 +391,10 @@ h3 {
   <data name="YourGroupIs" xml:space="preserve">
     <value>Группа {0}, роль {1}.</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Для видалення группи наберіть "{0}"</value>
+  </data>
 </root>

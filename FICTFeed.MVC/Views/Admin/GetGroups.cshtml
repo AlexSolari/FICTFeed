@@ -20,6 +20,10 @@
             <hr />
             <div class="card-action">
                 @Html.RouteLink(Html.ResourceString("Edit"), "EditGroup", new { id = item.Id }, new { @class = "btn-flat" })
+                @if(item.Name != "Global")
+                {
+                    <a href="#" class="btn-flat btn-danger js-group-delete" data-confirmation-msg="@Html.ResourceString("DeleteConfirmation").FormatWith(item.Name)" data-confirmation="@item.Name" data-confirmation-id="@item.Id">@Html.ResourceString("Delete")</a>
+                }
             </div>                
         </div>
     }

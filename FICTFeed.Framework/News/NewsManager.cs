@@ -71,5 +71,10 @@ namespace FICTFeed.Framework.News
         {
             provider.Update(obj);
         }
+
+        public void Delete(NewsItem item)
+        {
+            provider.Delete(item);
+        }
     }
 }
