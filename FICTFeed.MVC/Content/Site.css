@@ -179,7 +179,8 @@ article .description{
   z-index: 800;
   float: right;
   width: 300px;
-  position: relative;
+  position: fixed;
+  right: 0;
 }
 #sidebar div:last-child{
   margin: 0;
