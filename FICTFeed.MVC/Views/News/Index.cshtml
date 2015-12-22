@@ -16,6 +16,7 @@
                 <a href="@(Url.RouteUrl("NewsEdit") + "?id=" + Model.NewsItem.Id.ToString())">
                     @Html.ResourceString("Edit")
                 </a>
+                <a href="#" class="js-newsitem-delete" data-confirmation-msg="@Html.ResourceString("NewsDeleteConfirmation").FormatWith(Model.NewsItem.Id.ToString().Split('-').First())" data-confirmation="@Model.NewsItem.Id.ToString().Split('-').First()" data-confirmation-id="@Model.NewsItem.Id">@Html.ResourceString("Delete")</a>
             }
         </div>
         <p>@Model.NewsItem.Description</p>

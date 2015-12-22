@@ -397,4 +397,7 @@ h3 {
   <data name="DeleteConfirmation" xml:space="preserve">
     <value>Для видалення группи наберіть "{0}"</value>
   </data>
+  <data name="NewsDeleteConfirmation" xml:space="preserve">
+    <value>Для видалення новини наберіть "{0}"</value>
+  </data>
 </root>

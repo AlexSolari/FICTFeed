@@ -58,6 +58,12 @@ namespace FICTFeed.MVC
             );
 
             routes.MapRoute(
+                name: "NewsDelete",
+                url: "news/delete",
+                defaults: new { controller = "News", action = "Delete", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "NewsGetListForGroup",
                 url: "news/listforgroup",
                 defaults: new { controller = "News", action = "GetList", id = UrlParameter.Optional }

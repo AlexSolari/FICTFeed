@@ -326,12 +326,12 @@ span, h2, h5, p, a {
     height: 64px;
     border-radius: 32px;
 }
-.js-group-delete {
+.btn-danger {
     float: right;
     border: 1px solid rgba(255, 0, 0, 0.75);
     color: red !important;
 }
-.js-group-delete:active, .js-group-delete:focus{
+.btn-danger:active, .btn-danger:focus{
     background-color: rgba(255, 0, 0, 0.15);
 }
 .forgot-pass{

@@ -22,6 +22,7 @@
                 <a href="@(Url.RouteUrl("NewsEdit") + "?id=" + item.Id.ToString())">
                     <div class="btn-flat">@Html.ResourceString("Edit")</div>
                 </a>
+                <a href="#" class="btn-flat btn-danger js-newsitem-delete" data-confirmation-msg="@Html.ResourceString("NewsDeleteConfirmation").FormatWith(item.Id.ToString().Split('-').First())" data-confirmation="@item.Id.ToString().Split('-').First()" data-confirmation-id="@item.Id">@Html.ResourceString("Delete")</a>
             </div>
         </div>
     }

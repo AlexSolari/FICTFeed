@@ -72,6 +72,19 @@ $(window).load(function () {
         }
     });
 
+    $('.js-newsitem-delete').click(function () {
+        var $this = $(this);
+        var confirmationMsg = $this.data("confirmation-msg");
+        var confirmationData = $this.data("confirmation");
+        var id = $this.data("confirmation-id");
+        if (prompt(confirmationMsg) == confirmationData) {
+            $this.parents(".custom-card").fadeOut(500);
+            $.post(document.location.origin + "/news/delete", { id: id });
+        }
+        else {
+            alert("Неверно введений код підтвердження");
+        }
+    });
     
     BindCommentsDeleting();
     InitializeSpoilers();

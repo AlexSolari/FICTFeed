@@ -67,6 +67,31 @@ namespace FICTFeed.MVC.Controllers
             return RedirectToRoute("Home");
         }
 
+        [HttpPost]
+        public ActionResult Delete(string id)
+        {
+            var userdata = new UserDataContainer();
+            var newsItem = newsManager.GetById(id);
+
+            if (newsItem == null || !userdata.IsAuthorized)
+                return RedirectToRoute("NotFound");
+
+            if (userdata.CurrentUser.Id == newsItem.AuthorId
+                || userdata.CurrentUser.Role == Roles.Admin
+                || userdata.CurrentUser.Role == Roles.Moderator
+                || (userdata.CurrentUser.Role == Roles.Praepostor && userdata.CurrentUser.GroupId == newsItem.GroupId))
+            {
+                newsManager.Delete(newsItem);
+
+                return Json(true);
+            }
+            else
+            {
+                return RedirectToRoute("NotFound");
+            }
+            
+        }
+
         [HttpGet]
         public ActionResult Edit(string id)
         {
