@@ -36,7 +36,11 @@ namespace FICTFeed.MVC.Models.PageViews.News
                 if (UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.User || UserData.CurrentUser.Role == FICTFeed.Bussines.AdditionalData.Roles.Praepostor)
                 {
                     var usergroup = (manager.GetById(UserData.CurrentUser.GroupId.ToString()).Name);
-                    groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("NewsFor").FormatWith(usergroup), Value = usergroup });
+                    if (usergroup != "Global")
+                    {
+                        groups.Add(new SelectListItem() { Text = ResourceAccessor.Instance.Get("NewsFor").FormatWith(usergroup), Value = usergroup });
+                    }
+                    
                 }
                 else
                 {
