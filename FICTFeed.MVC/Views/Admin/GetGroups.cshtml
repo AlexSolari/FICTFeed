@@ -14,7 +14,16 @@
             <div class="card-content">
                 <h5 class="card-title grey-text">@Html.DisplayFor(m => item.Name)</h5>
                 <p>
-                    There will be detailed info.
+                    <h6 class="spoiler-link blue-grey-text">@Html.ResourceString("Users")</h6>
+                    <ul class="spoiler-body">
+                        @if (Model.Users[item.Id] != null)
+                        {
+                            foreach (var user in Model.Users[item.Id])
+                            {
+                                <li>[@Html.ResourceString(user.Role.ToString())] @user.Name : @user.Mail</li>
+                            }
+                        }
+                    </ul>
                 </p>
             </div>
             <hr />
