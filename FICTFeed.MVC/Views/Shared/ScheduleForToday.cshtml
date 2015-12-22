@@ -10,7 +10,8 @@
 </b>
 @for (int j = 0; j < 8; j++)
 {
-    if(string.IsNullOrWhiteSpace(schedule.Lessons[j].Name))
+    schedule.Lessons[j].MapStartTimes();
+    if (string.IsNullOrWhiteSpace(schedule.Lessons[j].Name))
     {
         continue;
     }

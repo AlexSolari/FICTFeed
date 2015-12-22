@@ -1,28 +1,4 @@
 ﻿@model FICTFeed.Framework.Shedule.Schedule
-@*@for (int i = 0; i < model.weeks.count; i++)
-{
-    <h4 title="click to expand" class="spoiler-link">@html.resourcestring("week") @(i + 1)</h4>
-    <div class="spoiler-body">
-        @for (int q = 0; q < model.weeks[i].days.count; q++)
-        {
-            <h5 title="click to expand" class="spoiler-link">@html.resourcestring("day") @(q + 1)</h5>
-            <div class="spoiler-body">
-                @for (int j = 0; j < model.weeks[i].days[q].lessons.count; j++)
-                {
-                    <div title="click to expand" class="spoiler-link">@html.resourcestring("lesson") @(j + 1)</div>
-                    <div class="spoiler-body">
-                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].name)</div>
-                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].room)</div>
-                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].teacher)</div>
-                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].start)</div>
-                        <div>@html.editorfor(m => m.weeks[i].days[q].lessons[j].end)</div>
-                        @html.hiddenfor(m=>m.weeks[i].days[q].lessons[j].number)
-                    </div>
-                }
-            </div>
-        }
-    </div>
-}*@
 <table>
     <tr>
         <td>
@@ -88,6 +64,7 @@
                         <td>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Name)</td>
                         <td>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Room)</td>
                         <td><i>@Html.EditorFor(m => m.Weeks[i].Days[q].Lessons[j].Teacher)</i></td>
+                        @Html.HiddenFor(m => m.Weeks[i].Days[q].Lessons[j].Number)
                     </tr>
                 }
             </tbody>
