@@ -11,7 +11,7 @@ namespace FICTFeed.MVC.Models.ViewModels.News
         [HiddenInput(DisplayValue = false)]
         public virtual Guid Id { get; set; }
 
-        [CustomizebleStringLength(100, 3)]
+        [CustomizebleStringLength(250, 3)]
         [СustomizebleRequired]
         [AllowHtml]
         public virtual string Title { get; set; }
