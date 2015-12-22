@@ -119,6 +119,32 @@ namespace FICTFeed.MVC.Controllers
             return RedirectToRoute("GetGroups");
         }
 
+        [HttpPost]
+        public ActionResult DeleteGroup(string id)
+        {
+            var group = groupsManager.GetById(id);
+
+            var users = userManager.GetList().Where(x => x.GroupId == group.Id);
+
+            foreach (var item in users)
+            {
+                item.GroupId = groupsManager.GetByName("Global").Id;
+                if (item.Role == Roles.Praepostor)
+                    item.Role = Roles.User;
+                userManager.Update(item);
+            }
+
+            foreach (var item in newsManager.GetList())
+	        {
+                if (item.GroupId == group.Id)
+                    newsManager.Delete(item);
+	        }
+            
+            groupsManager.Delete(group);
+
+            return RedirectToRoute("GetGroups");
+        }
+
         [HttpGet]
         public ActionResult GetNewsItem()
         {

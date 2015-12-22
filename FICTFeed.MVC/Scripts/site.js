@@ -19,6 +19,17 @@ var InitializeNewsFilters = function () {
     });
 };
 
+var BindCommentsDeleting = function () {
+    $('.js-delete-comment').unbind("click");
+    $('.js-delete-comment').click(function () {
+        var $this = $(this);
+        var id = $this.data("id");
+        $.post(document.location.origin + "/comment/delete", { id: id }, function() {
+            $this.parents('li').fadeOut(500);
+        });
+    });
+};
+
 $(window).load(function () {
     $("#navigation-button").click(function () {
         $("#dropdown-navigation").toggleClass("hidden");
@@ -41,9 +52,28 @@ $(window).load(function () {
             $('textarea#text').val("");
             $($('.comments-list').children()[0]).fadeOut(0);
             $($('.comments-list').children()[0]).fadeIn(1500);
+            BindCommentsDeleting();
         });
     });
 
+    $('.js-group-delete').click(function () {
+        var $this = $(this);
+        var confirmationMsg = $this.data("confirmation-msg");
+        var confirmationData = $this.data("confirmation");
+        var id = $this.data("confirmation-id");
+        if (prompt(confirmationMsg) == confirmationData)
+        {
+            $this.parents(".custom-card").fadeOut(500);
+            $.post(document.location.origin + "/admin/deletegroup", { id: id });
+        }
+        else
+        {
+            alert("Неверно введений код підтвердження");
+        }
+    });
+
+    
+    BindCommentsDeleting();
     InitializeSpoilers();
     InitializeNewsFilters();
 });

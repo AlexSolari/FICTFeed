@@ -71,11 +71,21 @@ namespace FICTFeed.MVC
 
             #endregion
 
+            #region Comments
+            
             routes.MapRoute(
                 name: "CommentCreate",
                 url: "comment/create",
                 defaults: new { controller = "Comments", action = "Create", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "CommentDelete",
+                url: "comment/delete",
+                defaults: new { controller = "Comments", action = "Delete", id = UrlParameter.Optional }
+            );
+
+            #endregion
 
             #region Admin
 
@@ -119,6 +129,12 @@ namespace FICTFeed.MVC
                 name: "EditGroup",
                 url: "admin/editgroup",
                 defaults: new { controller = "Admin", action = "EditGroup" }
+            );
+            
+            routes.MapRoute(
+                name: "DeleteGroup",
+                url: "admin/deletegroup",
+                defaults: new { controller = "Admin", action = "DeleteGroup" }
             );
 
             #endregion

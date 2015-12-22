@@ -154,6 +154,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\PageViews\BasePageView.cs" />
+    <Compile Include="Models\PageViews\Comments\CommentPartialViewModel.cs" />
     <Compile Include="Models\PageViews\Groups\CreateGroupPageView.cs" />
     <Compile Include="Models\PageViews\Groups\GroupEditPageView.cs" />
     <Compile Include="Models\PageViews\Groups\EditGroupsPageView.cs" />

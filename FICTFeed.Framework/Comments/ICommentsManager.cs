@@ -12,5 +12,6 @@ namespace FICTFeed.Framework.News
     {
         IList<Comment> GetList();
         IList<Comment> GetList(Guid newsItemId);
+        void Delete(Comment comment);
     }
 }

@@ -47,9 +47,10 @@
         <div id="navigation-button" class="primary light material-icons">reorder</div>
         
     </nav>
-    <a href="#top"><div id="jumpup" class="primary light">Угору</div></a>
-    <div id="content">      
-        <div id="sidebar" class="primary light primary-text">
+    <a href="#top"><div id="jumpup" class="primary light material-icons">navigation</div></a>
+    <div id="content">
+        <div id="main">
+            <div id="sidebar" class="primary light primary-text">
                 @if (UserData.IsAuthorized && UserData.CurrentUser != null)
                 {
                     <div>
@@ -62,9 +63,7 @@
                 <div>
                     @{Html.RenderPartial("NewestNews", new FICTFeed.MVC.Models.PageViews.BasePageView());}
                 </div>
-        </div>
-        <div id="main">
-            
+            </div>
             <div id="body">
                 @RenderBody()
             </div>
