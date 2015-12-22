@@ -7,6 +7,7 @@ using FICTFeed.MVC.Models.PageViews;
 using FICTFeed.MVC.Models.PageViews.News;
 using FICTFeed.MVC.Models.ViewModels.News;
 using System.Web.Mvc;
+using System.Linq;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -24,7 +25,7 @@ namespace FICTFeed.MVC.Controllers
         {
             var userInfo = new UserDataContainer();
 
-            var news = newsManager.GetListMatchingUserGroups(userInfo);
+            var news = newsManager.GetListMatchingUserGroups(userInfo, "PostingDate");
             var result = new NewsListPageView(Mapper.Map<NewsItemViewModel, NewsItem>(news));
 
             return View(result);
