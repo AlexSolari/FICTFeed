@@ -406,6 +406,24 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JUST DO IT.
+        /// </summary>
+        internal static string JUSTDOIT {
+            get {
+                return ResourceManager.GetString("JUSTDOIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Всі новини твого факультету.
+        /// </summary>
+        internal static string LandingLine {
+            get {
+                return ResourceManager.GetString("LandingLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Пара.
         /// </summary>
         internal static string Lesson {
@@ -429,6 +447,15 @@ namespace FICTFeed.Resources {
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to вхід в існуючий аккаунт.
+        /// </summary>
+        internal static string LoginIntoExisting {
+            get {
+                return ResourceManager.GetString("LoginIntoExisting", resourceCulture);
             }
         }
         
@@ -550,6 +577,15 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Будь в курсі всьго що проходить на факультеті та у твоїй группі..
+        /// </summary>
+        internal static string NewsMotivator {
+            get {
+                return ResourceManager.GetString("NewsMotivator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to На жаль, новин немає =(.
         /// </summary>
         internal static string NoNews {
@@ -636,6 +672,15 @@ namespace FICTFeed.Resources {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Потрібен детальний розклад або розклад на сьогодні? Один клік -- і він у тебе..
+        /// </summary>
+        internal static string ScheduleMotivator {
+            get {
+                return ResourceManager.GetString("ScheduleMotivator", resourceCulture);
             }
         }
         

@@ -159,6 +159,12 @@ namespace FICTFeed.MVC
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                name: "Landing",
+                url: "landing",
+                defaults: new { controller = "Home", action = "Landing", id = UrlParameter.Optional }
+            );
+
             #endregion
 
             #region Group

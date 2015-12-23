@@ -1,0 +1,41 @@
+﻿@model FICTFeed.MVC.Models.PageViews.BasePageView
+@{
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
+    ViewBag.Title = Html.ResourceString("Home");
+}
+<div class="landing">
+    <div class="image-background valign-wrapper">
+        <div class="landing-line valign">
+            <h1>@Html.ResourceString("SiteTitle")</h1>
+            <h5>@Html.ResourceString("LandingLine")</h5>
+        </div>
+    </div>
+    <div class="motivation">
+        <ul class="inline-list">
+            <li>
+                <div class="motivator">
+                    <h5>@Html.ResourceString("News")</h5>
+                    <p>
+                        @Html.ResourceString("NewsMotivator")
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="action">
+                    <h4>@Html.ResourceString("JUSTDOIT")</h4>
+                    <a class="btn" href="@Url.RouteUrl("RegisterUser")">@Html.ResourceString("Registration")</a><br />
+                    <a href="@Url.RouteUrl("LoginUser")">@Html.ResourceString("LoginIntoExisting")</a>
+                </div>
+            </li>
+            <li>
+                <div class="motivator">
+                    <h5>@Html.ResourceString("GroupSchedule")</h5>
+                    <p>
+                        @Html.ResourceString("ScheduleMotivator")
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

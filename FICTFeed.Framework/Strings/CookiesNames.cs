@@ -9,5 +9,6 @@ namespace FICTFeed.Framework.Strings
     public class CookiesNames
     {
         public const string LoginCookie = "FICTFeed.LoginCookie";
+        public const string LandingVisited = "FICTFeed.LandingVisited";
     }
 }

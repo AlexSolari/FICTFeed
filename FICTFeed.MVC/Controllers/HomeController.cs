@@ -8,6 +8,8 @@ using FICTFeed.MVC.Models.PageViews.News;
 using FICTFeed.MVC.Models.ViewModels.News;
 using System.Web.Mvc;
 using System.Linq;
+using FICTFeed.Framework.Strings;
+using System;
 
 namespace FICTFeed.MVC.Controllers
 {
@@ -23,12 +25,25 @@ namespace FICTFeed.MVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var userInfo = new UserDataContainer();
+            if (Request.Cookies.AllKeys.Contains(CookiesNames.LandingVisited))
+            {
+                var userInfo = new UserDataContainer();
 
-            var news = newsManager.GetListMatchingUserGroups(userInfo, "PostingDate");
-            var result = new NewsListPageView(Mapper.Map<NewsItemViewModel, NewsItem>(news));
+                var news = newsManager.GetListMatchingUserGroups(userInfo, "PostingDate");
+                var result = new NewsListPageView(Mapper.Map<NewsItemViewModel, NewsItem>(news));
 
-            return View(result);
+                return View(result);
+            }
+
+            return RedirectToRoute("Landing");
+        }
+
+        [HttpGet]
+        public ActionResult Landing()
+        {
+            Request.RequestContext.HttpContext.Response.Cookies.Add(new System.Web.HttpCookie(CookiesNames.LandingVisited, Guid.NewGuid().ToString()));
+
+            return View(new BasePageView());
         }
     }
 }

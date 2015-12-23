@@ -400,4 +400,19 @@ h3 {
   <data name="NewsDeleteConfirmation" xml:space="preserve">
     <value>Для видалення новини наберіть "{0}"</value>
   </data>
+  <data name="JUSTDOIT" xml:space="preserve">
+    <value>JUST DO IT</value>
+  </data>
+  <data name="LandingLine" xml:space="preserve">
+    <value>Всі новини твого факультету</value>
+  </data>
+  <data name="LoginIntoExisting" xml:space="preserve">
+    <value>вхід в існуючий аккаунт</value>
+  </data>
+  <data name="NewsMotivator" xml:space="preserve">
+    <value>Будь в курсі всьго що проходить на факультеті та у твоїй группі.</value>
+  </data>
+  <data name="ScheduleMotivator" xml:space="preserve">
+    <value>Потрібен детальний розклад або розклад на сьогодні? Один клік -- і він у тебе.</value>
+  </data>
 </root>
