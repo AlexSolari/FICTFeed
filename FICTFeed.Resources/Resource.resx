@@ -133,7 +133,7 @@
     <value>Створити группу</value>
   </data>
   <data name="CurrentWeekNo" xml:space="preserve">
-    <value>Сьогодні неділя №{0}</value>
+    <value>Сьогодні тиждень №{0}</value>
   </data>
   <data name="CustomizebleCompareErrorMessage" xml:space="preserve">
     <value>Поля "{0}" та "{1}" повинні співпадати.</value>
@@ -395,7 +395,7 @@ h3 {
     <value>Видалити</value>
   </data>
   <data name="DeleteConfirmation" xml:space="preserve">
-    <value>Для видалення группи наберіть "{0}"</value>
+    <value>Для видалення групи наберіть "{0}"</value>
   </data>
   <data name="NewsDeleteConfirmation" xml:space="preserve">
     <value>Для видалення новини наберіть "{0}"</value>
@@ -410,9 +410,9 @@ h3 {
     <value>вхід в існуючий аккаунт</value>
   </data>
   <data name="NewsMotivator" xml:space="preserve">
-    <value>Будь в курсі всьго що проходить на факультеті та у твоїй группі.</value>
+    <value>Будь у курсі всьго, що проходить на факультеті та у твоїй групі.</value>
   </data>
   <data name="ScheduleMotivator" xml:space="preserve">
-    <value>Потрібен детальний розклад або розклад на сьогодні? Один клік -- і він у тебе.</value>
+    <value>Потрібен детальний розклад, або розклад на сьогодні? Один клік -- і він у тебе.</value>
   </data>
 </root>

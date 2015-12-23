@@ -160,7 +160,7 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Сьогодні неділя №{0}.
+        ///   Looks up a localized string similar to Сьогодні тиждень №{0}.
         /// </summary>
         internal static string CurrentWeekNo {
             get {
@@ -214,7 +214,7 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Для видалення группи наберіть &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Для видалення групи наберіть &quot;{0}&quot;.
         /// </summary>
         internal static string DeleteConfirmation {
             get {
@@ -577,7 +577,7 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Будь в курсі всьго що проходить на факультеті та у твоїй группі..
+        ///   Looks up a localized string similar to Будь у курсі всьго, що проходить на факультеті та у твоїй групі..
         /// </summary>
         internal static string NewsMotivator {
             get {
@@ -676,7 +676,7 @@ namespace FICTFeed.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Потрібен детальний розклад або розклад на сьогодні? Один клік -- і він у тебе..
+        ///   Looks up a localized string similar to Потрібен детальний розклад, або розклад на сьогодні? Один клік -- і він у тебе..
         /// </summary>
         internal static string ScheduleMotivator {
             get {
