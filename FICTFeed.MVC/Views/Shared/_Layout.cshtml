@@ -21,6 +21,7 @@
                 @if (UserData.IsAuthorized)
                 {
                     <li>@Html.RouteLink(Html.ResourceString("Logout"), "LogoutUser")</li>
+                    <li><a href="@(Url.RouteUrl("GetSchedulePDF") + "?id=" + UserData.CurrentUser.GroupId.ToString())">@Html.ResourceString("GroupSchedule")</a></li>
                 }
                 else
                 {
@@ -35,6 +36,7 @@
                 @if (UserData.IsAuthorized)
                 {
                     <li>@Html.RouteLink(Html.ResourceString("Logout"), "LogoutUser")</li>
+                    <li><a href="@(Url.RouteUrl("GetSchedulePDF") + "?id=" + UserData.CurrentUser.GroupId.ToString())">@Html.ResourceString("GroupSchedule")</a></li>
                 }
                 else
                 {
